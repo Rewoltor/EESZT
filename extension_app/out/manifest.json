@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "EESZT Adatelemző",
+    "version": "1.0.0",
+    "description": "Automatikus EESZT laborlelet letöltő és elemző.",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage",
+        "downloads",
+        "scripting"
+    ],
+    "host_permissions": [
+        "*://*.eeszt.gov.hu/*",
+        "file:///*"
+    ],
+    "action": {
+        "default_popup": "simple_popup.html",
+        "default_title": "EESZT Elemző (Debug)"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.eeszt.gov.hu/*"
+            ],
+            "js": [
+                "content_eeszt.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    }
+}

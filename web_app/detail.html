@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marker Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <span>←</span> Back to Dashboard
+        </a>
+
+        <div class="detail-header">
+            <h1 id="marker-title" class="detail-title">Loading...</h1>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">Latest</div>
+                <div id="latest-stat" class="stat-value">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Min</div>
+                <div id="min-stat" class="stat-value">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Max</div>
+                <div id="max-stat" class="stat-value">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tests</div>
+                <div id="count-stat" class="stat-value">--</div>
+            </div>
+        </div>
+
+        <div id="ref-range-banner"></div>
+
+        <div class="chart-card">
+            <div id="chart-container" class="chart-container">
+                <canvas id="historyChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', renderDetail);
+    </script>
+</body>
+
+</html>

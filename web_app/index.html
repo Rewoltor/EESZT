@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Lab Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div>
+                <h1>Lab Results</h1>
+                <p class="patient-info">Marton Baltay • ID: 116086200</p>
+            </div>
+            <div class="header-actions">
+                <!-- Placeholder for potential actions like Export or Filter -->
+                <span class="last-updated">Last Updated: Today</span>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search markers...">
+        </div>
+
+        <div id="dashboard-grid" class="dashboard-grid">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => renderDashboard());
+    </script>
+</body>
+
+</html>

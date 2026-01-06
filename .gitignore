@@ -1,0 +1,8 @@
+/venv
+
+EESZT_Archives
+blood_results.json
+merged_medical_history.pdf
+manifest.json
+eeszt_downloader.log
+errors.log

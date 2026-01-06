@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/Legacy/EESZT_Archive
+/Legacy/venv
+/Legacy/eeszt_downloader.log
+/Legacy/errors.log
+/Legacy/manifest.json
+/Legacy/merged_medical_history.pdf
+/Legacy/blood_results.json

@@ -1,54 +1,41 @@
 // Background Service Worker
 
-// State
-let isSyncing = false;
-let processedCount = 0;
+console.log("EESZT Background Worker Loaded");
 
-chrome.runtime.onInstalled.addListener(() => {
-    console.log("EESZT Adatelemző Extension Installed");
-});
-
-// Listener for messages from Popup or Content Script
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log("Msg received:", message);
-
-    if (message.action === "START_SYNC") {
-        isSyncing = true;
-        processedCount = 0;
-
-        // Open EESZT or focus existing
-        chrome.tabs.query({ url: "https://www.eeszt.gov.hu/*" }, (tabs) => {
-            if (tabs.length > 0) {
-                chrome.tabs.update(tabs[0].id, { active: true });
-                // Inject start message
-                chrome.tabs.sendMessage(tabs[0].id, { action: "INIT_SCRAPE" });
-            } else {
-                chrome.tabs.create({ url: "https://www.eeszt.gov.hu/hu/e-kortortenet" }, (tab) => {
-                    // Wait for load? The content script will auto-run but might need a trigger.
-                    // We'll let the content script announce itself.
-                });
-            }
-        });
-        sendResponse({ status: "started" });
-    }
-
-    if (message.action === "DOWNLOAD_ITEM") {
-        // Content script found a file to download
-        // We can use chrome.downloads.download if we have the URL, 
-        // or if it was a click, we just monitor.
-        // If we want to rename:
-        // chrome.downloads.download({ url: message.url, filename: message.filename });
-    }
-
-    if (message.action === "SYNC_STATUS_UPDATE") {
-        // Forward to popup if open
-        chrome.runtime.sendMessage(message).catch(() => { });
-    }
-});
-
-// Rename downloads to keep them organized
+// 1. Rename downloads to avoid collision
+// This listens for ANY download started by the browser (including those triggered by invalid links/clicks)
 chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
-    // Check if this download is from EESZT
-    // We might need a flag to know if it's "our" download
-    suggest({ filename: `EESZT_Data/${item.filename}`, conflictAction: 'overwrite' });
+    // Check if it looks like an EESZT file or PDF coming from EESZT domain
+    // We check URL pattern and MIME type
+    const isEeszt = item.url.includes("eeszt.gov.hu") || item.url.includes("e-kortortenet") || item.referrer?.includes("eeszt.gov.hu");
+
+    if (isEeszt) {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+        // Create a unique filename: EESZT_2025-01-01_12-30-55_123.pdf
+        // We put it in an "EESZT" subfolder for cleanliness
+        const newFilename = `EESZT/EESZT_Letoltes_${timestamp}_${Math.floor(Math.random() * 1000)}.pdf`;
+
+        console.log(`Renaming download [${item.id}] from '${item.filename}' to '${newFilename}'`);
+
+        suggest({
+            filename: newFilename,
+            conflictAction: "uniquify"
+        });
+    } else {
+        // Let other files pass normally
+        suggest();
+    }
+});
+
+// 2. Open Popup/Help on Install (Optional helpful feature)
+chrome.runtime.onInstalled.addListener(() => {
+    console.log("EESZT Extension Installed");
+});
+
+// 3. Keep Message Channel Open (Legacy Support)
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "START_SYNC") {
+        console.log("Background received START_SYNC");
+    }
+    return true;
 });

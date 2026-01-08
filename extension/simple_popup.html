@@ -10,22 +10,29 @@
         }
 
         body {
-            width: 380px;
-            min-height: 400px;
-            padding: 0;
+            width: 400px;
+            padding: 8px;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(160deg, #0f0f0f 0%, #1a1a2e 100%);
-            color: #f3f4f6;
+            background: #111;
             margin: 0;
             overflow-x: hidden;
         }
 
+        /* Main Container for Rounded Look */
+        #app-container {
+            background: linear-gradient(160deg, #1a1a1a 0%, #16213e 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+            min-height: 480px;
+        }
+
         /* Header */
         header {
-            padding: 20px 24px;
+            padding: 24px 24px 16px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.2);
         }
 
         h2 {
@@ -33,19 +40,22 @@
             color: #fff;
             font-size: 18px;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
             margin: 6px 0 0;
             font-size: 11px;
-            color: #6b7280;
+            color: #9ca3af;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         /* Content Area */
         .content {
             padding: 24px;
+            position: relative;
         }
 
         /* States - Only one visible at a time */
@@ -55,7 +65,7 @@
 
         .state.active {
             display: block;
-            animation: fadeIn 0.3s ease-out;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* Tutorial Carousel */
@@ -66,17 +76,17 @@
 
         .slide.active {
             display: block;
-            animation: slideIn 0.25s ease-out;
+            animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .slide img {
-            width: 95%;
-            max-height: 180px;
+            width: 100%;
+            height: 180px;
             object-fit: contain;
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
-            margin: 16px auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .slide h4 {
@@ -159,44 +169,6 @@
             cursor: not-allowed;
         }
 
-        /* Waiting State */
-        #state-waiting {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .spinner {
-            width: 48px;
-            height: 48px;
-            border: 4px solid rgba(59, 130, 246, 0.2);
-            border-top-color: #3b82f6;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 24px;
-        }
-
-        #state-waiting h3 {
-            margin: 0 0 12px;
-            font-size: 16px;
-            color: #fbbf24;
-        }
-
-        #state-waiting p {
-            font-size: 13px;
-            color: #9ca3af;
-            line-height: 1.6;
-        }
-
-        .arrow-hint {
-            margin-top: 20px;
-            padding: 12px;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            border-radius: 8px;
-            font-size: 12px;
-            color: #fbbf24;
-        }
-
         /* Running State */
         #state-running {
             text-align: center;
@@ -240,76 +212,51 @@
                 transform: translateX(0);
             }
         }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h2>EESZT Elemző</h2>
-        <p class="subtitle">Dokumentum Letöltő</p>
-    </header>
+    <div id="app-container">
+        <header>
+            <h2>EESZT Elemző</h2>
+            <p class="subtitle">Dokumentum Letöltő</p>
+        </header>
 
-    <div class="content">
-        <!-- STATE: Tutorial (Default - Visible on Open) -->
-        <div id="state-tutorial" class="state active">
-            <div class="slide active" data-slide="0">
-                <h4>👋 Üdvözöljük!</h4>
-                <p>Ez a bővítmény automatikusan letölti az összes EESZT dokumentumot. Ehhez engedélyeznie kell a felugró
-                    ablakokat.</p>
-                <img src="/images/guide_blocked.png" alt="Popup Icon">
-                <p style="margin-top:12px; font-size:12px; color:#9ca3af;">A következő lépésekben megmutatjuk, hogyan.
-                </p>
-            </div>
-            <div class="slide" data-slide="1">
-                <h4>⚠️ 1. Lépés</h4>
-                <p>Kattintson a <strong>"Kezdés"</strong> gombra. A böngésző blokkolni fogja a felugró ablakot.</p>
-                <img src="/images/guide_blocked.png" alt="Blocked">
-                <p style="margin-top:8px; font-size:12px; color:#fbbf24;">Ezt kell majd engedélyeznie!</p>
-            </div>
-            <div class="slide" data-slide="2">
-                <h4>✅ 2. Lépés</h4>
-                <p>Kattintson a címsorban megjelenő <strong>ikonra</strong>, majd válassza az <strong>"Always
-                        allow"</strong> opciót.</p>
-                <img src="/images/guide_allow.png" alt="Allow">
-            </div>
-            <div class="slide" data-slide="3">
-                <h4>🎉 3. Lépés</h4>
-                <p>Nyomja meg a <strong>"Done"</strong> gombot. A letöltés automatikusan elindul!</p>
-                <img src="/images/guide_done.png" alt="Done">
+        <div class="content">
+            <!-- STATE: Tutorial (Simpler now) -->
+            <div id="state-tutorial" class="state active">
+                <!-- Slide 0 -->
+                <div class="slide active">
+                    <h4>👋 Üdvözöljük!</h4>
+                    <p>A bővítmény automatikusan letölti az összes EESZT dokumentumot, és rendezi őket.</p>
+                    <img src="/images/guide_blocked.png" alt="Icon">
+                </div>
+                <!-- Slide 1 (Auto Config) -->
+                <div class="slide">
+                    <h4>⚙️ Automatikus Beállitás</h4>
+                    <p>A "Kezdés" gomb megnyomásával a bővítmény automatikusan engedélyezi a pop-upokat és letöltéseket
+                        az EESZT
+                        számára.</p>
+                    <img src="/images/guide_allow.png" alt="Auto Setup">
+                </div>
+
+                <div class="carousel-nav">
+                    <button class="btn-secondary" id="btn-prev" disabled>← Vissza</button>
+                    <div class="dots" id="dots"></div>
+                    <button class="btn-primary" id="btn-next">Tovább →</button>
+                </div>
             </div>
 
-            <div class="carousel-nav">
-                <button class="btn-secondary" id="btn-prev" disabled>← Vissza</button>
-                <div class="dots" id="dots"></div>
-                <button class="btn-primary" id="btn-next">Tovább →</button>
+            <!-- STATE: Running -->
+            <div id="state-running" class="state">
+                <div class="check-icon">✅</div>
+                <h3>Letöltés folyamatban...</h3>
+                <p>✓ Pop-up jogosultságok engedélyezve<br>✓ Letöltési jogosultságok engedélyezve<br>✓ Automatikus
+                    letöltés aktív<br><br>Ne zárja be az EESZT
+                    oldalt!</p>
             </div>
-        </div>
-
-        <!-- STATE: Waiting for Permission -->
-        <div id="state-waiting" class="state">
-            <div class="spinner"></div>
-            <h3>Várakozás az engedélyezésre...</h3>
-            <p>Kattintson a böngésző címsorában megjelenő <strong>blokkolás ikonra</strong> (jobb felső sarok), majd
-                engedélyezze a felugró ablakokat.</p>
-            <div class="arrow-hint">
-                ☝️ Keresse a címsor jobb szélén a kis ikont!
-            </div>
-        </div>
-
-        <!-- STATE: Running -->
-        <div id="state-running" class="state">
-            <div class="check-icon">✅</div>
-            <h3>Letöltés folyamatban...</h3>
-            <p>Ne zárja be ezt az ablakot és az EESZT oldalt!<br>A folyamat automatikusan fut.</p>
         </div>
     </div>
-
     <script src="/simple_popup.js"></script>
 </body>
 

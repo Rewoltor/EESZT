@@ -1,9 +1,8 @@
-// simple_popup.js - New Permission Flow
+// simple_popup.js - Auto-Allow Downloads Flow
 
 // === UI Elements ===
 const states = {
     tutorial: document.getElementById('state-tutorial'),
-    waiting: document.getElementById('state-waiting'),
     running: document.getElementById('state-running')
 };
 
@@ -14,8 +13,6 @@ const btnNext = document.getElementById('btn-next');
 
 let currentSlide = 0;
 const totalSlides = slides.length;
-let pollingInterval = null;
-let targetTabId = null;
 
 // === Initialize ===
 function init() {
@@ -28,24 +25,22 @@ function init() {
 
     // Button listeners
     btnPrev.addEventListener('click', prevSlide);
-    btnNext.addEventListener('click', nextSlide);
+    btnNext.addEventListener('click', handleNextClick);
 
     updateSlide();
 }
 
-// === State Management ===
-function showState(stateName) {
-    Object.keys(states).forEach(key => {
-        states[key].classList.toggle('active', key === stateName);
-    });
-}
-
 // === Carousel ===
 function updateSlide() {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentSlide);
-    });
+    // Hide all first
+    slides.forEach(s => s.classList.remove('active'));
 
+    // Show current
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Update dots
     const dots = dotsContainer.querySelectorAll('.dot');
     dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentSlide);
@@ -53,13 +48,24 @@ function updateSlide() {
 
     btnPrev.disabled = currentSlide === 0;
 
-    // Last slide: Change button to "Kezdés"
+    // Last slide handling
     if (currentSlide === totalSlides - 1) {
         btnNext.textContent = '🚀 Kezdés';
-        btnNext.onclick = startPermissionFlow;
+        btnNext.classList.remove('btn-secondary');
+        btnNext.classList.add('btn-primary');
     } else {
         btnNext.textContent = 'Tovább →';
-        btnNext.onclick = nextSlide;
+        // Ensure styling is consistent if we went back
+        btnNext.classList.add('btn-primary');
+    }
+}
+
+function handleNextClick() {
+    if (currentSlide === totalSlides - 1) {
+        // Last slide -> Start Flow
+        startAutoConfigAndSync();
+    } else {
+        nextSlide();
     }
 }
 
@@ -77,132 +83,141 @@ function prevSlide() {
     }
 }
 
-// === Permission Flow ===
-async function startPermissionFlow() {
-    console.log("Starting permission flow...");
+// === Auto-Config & Sync ===
+async function startAutoConfigAndSync() {
+    console.log("Starting Auto-Config...");
 
     try {
-        // Find EESZT tab
         const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (tabs.length === 0) return;
+        const targetTabId = tabs[0].id; // Assign to const now
 
-        if (tabs.length === 0) {
-            alert("Nincs aktív fül! Kérjük, nyissa meg az EESZT oldalt.");
-            return;
-        }
-
-        targetTabId = tabs[0].id;
-
-        // Check if on EESZT
         if (!tabs[0].url.includes("eeszt.gov.hu")) {
-            alert("Ez nem az EESZT oldala!\nKérjük, lépjen be az eeszt.gov.hu oldalra, majd próbálja újra.");
+            alert("Ez nem az EESZT oldala!");
             return;
         }
 
-        // Switch to waiting state
-        showState('waiting');
+        // 1. AUTO-GRANT PERMISSIONS (Pop-ups + Downloads)
+        // CRITICAL: We need BOTH popups (for window.open) AND automaticDownloads
+        const origins = [
+            'https://eeszt.gov.hu/*',
+            'https://*.eeszt.gov.hu/*',
+            'https://www.eeszt.gov.hu/*',
+            'https://portal.eeszt.gov.hu/*',
+            'https://e-kortortenet.eeszt.gov.hu/*',
+            'https://*.e-kortortenet.eeszt.gov.hu/*',
+            // Catch-all for subdomains
+            '*://*.eeszt.gov.hu/*'
+        ];
 
-        // Trigger popup via setTimeout (FORCES BLOCK if not whitelisted)
-        await chrome.scripting.executeScript({
-            target: { tabId: targetTabId },
-            func: () => {
-                // setTimeout disconnects from user gesture -> Chrome applies popup rules
-                setTimeout(() => {
-                    window.open("about:blank", "_blank", "width=100,height=100,top=0,left=0");
-                }, 50);
-            }
+        console.log("Setting permissions for EESZT domains...");
+        console.log("🔧 Configuring: Pop-ups + Automatic Downloads");
+
+        let popupSuccessCount = 0;
+        let downloadSuccessCount = 0;
+        let totalErrors = 0;
+
+        // Set POPUPS permission (THIS IS THE KEY FIX)
+        console.log("\n📋 Setting POP-UP permissions...");
+        for (const pattern of origins) {
+            await new Promise((resolve) => {
+                chrome.contentSettings.popups.set({
+                    primaryPattern: pattern,
+                    setting: 'allow'
+                }, () => {
+                    if (chrome.runtime.lastError) {
+                        console.error(`❌ Pop-up ERROR for ${pattern}:`, chrome.runtime.lastError.message);
+                        totalErrors++;
+                    } else {
+                        console.log(`✓ Pop-ups allowed for: ${pattern}`);
+                        popupSuccessCount++;
+                    }
+                    resolve();
+                });
+            });
+        }
+
+        // Set AUTOMATIC DOWNLOADS permission (backup/additional)
+        console.log("\n📥 Setting AUTOMATIC DOWNLOAD permissions...");
+        for (const pattern of origins) {
+            await new Promise((resolve) => {
+                chrome.contentSettings.automaticDownloads.set({
+                    primaryPattern: pattern,
+                    setting: 'allow'
+                }, () => {
+                    if (chrome.runtime.lastError) {
+                        console.error(`❌ Download ERROR for ${pattern}:`, chrome.runtime.lastError.message);
+                        totalErrors++;
+                    } else {
+                        console.log(`✓ Downloads allowed for: ${pattern}`);
+                        downloadSuccessCount++;
+                    }
+                    resolve();
+                });
+            });
+        }
+
+        // Verify at least popups were set (most critical)
+        if (popupSuccessCount === 0) {
+            throw new Error("Nem sikerült beállítani a pop-up jogosultságokat. Próbálja újra vagy engedélyezze manuálisan!");
+        }
+
+        console.log(`\n✅ Permissions configured successfully!`);
+        console.log(`   Pop-ups: ${popupSuccessCount}/${origins.length}`);
+        console.log(`   Downloads: ${downloadSuccessCount}/${origins.length}`);
+        if (totalErrors > 0) {
+            console.warn(`   Warnings: ${totalErrors} errors (may be safe to ignore)`);
+        }
+
+        // Verify popup permission for main domain
+        await new Promise((resolve) => {
+            chrome.contentSettings.popups.get({
+                primaryUrl: 'https://www.eeszt.gov.hu/'
+            }, (details) => {
+                if (details.setting === 'allow') {
+                    console.log('✅ Pop-up permission VERIFIED for eeszt.gov.hu');
+                } else {
+                    console.warn('⚠️ Pop-up permission verification failed:', details.setting);
+                }
+                resolve();
+            });
         });
 
-        console.log("Popup trigger sent. Starting polling...");
+        // Give Chrome extra time to process the permission changes
+        console.log("⏱️  Waiting for Chrome to process permissions...");
+        await new Promise(resolve => setTimeout(resolve, 800));
 
-        // Start polling for permission
-        startPolling();
+        // 2. Start Sync Immediately
+        startSync(targetTabId);
 
     } catch (e) {
-        console.error("Error starting flow:", e);
-        alert("Hiba történt: " + e.message);
-        showState('tutorial');
+        console.error("Error:", e);
+        alert("Hiba: " + e.message);
     }
 }
 
-// === Polling for Permission ===
-function startPolling() {
-    // Clear any existing interval
-    if (pollingInterval) clearInterval(pollingInterval);
+async function startSync(tabId) {
+    // Switch UI
+    states.tutorial.classList.remove('active');
+    states.running.classList.add('active');
 
-    // Check every 2 seconds
-    pollingInterval = setInterval(async () => {
-        console.log("Polling for permission...");
-
-        try {
-            const result = await chrome.scripting.executeScript({
-                target: { tabId: targetTabId },
-                func: () => {
-                    return new Promise((resolve) => {
-                        // Use setTimeout to simulate async (triggers block if not allowed)
-                        setTimeout(() => {
-                            try {
-                                const testWin = window.open("", "permission_test", "width=1,height=1,top=9999,left=9999");
-                                if (testWin && !testWin.closed) {
-                                    testWin.close();
-                                    resolve("allowed");
-                                } else {
-                                    resolve("blocked");
-                                }
-                            } catch (e) {
-                                resolve("blocked");
-                            }
-                        }, 50);
-                    });
-                }
-            });
-
-            const status = result[0]?.result;
-            console.log("Poll result:", status);
-
-            if (status === "allowed") {
-                // Permission granted! Start sync.
-                clearInterval(pollingInterval);
-                pollingInterval = null;
-                startSync();
-            }
-
-        } catch (e) {
-            console.error("Polling error:", e);
-            // Continue polling despite errors
-        }
-
-    }, 2000);
-}
-
-// === Start Sync ===
-async function startSync() {
-    console.log("Permission granted! Starting sync...");
-
-    showState('running');
-
+    console.log("Sending start command...");
     try {
         await chrome.scripting.executeScript({
-            target: { tabId: targetTabId },
+            target: { tabId: tabId },
             func: () => {
                 if (window.EESZT_START_SYNC) {
                     window.EESZT_START_SYNC();
                 } else {
-                    alert("A script még nem töltött be. Frissítse az EESZT oldalt (F5), majd próbálja újra.");
+                    alert("A script még nem töltött be. Frissítse az oldalt!");
                 }
             }
         });
     } catch (e) {
-        console.error("Sync start error:", e);
-        alert("Hiba a szinkronizálás indításakor: " + e.message);
+        console.error("Script injection failed:", e);
+        alert("Script injection error: " + e.message);
     }
 }
-
-// === Cleanup on Popup Close ===
-window.addEventListener('unload', () => {
-    if (pollingInterval) {
-        clearInterval(pollingInterval);
-    }
-});
 
 // === Start ===
 init();

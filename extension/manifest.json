@@ -8,11 +8,13 @@
         "activeTab",
         "downloads",
         "storage",
-        "tabs"
+        "tabs",
+        "contentSettings"
     ],
     "host_permissions": [
         "*://*.eeszt.gov.hu/*",
-        "*://*.e-kortortenet.eeszt.gov.hu/*"
+        "*://*.e-kortortenet.eeszt.gov.hu/*",
+        "*://*/*"
     ],
     "action": {
         "default_popup": "simple_popup.html",

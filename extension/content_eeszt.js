@@ -10,15 +10,21 @@ console.log("EESZT Content Script Loaded");
 window.EESZT_START_SYNC = function () {
     console.log("Global EESZT_START_SYNC command received");
     if (!isRunning) {
-        showToast("AUTOMATIZÁLÁS INDÍTÁSA...");
+        // Init UI
+        createRunningIndicator();
+        updateRunningIndicator("AUTOMATIZÁLÁS INDÍTÁSA...");
+
         isRunning = true;
 
         // Start immediately
         runAutomationSequence().catch(err => {
             console.error("Automation error:", err);
-            showToast("Hiba: " + err.message);
+            updateRunningIndicator("Hiba: " + err.message); // Show error in indicator
+            showToast("Hiba: " + err.message); // Backup toast
             chrome.runtime.sendMessage({ action: "SYNC_STATUS_UPDATE", status: "Hiba: " + err.message }).catch(() => { });
             isRunning = false;
+            // Optionally leave indicator up or remove it after delay
+            setTimeout(removeRunningIndicator, 5000);
         });
     }
     return "started";
@@ -33,19 +39,189 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return false;
 });
 
+// --- UI COMPONENTS ---
+
+function createRunningIndicator() {
+    if (document.getElementById("eeszt-running-indicator")) return;
+
+    const indicator = document.createElement("div");
+    indicator.id = "eeszt-running-indicator";
+    indicator.style.position = "fixed";
+    indicator.style.top = "20px";
+    indicator.style.left = "20px"; // Top left
+    indicator.style.padding = "16px 24px";
+    indicator.style.background = "#2563eb"; // Blue
+    indicator.style.color = "white";
+    indicator.style.borderRadius = "12px";
+    indicator.style.zIndex = "9999999";
+    indicator.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2)";
+    indicator.style.fontFamily = "'Inter', -apple-system, sans-serif";
+    indicator.style.display = "flex";
+    indicator.style.alignItems = "center";
+    indicator.style.gap = "12px";
+    indicator.style.maxWidth = "400px";
+    indicator.style.transition = "all 0.3s ease";
+
+    // Spinner
+    const spinner = document.createElement("div");
+    spinner.style.width = "20px";
+    spinner.style.height = "20px";
+    spinner.style.border = "3px solid rgba(255,255,255,0.3)";
+    spinner.style.borderTopColor = "#fff";
+    spinner.style.borderRadius = "50%";
+    spinner.style.animation = "eeszt-spin 1s linear infinite";
+
+    // Add keyframes
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+        @keyframes eeszt-spin { to { transform: rotate(360deg); } }
+        @keyframes eeszt-fade-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        #eeszt-running-indicator { animation: eeszt-fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    `;
+    document.head.appendChild(styleSheet);
+
+    const textContainer = document.createElement("div");
+
+    const title = document.createElement("div");
+    title.innerText = "A program fut...";
+    title.style.fontWeight = "700";
+    title.style.fontSize = "14px";
+    title.style.marginBottom = "4px";
+
+    const statusObj = document.createElement("div");
+    statusObj.id = "eeszt-indicator-status";
+    statusObj.innerText = "Kérjük, várjon...";
+    statusObj.style.fontSize = "12px";
+    statusObj.style.opacity = "0.9";
+    statusObj.style.lineHeight = "1.4";
+
+    const warning = document.createElement("div");
+    warning.innerText = "Nyugodtan végezhet más munkát, de ezt az oldalt NE zárja be!";
+    warning.style.fontSize = "11px";
+    warning.style.marginTop = "6px";
+    warning.style.paddingTop = "6px";
+    warning.style.borderTop = "1px solid rgba(255,255,255,0.2)";
+    warning.style.opacity = "0.8";
+
+    textContainer.appendChild(title);
+    textContainer.appendChild(statusObj);
+    textContainer.appendChild(warning);
+
+    indicator.appendChild(spinner);
+    indicator.appendChild(textContainer);
+
+    document.body.appendChild(indicator);
+}
+
+function updateRunningIndicator(text) {
+    const el = document.getElementById("eeszt-indicator-status");
+    if (el) el.innerText = text;
+}
+
+function removeRunningIndicator() {
+    const el = document.getElementById("eeszt-running-indicator");
+    if (el) el.remove();
+}
+
+function createCompletionModal() {
+    // Remove running indicator first
+    removeRunningIndicator();
+
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.inset = "0";
+    overlay.style.background = "rgba(0, 0, 0, 0.7)";
+    overlay.style.zIndex = "10000000";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.backdropFilter = "blur(4px)";
+    overlay.style.animation = "eeszt-fade-in 0.3s ease-out";
+
+    const modal = document.createElement("div");
+    modal.style.background = "white";
+    modal.style.padding = "32px";
+    modal.style.borderRadius = "16px";
+    modal.style.width = "400px";
+    modal.style.textAlign = "center";
+    modal.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)";
+    modal.style.fontFamily = "'Inter', -apple-system, sans-serif";
+
+    // Icon
+    const icon = document.createElement("div");
+    icon.innerHTML = "";
+    icon.style.fontSize = "48px";
+    icon.style.marginBottom = "16px";
+
+    const title = document.createElement("h2");
+    title.innerText = "✅ Siker!";
+    title.style.margin = "0 0 12px 0";
+    title.style.color = "#111827";
+    title.style.fontSize = "24px";
+
+    const desc = document.createElement("p");
+    desc.innerText = "Minden fájl letöltése sikeresen befejeződött.";
+    desc.style.color = "#6b7280";
+    desc.style.margin = "0 0 8px 0";
+    desc.style.lineHeight = "1.5";
+
+    const subDesc = document.createElement("p");
+    subDesc.innerText = "A következő lépés az eredmények és kiértékelés megtekintése.";
+    subDesc.style.color = "#4b5563"; // Darker gray
+    subDesc.style.margin = "0 0 24px 0";
+    subDesc.style.fontSize = "14px";
+    subDesc.style.lineHeight = "1.5";
+
+    const button = document.createElement("button");
+    button.innerText = "Eredmények megtekintése →";
+    button.style.background = "linear-gradient(135deg, #3b82f6, #2563eb)";
+    button.style.color = "white";
+    button.style.border = "none";
+    button.style.padding = "12px 24px";
+    button.style.borderRadius = "8px";
+    button.style.fontWeight = "600";
+    button.style.fontSize = "14px";
+    button.style.cursor = "pointer";
+    button.style.width = "100%";
+    button.style.transition = "transform 0.1s";
+
+    button.onmouseover = () => button.style.transform = "translateY(-1px)";
+    button.onmouseout = () => button.style.transform = "translateY(0)";
+
+    // Button Action
+    button.onclick = () => {
+        // Redirect to analysis page (Placeholder)
+        window.location.href = "https://ANALYSIS_PAGE_URL";
+    };
+
+    modal.appendChild(icon);
+    modal.appendChild(title);
+    modal.appendChild(desc);
+    modal.appendChild(subDesc);
+    modal.appendChild(button);
+    overlay.appendChild(modal);
+
+    document.body.appendChild(overlay);
+}
+
 function showToast(text) {
+    // Keep legacy toast for quick debug or if needed, but style it smaller if indicator is present?
+    // Actually, just let it exist or reuse if you want.
+    // For now, I'll leave the original implementation as a fallback but primarily use the indicator.
     let toast = document.getElementById("eeszt-toast");
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "eeszt-toast";
         toast.style.position = "fixed";
         toast.style.top = "20px";
-        toast.style.right = "20px";
+        toast.style.right = "20px"; // Same pos as indicator? Might overlap.
+        // Let's move toast down if indicator exists
+        toast.style.marginTop = "100px";
         toast.style.padding = "15px 25px";
         toast.style.background = "#2563eb";
         toast.style.color = "white";
         toast.style.borderRadius = "8px";
-        toast.style.zIndex = "999999";
+        toast.style.zIndex = "999998"; // Below indicator
         toast.style.fontWeight = "bold";
         toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
         toast.style.fontFamily = "sans-serif";
@@ -88,7 +264,9 @@ async function runAutomationSequence() {
         if (currentEnd > now) currentEnd = now;
 
         const dateStr = `${formatDate(currentStart)} - ${formatDate(currentEnd)}`;
-        showToast(`Időszak feldolgozása: ${dateStr}`);
+
+        // Update UI
+        updateRunningIndicator(`Időszak feldolgozása:\n${dateStr}`);
         console.log(`Processing window: ${dateStr}`);
 
         // Set inputs
@@ -142,7 +320,8 @@ async function runAutomationSequence() {
         await SLEEP(1000);
     }
 
-    showToast("TELJES SZINKRONIZÁLÁS KÉSZ!");
+    // Finished
+    createCompletionModal();
     isRunning = false;
 }
 
@@ -151,6 +330,12 @@ async function processResults() {
     while (pageCount < MAX_PAGES && isRunning) {
         pageCount++;
         console.log("Processing page", pageCount);
+
+        // Minor UX update: show page number if deep in pagination
+        if (pageCount > 1) {
+            const statusText = document.getElementById("eeszt-indicator-status");
+            if (statusText) statusText.innerText += ` (Oldal: ${pageCount})`;
+        }
 
         // Find the correct results table
         const tables = Array.from(document.querySelectorAll("table"));
@@ -216,17 +401,36 @@ async function processResults() {
             }
         }
 
-        // Pagination: Next Page
-        // Look for typical "next" arrow or button
-        const nextBtn = document.querySelector(".ui-paginator-next, .pagination-next, .ui-icon-seek-next");
-        if (nextBtn && !nextBtn.classList.contains("ui-state-disabled") && !nextBtn.disabled) {
-            console.log("Clicking next page...");
-            nextBtn.click();
-            await SLEEP(3000);
-        } else {
-            console.log("No next page.");
-            break;
+        // Pagination: Specific EESZT Logic (eventsForPatientListPager)
+        // User provided ID: eventsForPatientListPager_nextbutton
+        // Disabled class: df_pagination_disabled
+
+        const nextBtn = document.getElementById("eventsForPatientListPager_nextbutton");
+
+        if (nextBtn) {
+            // Check if disabled
+            if (nextBtn.classList.contains("df_pagination_disabled")) {
+                console.log("Next button is disabled. End of pagination for this period.");
+                break;
+            } else {
+                console.log("Clicking NEXT page (eventsForPatientListPager_nextbutton)...");
+                nextBtn.click();
+                await SLEEP(3000); // Allow table refresh
+                continue;
+            }
         }
+
+        // Fallback: Check for generic/other paginators if the above ID is missing (just in case)
+        const genericNext = document.querySelector(".ui-paginator-next, .pagination-next");
+        if (genericNext && !genericNext.classList.contains("ui-state-disabled") && !genericNext.classList.contains("disabled")) {
+            console.log("Fallback: Clicking generic next...");
+            genericNext.click();
+            await SLEEP(3000);
+            continue;
+        }
+
+        console.log("No next page button found.");
+        break;
     }
 }
 

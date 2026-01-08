@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "EESZT Elemző Automation",
+    "version": "1.0",
+    "description": "Automated document download for EESZT",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "downloads",
+        "storage",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://*.eeszt.gov.hu/*",
+        "*://*.e-kortortenet.eeszt.gov.hu/*"
+    ],
+    "action": {
+        "default_popup": "simple_popup.html",
+        "default_icon": {
+            "16": "file.svg",
+            "48": "file.svg",
+            "128": "file.svg"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.eeszt.gov.hu/*",
+                "*://*.e-kortortenet.eeszt.gov.hu/*"
+            ],
+            "js": [
+                "content_eeszt.js"
+            ],
+            "all_frames": true
+        }
+    ]
+}

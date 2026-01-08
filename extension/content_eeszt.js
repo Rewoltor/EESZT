@@ -1,10 +1,10 @@
-// EESZT Automation Content Script
-
-console.log("EESZT Adatelemző Scripts Injected - v2");
-showToast("EESZT Elemző Aktív");
+// EESZT Content Script
 
 let isRunning = false;
-let processedRows = new Set();
+const processedRows = new Set(); // Track processed IDs to avoid loops
+const MAX_PAGES = 50;
+
+console.log("EESZT Content Script Loaded");
 
 // Expose global entry point for executeScript
 window.EESZT_START_SYNC = function () {
@@ -24,28 +24,9 @@ window.EESZT_START_SYNC = function () {
     return "started";
 };
 
-// Expose global entry point for executeScript
-window.EESZT_START_SYNC = function () {
-    console.log("Global EESZT_START_SYNC command received");
-    if (!isRunning) {
-        showToast("AUTOMATIZÁLÁS INDÍTÁSA...");
-        isRunning = true;
-
-        // Start immediately
-        runAutomationSequence().catch(err => {
-            console.error("Automation error:", err);
-            showToast("Hiba: " + err.message);
-            chrome.runtime.sendMessage({ action: "SYNC_STATUS_UPDATE", status: "Hiba: " + err.message }).catch(() => { });
-            isRunning = false;
-        });
-    }
-    return "started";
-};
-
+// Listen for messages from popup (Legacy)
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log("Msg received in content:", message);
     if (message.action === "INIT_SCRAPE") {
-        // Legacy support / fallback
         window.EESZT_START_SYNC();
         sendResponse({ status: "ack" });
     }
@@ -58,41 +39,47 @@ function showToast(text) {
         toast = document.createElement("div");
         toast.id = "eeszt-toast";
         toast.style.position = "fixed";
-        toast.style.top = "80px"; // Lower it so it doesn't overlap header
+        toast.style.top = "20px";
         toast.style.right = "20px";
         toast.style.padding = "15px 25px";
         toast.style.background = "#2563eb";
         toast.style.color = "white";
         toast.style.borderRadius = "8px";
-        toast.style.zIndex = "9999999";
-        toast.style.fontFamily = "sans-serif";
+        toast.style.zIndex = "999999";
         toast.style.fontWeight = "bold";
-        toast.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+        toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+        toast.style.fontFamily = "sans-serif";
         document.body.appendChild(toast);
     }
     toast.innerText = text;
     toast.style.display = "block";
-
-    // Auto hide after 5s
-    if (toast.hideTimeout) clearTimeout(toast.hideTimeout);
-    toast.hideTimeout = setTimeout(() => { toast.style.display = "none"; }, 5000);
+    setTimeout(() => { toast.style.display = "none"; }, 5000);
 }
 
-const SLEEP = (ms) => new Promise(r => setTimeout(r, ms));
+function SLEEP(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Format date as YYYY.MM.DD.
+function formatDate(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}.${m}.${d}.`;
+}
+
+// --- CORE AUTOMATION ---
 
 async function runAutomationSequence() {
     console.log("Running automation...");
 
-    // 1. Check if we are on the right page
-    // Based on screens, user is at "Eseménykatalógus"
-
-    // 2. Loop through time windows (2017 -> Now)
-    const startDate = new Date(2017, 0, 1);
+    // 1. Cycle through dates from 2017 to NOW
+    const startYear = 2017; // EESZT start
     const now = new Date();
 
-    let currentStart = startDate;
+    let currentStart = new Date(startYear, 0, 1);
 
-    while (currentStart < now) {
+    while (currentStart < now && isRunning) {
         if (!isRunning) { console.log("Stopped."); break; }
 
         let currentEnd = new Date(currentStart);
@@ -101,112 +88,67 @@ async function runAutomationSequence() {
         if (currentEnd > now) currentEnd = now;
 
         const dateStr = `${formatDate(currentStart)} - ${formatDate(currentEnd)}`;
+        showToast(`Időszak feldolgozása: ${dateStr}`);
         console.log(`Processing window: ${dateStr}`);
-        showToast(`Keresés: ${dateStr}`);
 
-        try {
-            await performSearch(currentStart, currentEnd);
-            await processResults();
-        } catch (e) {
-            console.error("Error in window:", e);
-            // Continue to next window?
+        // Set inputs
+        // Try multiple selectors for start/end date inputs
+        const inputs = Array.from(document.querySelectorAll("input[type='text']"));
+        // Filter by common date format placeholder or ID logic if possible
+        const dateInputs = inputs.filter(i =>
+            (i.placeholder && i.placeholder.includes("éééé")) ||
+            (i.id && (i.id.includes("date") || i.id.includes("Date")))
+        );
+
+        if (dateInputs.length >= 2) {
+            console.log("Found 2 text inputs");
+            const startInput = dateInputs[0];
+            const endInput = dateInputs[1];
+
+            startInput.value = formatDate(currentStart);
+            endInput.value = formatDate(currentEnd);
+
+            // Trigger change events
+            startInput.dispatchEvent(new Event('change', { bubbles: true }));
+            endInput.dispatchEvent(new Event('change', { bubbles: true }));
+
+            console.log("Using inputs:", startInput, endInput);
+
+            await SLEEP(500);
+
+            // Click Search (Keresés)
+            const buttons = Array.from(document.querySelectorAll("button, input[type='submit'], a.btn"));
+            const searchBtn = buttons.find(b => b.innerText.toUpperCase().includes("KERESÉS"));
+
+            if (searchBtn) {
+                console.log("Clicking Search...");
+                searchBtn.click();
+                await SLEEP(3000); // 3s for table load
+
+                // Process Results
+                await processResults();
+
+            } else {
+                console.warn("Search button not found!");
+            }
+
+        } else {
+            console.warn("Could not find Date inputs!");
         }
 
+        // Advance to next window
         currentStart = new Date(currentEnd);
-        currentStart.setDate(currentStart.getDate() + 1);
+        currentStart.setDate(currentStart.getDate() + 1); // Next day
         await SLEEP(1000);
     }
 
-    showToast("Kész! Minden adat feldolgozva.");
+    showToast("TELJES SZINKRONIZÁLÁS KÉSZ!");
     isRunning = false;
-    processedRows.clear();
-}
-
-function formatDate(date) {
-    const y = date.getFullYear();
-    const m = String(date.getMonth() + 1).padStart(2, '0');
-    const d = String(date.getDate()).padStart(2, '0');
-    return `${y}.${m}.${d}.`;
-}
-
-async function performSearch(start, end) {
-    // Locate inputs - Aggressive Strategy
-    const inputs = Array.from(document.querySelectorAll("input[type='text']"));
-    console.log(`Found ${inputs.length} text inputs`);
-
-    // Strategy: Look for the specific values currently in them (from screenshot "2025.07.10.") to identify them?
-    // Or just identifying by structure.
-    // In PrimeFaces/JSF, calendars usually have `input` inside a span.
-
-    // Filter for date-like inputs (width, placeholder, class)
-    // Heuristic: The first two visible inputs in the main content area are consistently Start/End date.
-
-    // Filter out hidden inputs
-    const visibleInputs = inputs.filter(i => i.offsetParent !== null && i.style.display !== 'none');
-
-    // Use the first two visible inputs
-    if (visibleInputs.length >= 2) {
-        console.log("Using inputs:", visibleInputs[0], visibleInputs[1]);
-        setNativeValue(visibleInputs[0], formatDate(start));
-        setNativeValue(visibleInputs[1], formatDate(end));
-    } else {
-        console.warn("Could not find 2 visible date inputs!");
-        showToast("Hiba: Nem találom a dátum mezőket");
-        return;
-    }
-
-    // Click Search
-    // Button usually "KERESÉS" (blue button)
-    const buttons = Array.from(document.querySelectorAll("button, a.ui-button")); // PrimeFaces often uses anchors as buttons
-    const searchBtn = buttons.find(b => b.innerText && b.innerText.trim().toUpperCase() === "KERESÉS");
-
-    if (searchBtn) {
-        console.log("Clicking Search...");
-        searchBtn.click();
-        await waitForResults();
-    } else {
-        console.warn("Search button not found! Trying generic submit...");
-        // Fallback
-        const submit = document.querySelector("button[type='submit']");
-        if (submit) submit.click();
-    }
-}
-
-function setNativeValue(element, value) {
-    const lastValue = element.value;
-    element.value = value;
-    const event = new Event('input', { bubbles: true });
-    // React hack
-    const tracker = element._valueTracker;
-    if (tracker) {
-        tracker.setValue(lastValue);
-    }
-    element.dispatchEvent(event);
-    element.dispatchEvent(new Event('change', { bubbles: true }));
-
-    // PrimeFaces specifics: sometimes need 'blur' or 'keydown'
-    element.dispatchEvent(new Event('blur', { bubbles: true }));
-}
-
-async function waitForResults() {
-    await SLEEP(1000); // Wait for click to register
-
-    // Wait for any loader
-    let attempts = 0;
-    while (document.querySelector(".ui-blockui") || document.querySelector(".loading-indicator")) {
-        console.log("Waiting for loading...");
-        await SLEEP(500);
-        attempts++;
-        if (attempts > 20) break;
-    }
-    await SLEEP(1000); // Rendering buffer
 }
 
 async function processResults() {
-    // Logic: Pagination loop
     let pageCount = 0;
-    while (true) {
-        if (!isRunning) return;
+    while (pageCount < MAX_PAGES && isRunning) {
         pageCount++;
         console.log("Processing page", pageCount);
 
@@ -230,16 +172,13 @@ async function processResults() {
 
         console.log(`Found ${rows.length} rows.`);
 
-        // Iterate Rows
         for (let i = 0; i < rows.length; i++) {
-            if (!isRunning) return;
+            if (!isRunning) break;
             const row = rows[i];
 
-            // Unique ID
-            const rowId = row.innerText.substring(0, 50).replace(/\s/g, '');
-            if (processedRows.has(rowId)) {
-                continue;
-            }
+            // Generate simple ID
+            const rowId = row.innerText.substring(0, 30);
+            // if (processedRows.has(rowId)) continue; // Optional: skip duplicates
 
             // Look for "Részletek"
             // The HTML shows it is inside: td > span > a > span.taglib-text
@@ -256,7 +195,6 @@ async function processResults() {
             // Fallback: Last link in row
             if (!detailsLink) {
                 const links = row.querySelectorAll("a"); // Strictly A tags
-                // Filter out empty links or hidden ones if possible
                 const validLinks = Array.from(links).filter(l => l.offsetParent !== null && l.innerText.trim().length > 0);
                 if (validLinks.length > 0) detailsLink = validLinks[validLinks.length - 1];
             }
@@ -278,13 +216,13 @@ async function processResults() {
             }
         }
 
-        // Pagination
-        const nextBtn = document.querySelector(".ui-paginator-next");
-        // Check if disabled - PrimeFaces usually adds ui-state-disabled
-        if (nextBtn && !nextBtn.classList.contains("ui-state-disabled") && !nextBtn.getAttribute("disabled")) {
-            console.log("Clicking Next Page...");
+        // Pagination: Next Page
+        // Look for typical "next" arrow or button
+        const nextBtn = document.querySelector(".ui-paginator-next, .pagination-next, .ui-icon-seek-next");
+        if (nextBtn && !nextBtn.classList.contains("ui-state-disabled") && !nextBtn.disabled) {
+            console.log("Clicking next page...");
             nextBtn.click();
-            await waitForResults();
+            await SLEEP(3000);
         } else {
             console.log("No next page.");
             break;
@@ -292,6 +230,7 @@ async function processResults() {
     }
 }
 
+// --- Modal Logic ---
 async function waitForModal() {
     console.log("Waiting for modal...");
     // Wait up to 10 seconds for modal

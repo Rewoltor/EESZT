@@ -25,6 +25,8 @@
             overflow: hidden;
             box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
             min-height: 480px;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Header */
@@ -33,6 +35,7 @@
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             background: rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
         }
 
         h2 {
@@ -56,15 +59,22 @@
         .content {
             padding: 24px;
             position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* States - Only one visible at a time */
         .state {
             display: none;
+            width: 100%;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .state.active {
-            display: block;
+            display: flex;
             animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -72,6 +82,9 @@
         .slide {
             display: none;
             text-align: center;
+            padding: 0 20px;
+            margin: auto 0;
+            /* Center vertically */
         }
 
         .slide.active {
@@ -81,34 +94,62 @@
 
         .slide img {
             width: 100%;
-            height: 180px;
+            height: 160px;
+            /* Slightly smaller to fit better */
             object-fit: contain;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
-            margin: 20px auto;
+            margin: 16px auto;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        .slide ol {
+            display: inline-block;
+            text-align: left;
+            margin: 0 0 20px;
+            padding-left: 24px;
+            max-width: 320px;
+            font-size: 13px;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .slide li {
+            margin-bottom: 8px;
+        }
+
         .slide h4 {
-            margin: 0 0 8px;
+            margin: 0 0 16px;
             color: #fbbf24;
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .slide p {
-            font-size: 13px;
+            font-size: 14px;
             color: #d1d5db;
-            line-height: 1.5;
-            margin: 0;
+            line-height: 1.6;
+            margin: 0 0 16px;
+        }
+
+        .slide a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .slide a:hover {
+            text-decoration: underline;
         }
 
         .carousel-nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
-            padding-top: 16px;
+            margin-top: auto;
+            /* Push to bottom */
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
         }
 
         .dots {
@@ -131,17 +172,17 @@
 
         /* Buttons */
         button {
-            padding: 14px 24px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .btn-primary {
@@ -173,6 +214,7 @@
         #state-running {
             text-align: center;
             padding: 40px 20px;
+            margin: auto 0;
         }
 
         #state-running h3 {
@@ -228,16 +270,25 @@
                 <!-- Slide 0 -->
                 <div class="slide active">
                     <h4>👋 Üdvözöljük!</h4>
-                    <p>A bővítmény automatikusan letölti az összes EESZT dokumentumot, és rendezi őket.</p>
-                    <img src="/images/guide_blocked.png" alt="Icon">
+                    <p style="margin-bottom: 12px;">A kezdéshez kérjük lépjen be:</p>
+                    <ol>
+                        <li>Jelentkezzen be az <a href="https://www.eeszt.gov.hu/esemenykatalogus" target="_blank">EESZT
+                                Portálra</a>.</li>
+                        <li>Navigáljon az <b>Eseménykatalógus</b>hoz.</li>
+                        <li>Ezután kattintson a <b>Tovább</b> gombra.</li>
+                    </ol>
+                    <p style="color: #10b981; font-weight: 600; font-size: 13px; margin-top: 16px;">
+                        🚀 A letöltés hamarosan indul!
+                    </p>
                 </div>
                 <!-- Slide 1 (Auto Config) -->
                 <div class="slide">
-                    <h4>⚙️ Automatikus Beállitás</h4>
-                    <p>A "Kezdés" gomb megnyomásával a bővítmény automatikusan engedélyezi a pop-upokat és letöltéseket
-                        az EESZT
-                        számára.</p>
-                    <img src="/images/guide_allow.png" alt="Auto Setup">
+                    <h4>⬇️ Dokumentumok letöltése</h4>
+                    <p>A "Kezdés" gomb megnyomásával a bővítmény automatikusan megkezdi a dokumentumok letöltését az
+                        EESZT-ről.</p>
+                    <p>Ez a folyamat eltarthat akár 5 percig.</p>
+                    <p>Kérjük, ne zárja be az EESZT oldalt amíg a letöltés folyamatban van.</p>
+                    <!-- <img src="/images/guide_allow.png" alt="Auto Setup"> -->
                 </div>
 
                 <div class="carousel-nav">

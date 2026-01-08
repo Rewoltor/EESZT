@@ -1,172 +1,208 @@
-// simple_popup.js
+// simple_popup.js - New Permission Flow
 
-const ui = {
-    startBtn: document.getElementById('btn-start'),
-    retryBtn: document.getElementById('btn-retry'),
-    tutorial: document.getElementById('tutorial'),
-    status: document.getElementById('status'),
-    prevBtn: document.getElementById('btn-prev'),
-    nextBtn: document.getElementById('btn-next'),
-    slides: [document.getElementById('slide-1'), document.getElementById('slide-2'), document.getElementById('slide-3')],
-    dotsContainer: document.getElementById('dots-container')
+// === UI Elements ===
+const states = {
+    tutorial: document.getElementById('state-tutorial'),
+    waiting: document.getElementById('state-waiting'),
+    running: document.getElementById('state-running')
 };
 
-let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('dots');
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
 
-// Setup Dots
-if (ui.dotsContainer) {
-    ui.slides.forEach((_, i) => {
+let currentSlide = 0;
+const totalSlides = slides.length;
+let pollingInterval = null;
+let targetTabId = null;
+
+// === Initialize ===
+function init() {
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('div');
         dot.className = `dot ${i === 0 ? 'active' : ''}`;
-        ui.dotsContainer.appendChild(dot);
+        dotsContainer.appendChild(dot);
+    }
+
+    // Button listeners
+    btnPrev.addEventListener('click', prevSlide);
+    btnNext.addEventListener('click', nextSlide);
+
+    updateSlide();
+}
+
+// === State Management ===
+function showState(stateName) {
+    Object.keys(states).forEach(key => {
+        states[key].classList.toggle('active', key === stateName);
     });
 }
 
-function updateDots() {
-    if (!ui.dotsContainer) return;
-    Array.from(ui.dotsContainer.children).forEach((dot, i) => {
-        dot.className = `dot ${i === currentSlide ? 'active' : ''}`;
+// === Carousel ===
+function updateSlide() {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
     });
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+
+    btnPrev.disabled = currentSlide === 0;
+
+    // Last slide: Change button to "Kezdés"
+    if (currentSlide === totalSlides - 1) {
+        btnNext.textContent = '🚀 Kezdés';
+        btnNext.onclick = startPermissionFlow;
+    } else {
+        btnNext.textContent = 'Tovább →';
+        btnNext.onclick = nextSlide;
+    }
 }
 
-function log(msg, color = '#9ca3af') {
-    ui.status.innerText = msg;
-    ui.status.style.color = color;
-}
-
-function showTutorial() {
-    ui.startBtn.style.display = 'none';
-    ui.tutorial.style.display = 'block';
-    ui.retryBtn.style.display = 'flex';
-    log("⚠️ Pop-up blokkolva! Kövesse az útmutatót.", "#fbbf24");
-}
-
-function hideTutorial() {
-    ui.startBtn.style.display = 'flex';
-    ui.tutorial.style.display = 'none';
-    ui.retryBtn.style.display = 'none';
-    log("Készen áll.", "#9ca3af");
-}
-
-// Carousel Navigation
-ui.nextBtn.addEventListener('click', () => {
-    if (currentSlide < ui.slides.length - 1) {
-        ui.slides[currentSlide].classList.remove('active');
+function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
         currentSlide++;
-        ui.slides[currentSlide].classList.add('active');
+        updateSlide();
     }
-    updateNavButtons();
-    updateDots();
-});
-
-ui.prevBtn.addEventListener('click', () => {
-    if (currentSlide > 0) {
-        ui.slides[currentSlide].classList.remove('active');
-        currentSlide--;
-        ui.slides[currentSlide].classList.add('active');
-    }
-    updateNavButtons();
-    updateDots();
-});
-
-function updateNavButtons() {
-    ui.prevBtn.disabled = currentSlide === 0;
-    ui.nextBtn.disabled = currentSlide === ui.slides.length - 1;
-    ui.prevBtn.style.opacity = ui.prevBtn.disabled ? 0.3 : 1;
-    ui.nextBtn.style.opacity = ui.nextBtn.disabled ? 0.3 : 1;
 }
 
-// --- CORE LOGIC ---
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+    }
+}
 
-async function attemptStart() {
-    log("Jogosultság ellenőrzése...", "#f59e0b");
+// === Permission Flow ===
+async function startPermissionFlow() {
+    console.log("Starting permission flow...");
 
     try {
+        // Find EESZT tab
         const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
 
         if (tabs.length === 0) {
-            log("Hiba: Nincs aktív fül.");
+            alert("Nincs aktív fül! Kérjük, nyissa meg az EESZT oldalt.");
             return;
         }
 
-        const tabId = tabs[0].id;
+        targetTabId = tabs[0].id;
 
-        // 1. Check if we are on EESZT
+        // Check if on EESZT
         if (!tabs[0].url.includes("eeszt.gov.hu")) {
-            alert("Ez nem az EESZT oldala!\nKérjük, lépjen be az eeszt.gov.hu oldalra.");
-            log("Hiba: Nem EESZT oldal.", "#ef4444");
+            alert("Ez nem az EESZT oldala!\nKérjük, lépjen be az eeszt.gov.hu oldalra, majd próbálja újra.");
             return;
         }
 
-        // 2. Proactive Block Check (INJECTED)
-        const result = await chrome.scripting.executeScript({
-            target: { tabId: tabId },
+        // Switch to waiting state
+        showState('waiting');
+
+        // Trigger popup via setTimeout (FORCES BLOCK if not whitelisted)
+        await chrome.scripting.executeScript({
+            target: { tabId: targetTabId },
             func: () => {
-                return new Promise((resolve) => {
-                    try {
-                        // Open window
-                        const testWin = window.open("", "eeszt_test_popup", "width=100,height=100,top=0,left=0");
-
-                        // If null immediately, it's blocked
-                        if (!testWin || testWin.closed || typeof testWin.closed === 'undefined') {
-                            resolve("blocked");
-                            return;
-                        }
-
-                        // Wait 500ms to see if browser auto-closes it (common in blockers)
-                        // Also prevents "instant flash" confusion
-                        setTimeout(() => {
-                            if (testWin.closed) {
-                                resolve("blocked");
-                            } else {
-                                testWin.close();
-                                resolve("allowed");
-                            }
-                        }, 500);
-
-                    } catch (e) {
-                        resolve("blocked");
-                    }
-                });
+                // setTimeout disconnects from user gesture -> Chrome applies popup rules
+                setTimeout(() => {
+                    window.open("about:blank", "_blank", "width=100,height=100,top=0,left=0");
+                }, 50);
             }
         });
 
-        // result[0].result contains the return value
-        const status = result[0]?.result || "blocked";
-        console.log("Popup check result:", status);
+        console.log("Popup trigger sent. Starting polling...");
 
-        // ALWAYS show tutorial if not explicitly allowed
-        if (status !== "allowed") {
-            console.warn("Popup blocked on page!");
-            showTutorial();
-            return;
+        // Start polling for permission
+        startPolling();
+
+    } catch (e) {
+        console.error("Error starting flow:", e);
+        alert("Hiba történt: " + e.message);
+        showState('tutorial');
+    }
+}
+
+// === Polling for Permission ===
+function startPolling() {
+    // Clear any existing interval
+    if (pollingInterval) clearInterval(pollingInterval);
+
+    // Check every 2 seconds
+    pollingInterval = setInterval(async () => {
+        console.log("Polling for permission...");
+
+        try {
+            const result = await chrome.scripting.executeScript({
+                target: { tabId: targetTabId },
+                func: () => {
+                    return new Promise((resolve) => {
+                        // Use setTimeout to simulate async (triggers block if not allowed)
+                        setTimeout(() => {
+                            try {
+                                const testWin = window.open("", "permission_test", "width=1,height=1,top=9999,left=9999");
+                                if (testWin && !testWin.closed) {
+                                    testWin.close();
+                                    resolve("allowed");
+                                } else {
+                                    resolve("blocked");
+                                }
+                            } catch (e) {
+                                resolve("blocked");
+                            }
+                        }, 50);
+                    });
+                }
+            });
+
+            const status = result[0]?.result;
+            console.log("Poll result:", status);
+
+            if (status === "allowed") {
+                // Permission granted! Start sync.
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+                startSync();
+            }
+
+        } catch (e) {
+            console.error("Polling error:", e);
+            // Continue polling despite errors
         }
 
-        // 3. If Allowed, Proceed
-        console.log("Popup permission OK");
-        hideTutorial();
-        log("Szinkronizálás indítása...", "#3b82f6");
+    }, 2000);
+}
 
+// === Start Sync ===
+async function startSync() {
+    console.log("Permission granted! Starting sync...");
+
+    showState('running');
+
+    try {
         await chrome.scripting.executeScript({
-            target: { tabId: tabId },
+            target: { tabId: targetTabId },
             func: () => {
                 if (window.EESZT_START_SYNC) {
                     window.EESZT_START_SYNC();
                 } else {
-                    alert("A script betöltés alatt... Próbálja újra 1-2 másodperc múlva.");
+                    alert("A script még nem töltött be. Frissítse az EESZT oldalt (F5), majd próbálja újra.");
                 }
             }
         });
-
-        log("✅ Folyamat fut...", "#10b981");
-
     } catch (e) {
-        console.error("Error during start:", e);
-        // Fallback: If anything fails (e.g. injection blocked), show tutorial
-        showTutorial();
+        console.error("Sync start error:", e);
+        alert("Hiba a szinkronizálás indításakor: " + e.message);
     }
 }
 
-// Add Listeners
-ui.startBtn.addEventListener('click', attemptStart);
-ui.retryBtn.addEventListener('click', attemptStart);
+// === Cleanup on Popup Close ===
+window.addEventListener('unload', () => {
+    if (pollingInterval) {
+        clearInterval(pollingInterval);
+    }
+});
+
+// === Start ===
+init();

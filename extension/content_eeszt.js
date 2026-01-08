@@ -3,6 +3,7 @@
 let isRunning = false;
 const processedRows = new Set(); // Track processed IDs to avoid loops
 const MAX_PAGES = 50;
+let collectedEventData = []; // Store all scraped event metadata
 
 console.log("EESZT Content Script Loaded");
 
@@ -236,6 +237,92 @@ function SLEEP(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Scrape event metadata from modal
+function scrapeModalData(modalRoot) {
+    try {
+        const eventData = {};
+
+        // Strategy 1: Try table-based extraction (look for tr > td pairs)
+        const rows = modalRoot.querySelectorAll("tr");
+        if (rows.length > 0) {
+            console.log(`Found ${rows.length} table rows in modal`);
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("td");
+                if (cells.length >= 2) {
+                    const label = cells[0].innerText.trim().replace(/:\s*$/, ''); // Remove trailing colon
+                    const value = cells[1].innerText.trim();
+                    if (label && value) {
+                        eventData[label] = value;
+                    }
+                }
+            });
+        }
+
+        // Strategy 2: Text-based fallback (if table approach didn't work)
+        if (Object.keys(eventData).length === 0) {
+            console.log("Table extraction failed, trying text-based parsing...");
+            const modalText = modalRoot.innerText;
+            const lines = modalText.split('\n');
+
+            lines.forEach(line => {
+                // Look for pattern "Label: Value" or "Label:\tValue"
+                const colonIndex = line.indexOf(':');
+                if (colonIndex > 0 && colonIndex < line.length - 1) {
+                    const label = line.substring(0, colonIndex).trim();
+                    const value = line.substring(colonIndex + 1).trim();
+
+                    // Filter out empty values and common UI elements
+                    if (label && value &&
+                        !label.includes('BEZÁRÁS') &&
+                        !label.includes('EHR') &&
+                        value.length > 0) {
+                        eventData[label] = value;
+                    }
+                }
+            });
+        }
+
+        console.log(`Scraped ${Object.keys(eventData).length} fields from modal`);
+        return eventData;
+    } catch (error) {
+        console.error("Error scraping modal data:", error);
+        return {};
+    }
+}
+
+// Download collected metadata as JSON
+function downloadMetadataAsJson() {
+    if (collectedEventData.length === 0) {
+        console.warn("No event data collected, skipping JSON download.");
+        return;
+    }
+
+    try {
+        const now = new Date();
+        const timestamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+
+        const jsonContent = JSON.stringify(collectedEventData, null, 2);
+        const blob = new Blob([jsonContent], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `eeszt_metadata_${timestamp}.json`;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }, 100);
+
+        console.log(`Downloaded metadata JSON with ${collectedEventData.length} events`);
+    } catch (error) {
+        console.error("Error downloading metadata JSON:", error);
+    }
+}
+
 // Format date as YYYY.MM.DD.
 function formatDate(date) {
     const y = date.getFullYear();
@@ -320,7 +407,10 @@ async function runAutomationSequence() {
         await SLEEP(1000);
     }
 
-    // Finished
+    // Finished - Download metadata JSON
+    console.log("=== AUTOMATION COMPLETE ===");
+    downloadMetadataAsJson();
+    await SLEEP(500); // Give download time to trigger
     createCompletionModal();
     isRunning = false;
 }
@@ -451,6 +541,15 @@ async function waitForModal() {
 async function handleModalInteraction(modalRoot) {
     console.log("Modal opened. Looking for EHR button...");
     await SLEEP(1000); // Wait for animation
+
+    // SCRAPE METADATA FIRST (before clicking into EHR submenu)
+    const eventData = scrapeModalData(modalRoot);
+    if (eventData && Object.keys(eventData).length > 0) {
+        collectedEventData.push(eventData);
+        console.log("✓ Scraped event data:", eventData);
+    } else {
+        console.warn("⚠ No data scraped from modal");
+    }
 
     // 1. Click "EHR dokumentumok"
     // Try ID first as per HTML

@@ -416,6 +416,14 @@ async function runAutomationSequence() {
 }
 
 async function processResults() {
+    // Force reset to Page 1 (User request for reliability)
+    const pageOneBtn = document.getElementById("eventsForPatientListPagerNumber1");
+    if (pageOneBtn) {
+        console.log("Resetting to Page 1...");
+        pageOneBtn.click();
+        await SLEEP(2000); // Wait for reset
+    }
+
     let pageCount = 0;
     while (pageCount < MAX_PAGES && isRunning) {
         pageCount++;
@@ -571,8 +579,9 @@ async function handleModalInteraction(modalRoot) {
     }
 
     // 2. Click "EHR dokumentum letöltése" (Download)
-    // The user confirmed it is an <input type="button" value="EHR dokumentum letöltése">
-    let downloadBtn = Array.from(modalRoot.querySelectorAll("input[type='button'], button, a")).find(el => {
+    // The user confirmed there might be multiple buttons (e.g. document versions or multiple files)
+    // We must find and click ALL of them.
+    let downloadBtns = Array.from(modalRoot.querySelectorAll("input[type='button'], button, a")).filter(el => {
         const text = el.value || el.innerText;
         return text && (
             text.toUpperCase().includes("EHR DOKUMENTUM LETÖLTÉSE") ||
@@ -581,11 +590,14 @@ async function handleModalInteraction(modalRoot) {
         );
     });
 
-    if (downloadBtn) {
-        console.log("Clicking Download...", downloadBtn);
-        // Sometimes input[type=button] needs a direct click
-        downloadBtn.click();
-        await SLEEP(750);
+    if (downloadBtns.length > 0) {
+        console.log(`Found ${downloadBtns.length} download buttons.`);
+        for (const btn of downloadBtns) {
+            console.log("Clicking Download button...", btn.value || btn.innerText);
+            btn.click();
+            // Wait between multiple downloads to avoid browser throttling or race conditions
+            await SLEEP(1500);
+        }
     } else {
         console.warn("No download button found via value/text search.");
     }

@@ -27,6 +27,18 @@ function init() {
     btnPrev.addEventListener('click', prevSlide);
     btnNext.addEventListener('click', handleNextClick);
 
+    // Check for redirect warning flag
+    chrome.storage.local.get(['redirectWarning'], (result) => {
+        if (result.redirectWarning) {
+            const warningEl = document.getElementById('redirect-warning');
+            if (warningEl) {
+                warningEl.style.display = 'block';
+                // Clear the flag
+                chrome.storage.local.remove('redirectWarning');
+            }
+        }
+    });
+
     updateSlide();
 }
 
@@ -92,8 +104,24 @@ async function startAutoConfigAndSync() {
         if (tabs.length === 0) return;
         const targetTabId = tabs[0].id; // Assign to const now
 
-        if (!tabs[0].url.includes("eeszt.gov.hu")) {
-            alert("Ez nem az EESZT oldala!");
+        // Check if on the correct page (Eseménykatalógus)
+        const currentUrl = tabs[0].url;
+        if (!currentUrl.includes("esemenykatalogus")) {
+            console.log("Incorrect URL. Redirecting to Eseménykatalógus...");
+
+            // 1. Set flag for next popup open
+            await chrome.storage.local.set({ 'redirectWarning': true });
+
+            // 2. Redirect
+            // User provided link: https://www.eeszt.gov.hu/hu/esemenykatalogus
+            await chrome.tabs.update(targetTabId, { url: "https://www.eeszt.gov.hu/hu/esemenykatalogus" });
+
+            // 3. Show warning immediately (if popup persists)
+            const warningEl = document.getElementById('redirect-warning');
+            if (warningEl) {
+                warningEl.style.display = 'block';
+                warningEl.innerHTML = `⚠️ <b>Átirányítás...</b><br>Nem a megfelelő oldalon állt.<br>Átirányítottuk az Eseménykatalógusra.`;
+            }
             return;
         }
 
@@ -185,7 +213,7 @@ async function startAutoConfigAndSync() {
 
         // Give Chrome extra time to process the permission changes
         console.log("⏱️  Waiting for Chrome to process permissions...");
-        await new Promise(resolve => setTimeout(resolve, 800));
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         // 2. Start Sync Immediately
         startSync(targetTabId);

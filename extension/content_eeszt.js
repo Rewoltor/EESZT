@@ -379,7 +379,7 @@ async function runAutomationSequence() {
 
             console.log("Using inputs:", startInput, endInput);
 
-            await SLEEP(500);
+            await SLEEP(250);
 
             // Click Search (Keresés)
             const buttons = Array.from(document.querySelectorAll("button, input[type='submit'], a.btn"));
@@ -388,7 +388,7 @@ async function runAutomationSequence() {
             if (searchBtn) {
                 console.log("Clicking Search...");
                 searchBtn.click();
-                await SLEEP(3000); // 3s for table load
+                await SLEEP(1500); // 3s for table load
 
                 // Process Results
                 await processResults();
@@ -404,13 +404,13 @@ async function runAutomationSequence() {
         // Advance to next window
         currentStart = new Date(currentEnd);
         currentStart.setDate(currentStart.getDate() + 1); // Next day
-        await SLEEP(1000);
+        await SLEEP(500);
     }
 
     // Finished - Download metadata JSON
     console.log("=== AUTOMATION COMPLETE ===");
     downloadMetadataAsJson();
-    await SLEEP(500); // Give download time to trigger
+    await SLEEP(250); // Give download time to trigger
     createCompletionModal();
     isRunning = false;
 }
@@ -485,7 +485,7 @@ async function processResults() {
                     await handleModalInteraction(modal);
                     processedRows.add(rowId);
                 }
-                await SLEEP(500);
+                await SLEEP(250);
             } else {
                 console.warn(`No Részletek link found in row ${i} even with fallback!`, row.innerHTML.substring(0, 100));
             }
@@ -505,7 +505,7 @@ async function processResults() {
             } else {
                 console.log("Clicking NEXT page (eventsForPatientListPager_nextbutton)...");
                 nextBtn.click();
-                await SLEEP(3000); // Allow table refresh
+                await SLEEP(1500); // Allow table refresh (3s)
                 continue;
             }
         }
@@ -515,7 +515,7 @@ async function processResults() {
         if (genericNext && !genericNext.classList.contains("ui-state-disabled") && !genericNext.classList.contains("disabled")) {
             console.log("Fallback: Clicking generic next...");
             genericNext.click();
-            await SLEEP(3000);
+            await SLEEP(1500);
             continue;
         }
 
@@ -528,11 +528,11 @@ async function processResults() {
 async function waitForModal() {
     console.log("Waiting for modal...");
     // Wait up to 10 seconds for modal
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 200; i++) {
         // Look for the standard modal container or the backdrop
         const modal = document.querySelector(".modal-content, .ui-dialog, .ui-dialog-content");
         if (modal && modal.offsetParent !== null) return modal;
-        await SLEEP(500);
+        await SLEEP(250);
     }
     console.warn("Modal timeout!");
     return null;
@@ -540,7 +540,7 @@ async function waitForModal() {
 
 async function handleModalInteraction(modalRoot) {
     console.log("Modal opened. Looking for EHR button...");
-    await SLEEP(1000); // Wait for animation
+    await SLEEP(500); // Wait for animation
 
     // SCRAPE METADATA FIRST (before clicking into EHR submenu)
     const eventData = scrapeModalData(modalRoot);
@@ -565,7 +565,7 @@ async function handleModalInteraction(modalRoot) {
     if (ehrBtn) {
         console.log("Clicking EHR Dokumentumok button...");
         ehrBtn.click();
-        await SLEEP(2000); // Wait for list to load
+        await SLEEP(1000); // Wait for list to load
     } else {
         console.warn("EHR Button not found. Might be already on list?");
     }
@@ -585,7 +585,7 @@ async function handleModalInteraction(modalRoot) {
         console.log("Clicking Download...", downloadBtn);
         // Sometimes input[type=button] needs a direct click
         downloadBtn.click();
-        await SLEEP(1500);
+        await SLEEP(750);
     } else {
         console.warn("No download button found via value/text search.");
     }
@@ -595,7 +595,7 @@ async function handleModalInteraction(modalRoot) {
     if (closeBtn) {
         console.log("Closing modal...");
         closeBtn.click();
-        await SLEEP(500);
+        await SLEEP(250);
     } else {
         // Try Esc key
         document.body.dispatchEvent(new KeyboardEvent('keydown', { 'key': 'Escape', 'bubbles': true }));

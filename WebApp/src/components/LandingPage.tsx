@@ -8,7 +8,7 @@ export default function LandingPage() {
                 <div className="container">
                     <div className="hero-content animate-fade-in">
                         <div className="privacy-badge badge">
-                            🔒 100% Privát & Helyi Feldolgozás 11
+                            🔒 100% Privát & Helyi Feldolgozás
                         </div>
 
                         <h1 className="hero-title">

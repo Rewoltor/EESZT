@@ -82,7 +82,7 @@ export default function DetailPage({ testName }: { testName: string }) {
                         <div className="value-label">Legutóbbi Érték</div>
                         <div className="value-number">{latestResult.result} {latestResult.unit}</div>
                         {latestResult.ref_range && (
-                            <div className="value-reference">Referencia: {latestResult.ref_range} {latestResult.unit}</div>
+                            <div className="value-reference">Referencia: {formatRefRange(latestResult.ref_range, latestResult.unit)}</div>
                         )}
                         {(isOutOfRange || latestResult.flag) && (
                             <div className="value-warning">
@@ -181,15 +181,32 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
     if (data.length === 0) return null;
 
     const values = data.map(d => parseFloat(d.result.replace(',', '.')));
-    const validValues = values.filter(v => !isNaN(v));
+    let validValues = values.filter(v => !isNaN(v));
     if (validValues.length === 0) return null;
+
+    // ROBUST OUTLIER FILTERING: Remove extreme outliers that would destroy chart scale
+    // This handles cases where different test types were incorrectly merged
+    if (validValues.length >= 3) {
+        const sorted = [...validValues].sort((a, b) => a - b);
+        const q1 = sorted[Math.floor(sorted.length * 0.25)];
+        const q3 = sorted[Math.floor(sorted.length * 0.75)];
+        const iqr = q3 - q1;
+        const lowerBound = q1 - 3 * iqr; // 3x IQR for outliers
+        const upperBound = q3 + 3 * iqr;
+
+        const filteredValues = validValues.filter(v => v >= lowerBound && v <= upperBound);
+        // Only filter if we have enough remaining data points
+        if (filteredValues.length >= 2) {
+            validValues = filteredValues;
+        }
+    }
 
     const hasValidDates = data.some(d => d.date);
     const minValue = Math.min(...validValues);
     const maxValue = Math.max(...validValues);
     const range = maxValue - minValue || 1;
-    const padding = range * 0.1;
-    const chartMin = minValue - padding;
+    const padding = range * 0.2; // Increased padding for better visibility
+    const chartMin = Math.max(0, minValue - padding); // Don't go below 0 for blood tests
     const chartMax = maxValue + padding;
     const chartRange = chartMax - chartMin;
 
@@ -266,7 +283,9 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
                 {Array.from({ length: yTicks + 1 }).map((_, i) => {
                     const value = chartMin + i * yStep;
                     const y = scaleY(value);
-                    return <text key={i} x={marginLeft - 10} y={y + 4} textAnchor="end" fill="rgba(255, 255, 255, 0.7)" fontSize="12">{value.toFixed(1)}</text>;
+                    // Use Hungarian decimal format (comma) for display
+                    const displayValue = value.toFixed(1).replace('.', ',');
+                    return <text key={i} x={marginLeft - 10} y={y + 4} textAnchor="end" fill="rgba(255, 255, 255, 0.7)" fontSize="12">{displayValue}</text>;
                 })}
 
                 {/* X labels */}
@@ -357,6 +376,26 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
             </svg>
         </div>
     );
+}
+
+
+/**
+ * Format reference range for display without duplicate units
+ * Ensures Hungarian decimal format (commas)
+ */
+function formatRefRange(refRange: string, unit: string): string {
+    if (!refRange) return '';
+
+    // Convert dots to commas for Hungarian format
+    let formatted = refRange.replace(/\./g, ',');
+
+    // If ref_range already contains the unit, don't append it again
+    if (formatted.includes(unit)) {
+        return formatted;
+    }
+
+    // Otherwise append unit
+    return `${formatted} ${unit}`;
 }
 
 function checkIfOutOfRange(result: BloodTestResult): boolean {

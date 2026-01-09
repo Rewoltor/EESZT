@@ -114,6 +114,82 @@ interface ParseError {
 
 // ============================================================================
 
+// STANDARDIZED REFERENCE RANGES (Loaded from reference.json)
+
+// ============================================================================
+
+
+
+// Import reference ranges from single source of truth
+
+import referenceData from '../data/reference.json';
+
+
+
+interface ReferenceTest {
+
+    test_name: string;
+
+    result_type: 'numeric' | 'string';
+
+    unit: string;
+
+    ref_range: string;
+
+    ref_min: number | null;
+
+    ref_max: number | null;
+
+}
+
+
+
+/**
+
+ * Standardized reference ranges for blood tests
+
+ * Loaded from reference.json - single source of truth for all blood test metadata
+
+ */
+
+const STANDARD_REFERENCE_RANGES: Record<string, { min: number | null, max: number | null, unit: string }> = {};
+
+
+
+// Build lookup map from reference data
+
+for (const test of referenceData as ReferenceTest[]) {
+
+    STANDARD_REFERENCE_RANGES[test.test_name] = {
+
+        min: test.ref_min,
+
+        max: test.ref_max,
+
+        unit: test.unit
+
+    };
+
+}
+
+
+
+/**
+
+ * Get standard reference range for a test
+
+ */
+
+function getStandardRefRange(testName: string): { min: number | null, max: number | null, unit: string } | null {
+
+    return STANDARD_REFERENCE_RANGES[testName] || null;
+
+}
+
+
+
+// ============================================================================
+
 // MAIN EXTRACTION FUNCTION
 
 // ============================================================================
@@ -890,9 +966,11 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 
 
-        // Test name column
+        // Test name column (Hungarian & English)
 
-        if (text.includes('vizsgálat') || text.includes('megnevezés') || text.includes('teszt')) {
+        if (text.includes('vizsgálat') || text.includes('megnevezés') || text.includes('teszt') ||
+
+            text.includes('test') || text.includes('name') || text.includes('parameter')) {
 
             if (testNameIdx === -1) testNameIdx = i;
 
@@ -900,9 +978,9 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 
 
-        // Result column
+        // Result column (Hungarian & English)
 
-        if ((text.includes('eredmény') || text.includes('érték')) && !text.includes('mérték')) {
+        if ((text.includes('eredmény') || text.includes('érték') || text.includes('result') || text.includes('value')) && !text.includes('mérték')) {
 
             if (resultIdx === -1) resultIdx = i;
 
@@ -910,9 +988,11 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 
 
-        // Unit column
+        // Unit column (Hungarian & English)
 
-        if (text.includes('mértékegység') || text.includes('m.e.') || text.includes('egység')) {
+        if (text.includes('mértékegység') || text.includes('m.e.') || text.includes('egység') ||
+
+            text.includes('unit') || text.includes('measure')) {
 
             unitIdx = i;
 
@@ -920,9 +1000,11 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 
 
-        // Reference range column
+        // Reference range column (Hungarian & English)
 
-        if (text.includes('referencia') || text.includes('ref.') || text.includes('tartomány')) {
+        if (text.includes('referencia') || text.includes('ref.') || text.includes('tartomány') ||
+
+            text.includes('reference') || text.includes('range') || text.includes('normal')) {
 
             refIdx = i;
 
@@ -930,9 +1012,11 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 
 
-        // Flag/Status column
+        // Flag/Status column (Hungarian & English)
 
-        if (text.includes('minősítés') || text.includes('státusz') || text === '*') {
+        if (text.includes('minősítés') || text.includes('státusz') || text === '*' ||
+
+            text.includes('flag') || text.includes('status') || text.includes('interpretation')) {
 
             flagIdx = i;
 
@@ -972,9 +1056,9 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
 /**
 
-* Parse a data row using the identified column map
+ * Parse a data row using the identified column map
 
-*/
+ */
 
 function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | undefined): BloodTestResult | null {
 
@@ -1058,9 +1142,73 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
 
 
-    // Parse reference range
+    // IMPROVED: Parse reference range from multiple sources
 
-    const refRange = parseReferenceRange(refRangeText);
+    // Priority 1: Dedicated reference range column
+
+    let refRange = parseReferenceRange(refRangeText);
+
+
+
+    // Priority 2: Check flag column for reference ranges (common in some labs)
+
+    if ((!refRange.min && !refRange.max) && flagText) {
+
+        // Check if flag contains range pattern like "35 - 52" or "< 87.0"
+
+        const flagRefRange = parseReferenceRange(flagText);
+
+        if (flagRefRange.min !== null || flagRefRange.max !== null) {
+
+            refRange = flagRefRange;
+
+            flagText = ''; // Clear flag since it was actually a reference range
+
+        }
+
+    }
+
+
+
+    // Get canonical test name for standardization
+
+    const canonicalTestName = getCanonicalTestName(testName);
+
+
+
+    // Priority 3: Use standardized reference range as fallback
+
+    if (canonicalTestName && (!refRange.min && !refRange.max)) {
+
+        const standardRange = getStandardRefRange(canonicalTestName);
+
+        if (standardRange) {
+
+            refRange = {
+
+                min: standardRange.min,
+
+                max: standardRange.max,
+
+                original: standardRange.min !== null && standardRange.max !== null
+
+                    ? `${standardRange.min} - ${standardRange.max}`
+
+                    : standardRange.max !== null
+
+                        ? `< ${standardRange.max}`
+
+                        : standardRange.min !== null
+
+                            ? `> ${standardRange.min}`
+
+                            : ''
+
+            };
+
+        }
+
+    }
 
 
 
@@ -1308,9 +1456,15 @@ function deduplicateResults(results: BloodTestResult[]): { unique: BloodTestResu
 
     for (const result of results) {
 
-        // Create unique key: test_name + date + result value
+        // Create unique key
 
-        const key = `${result.test_name}|${result.date || 'null'}|${result.result}`;
+        // If date is null, include randomness to prevent deduplication (better false negatives than false positives)
+
+        const key = result.date
+
+            ? `${result.test_name}|${result.date}|${result.result}`
+
+            : `${result.test_name}|NO_DATE|${result.result}|${Math.random()}`;
 
 
 
@@ -1322,7 +1476,19 @@ function deduplicateResults(results: BloodTestResult[]): { unique: BloodTestResu
 
         } else {
 
-            duplicates++;
+            // Only count as duplicate if we have a valid date
+
+            if (result.date) {
+
+                duplicates++;
+
+            } else {
+
+                // Without dates, we can't be sure it's a duplicate, so keep it
+
+                unique.push(result);
+
+            }
 
         }
 

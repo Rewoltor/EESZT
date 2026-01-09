@@ -109,6 +109,7 @@ export const CANONICAL_TEST_NAMES: Record<string, string> = {
     'széklet kalprotektin': 'Széklet kalprotektin',
     'kalprotektin': 'Széklet kalprotektin',
     'albumin': 'Albumin',
+    'szérum albumin': 'Albumin',
     'c reaktív protein': 'C reaktív protein (CRP)',
     'crp': 'C reaktív protein (CRP)',
     'transzferrin': 'Transzferrin',
@@ -173,18 +174,28 @@ export function getCanonicalTestName(rawName: string): string | null {
     // Remove trailing punctuation
     cleaned = cleaned.replace(/[.:,;]+$/, '');
 
+    // STRICT: Filter out obvious non-medical noise
+    if (cleaned.length < 3) return null;
+    if (cleaned.match(/^(és|vagy|a|az|csak|nem|meg|de|hogyan|milyen|mit|miten)$/)) return null; // Common Hungarian words
+    if (cleaned.match(/(nyilatkozat|vény|szakorvos|ellátás|létrehozás)/)) return null; // Document text
+
     // Direct lookup
     if (CANONICAL_TEST_NAMES[cleaned]) {
         return CANONICAL_TEST_NAMES[cleaned];
     }
 
-    // Try partial matches for common cases
-    for (const [key, value] of Object.entries(CANONICAL_TEST_NAMES)) {
-        if (cleaned.includes(key) || key.includes(cleaned)) {
-            return value;
+    // Try partial matches ONLY if cleaned name is at least 5 chars
+    // This prevents single letter matches like "k" matching everything
+    if (cleaned.length >= 5) {
+        for (const [key, value] of Object.entries(CANONICAL_TEST_NAMES)) {
+            // Require substantial overlap (at least 80% of key length)
+            if (cleaned.includes(key) && key.length >= 5) {
+                return value;
+            }
+            // Don't do reverse matching (key.includes(cleaned)) as it's too permissive
         }
     }
 
-    // Return original if no match (will be filtered out later)
+    // Return null if no match (will be filtered out later)
     return null;
 }

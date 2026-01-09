@@ -192,7 +192,7 @@ function createCompletionModal() {
     // Button Action
     button.onclick = () => {
         // Redirect to analysis page (Placeholder)
-        window.location.href = "https://ANALYSIS_PAGE_URL";
+        window.location.href = "https://eeszt.vercel.app/#upload";
     };
 
     modal.appendChild(icon);

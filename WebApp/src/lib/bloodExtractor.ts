@@ -4,19 +4,13 @@ import type { BloodTestResult } from '../types/blood-results';
 
 import { getCanonicalTestName } from './canonicalNames';
 
-
-
 // Worker configuration is handled globally in main.tsx
-
-
 
 // ============================================================================
 
 // INTERFACES
 
 // ============================================================================
-
-
 
 interface TextItem {
 
@@ -30,8 +24,6 @@ interface TextItem {
 
 }
 
-
-
 // interface Cell {
 
 // text: string;
@@ -44,8 +36,6 @@ interface TextItem {
 
 // }
 
-
-
 interface RowData {
 
     y: number;
@@ -53,8 +43,6 @@ interface RowData {
     items: TextItem[];
 
 }
-
-
 
 interface ColumnMap {
 
@@ -70,8 +58,6 @@ interface ColumnMap {
 
 }
 
-
-
 interface ParsedResult {
 
     operator?: '<' | '>' | '<=';
@@ -84,8 +70,6 @@ interface ParsedResult {
 
 }
 
-
-
 interface RefRange {
 
     min: number | null;
@@ -95,8 +79,6 @@ interface RefRange {
     original: string;
 
 }
-
-
 
 interface ParseError {
 
@@ -110,21 +92,15 @@ interface ParseError {
 
 }
 
-
-
 // ============================================================================
 
 // STANDARDIZED REFERENCE RANGES (Loaded from reference.json)
 
 // ============================================================================
 
-
-
 // Import reference ranges from single source of truth
 
 import referenceData from '../data/reference.json';
-
-
 
 interface ReferenceTest {
 
@@ -142,8 +118,6 @@ interface ReferenceTest {
 
 }
 
-
-
 /**
 
  * Standardized reference ranges for blood tests
@@ -153,8 +127,6 @@ interface ReferenceTest {
  */
 
 const STANDARD_REFERENCE_RANGES: Record<string, { min: number | null, max: number | null, unit: string }> = {};
-
-
 
 // Build lookup map from reference data
 
@@ -172,8 +144,6 @@ for (const test of referenceData as ReferenceTest[]) {
 
 }
 
-
-
 /**
 
  * Get standard reference range for a test
@@ -186,15 +156,11 @@ function getStandardRefRange(testName: string): { min: number | null, max: numbe
 
 }
 
-
-
 // ============================================================================
 
 // MAIN EXTRACTION FUNCTION
 
 // ============================================================================
-
-
 
 /**
 
@@ -214,19 +180,13 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
     let previousDate: string | undefined = undefined;
 
-
-
     try {
 
         const loadingTask = pdfjsLib.getDocument({ data: pdfBytes });
 
         const pdf = await loadingTask.promise;
 
-
-
         console.log(`Processing PDF with ${pdf.numPages} pages`);
-
-
 
         // Process each page
 
@@ -235,8 +195,6 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
             const page = await pdf.getPage(pageNum);
 
             const textContent = await page.getTextContent();
-
-
 
             const { results: pageResults, pageDate, errors: pageErrors } = parsePageContent(
 
@@ -248,13 +206,9 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
             );
 
-
-
             results.push(...pageResults);
 
             errors.push(...pageErrors);
-
-
 
             // Update previous date for next page
 
@@ -266,11 +220,7 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
         }
 
-
-
         console.log(`Extracted ${results.length} raw results with ${errors.length} errors`);
-
-
 
         // Clean, normalize, and deduplicate
 
@@ -278,11 +228,7 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
         const { unique: dedupedResults, duplicates } = deduplicateResults(cleanedResults);
 
-
-
         console.log(`Final: ${dedupedResults.length} unique results (removed ${duplicates} duplicates)`);
-
-
 
         // Save error report
 
@@ -291,8 +237,6 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
             await saveErrorReport(errors);
 
         }
-
-
 
         return dedupedResults;
 
@@ -306,15 +250,11 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
 }
 
-
-
 // ============================================================================
 
 // PHASE 1: SPATIAL TABLE DETECTION
 
 // ============================================================================
-
-
 
 /**
 
@@ -362,8 +302,6 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
 // }
 
-
-
 /**
 
 * Assign each cell to a column index based on boundaries
@@ -388,15 +326,11 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 
 // }
 
-
-
 // ============================================================================
 
 // PHASE 2: INTELLIGENT RESULT PARSING
 
 // ============================================================================
-
-
 
 /**
 
@@ -407,8 +341,6 @@ export async function extractBloodResults(pdfBytes: Uint8Array): Promise<BloodTe
 function parseResultCell(text: string): ParsedResult {
 
     const trimmed = text.trim();
-
-
 
     // Pattern 1: Qualitative results
 
@@ -426,15 +358,11 @@ function parseResultCell(text: string): ParsedResult {
 
     }
 
-
-
     // Pattern 2: Operator + Number + Unit (e.g., "<0.35 kU/L", ">90 mL/min")
 
     const operatorPattern = /^([<>]=?)\s*([0-9.,]+)\s*(.*)$/;
 
     const operatorMatch = trimmed.match(operatorPattern);
-
-
 
     if (operatorMatch) {
 
@@ -452,15 +380,11 @@ function parseResultCell(text: string): ParsedResult {
 
     }
 
-
-
     // Pattern 3: Number + Unit (e.g., "73 g/L", "5.23 Giga/L")
 
     const numberUnitPattern = /^([0-9.,]+)\s*([a-zA-Z/%*°]+.*)$/;
 
     const numberUnitMatch = trimmed.match(numberUnitPattern);
-
-
 
     if (numberUnitMatch) {
 
@@ -475,8 +399,6 @@ function parseResultCell(text: string): ParsedResult {
         };
 
     }
-
-
 
     // Pattern 4: Just a number
 
@@ -494,8 +416,6 @@ function parseResultCell(text: string): ParsedResult {
 
     }
 
-
-
     // Fallback: return as qualitative
 
     return {
@@ -508,15 +428,11 @@ function parseResultCell(text: string): ParsedResult {
 
 }
 
-
-
 // ============================================================================
 
 // PHASE 3: MULTI-SOURCE FIELD RESOLUTION
 
 // ============================================================================
-
-
 
 /**
 
@@ -530,8 +446,6 @@ function resolveUnit(parsed: ParsedResult, unitCol?: string, refRangeCol?: strin
 
     if (parsed.unit) return parsed.unit;
 
-
-
     // Priority 2: Dedicated unit column (Format A: Synlab)
 
     if (unitCol && unitCol.trim() && !isNumeric(unitCol.trim())) {
@@ -539,8 +453,6 @@ function resolveUnit(parsed: ParsedResult, unitCol?: string, refRangeCol?: strin
         return unitCol.trim();
 
     }
-
-
 
     // Priority 3: Extract from reference range
 
@@ -556,13 +468,9 @@ function resolveUnit(parsed: ParsedResult, unitCol?: string, refRangeCol?: strin
 
     }
 
-
-
     return '';
 
 }
-
-
 
 /**
 
@@ -575,8 +483,6 @@ function isNumeric(str: string): boolean {
     return /^[0-9.,\s<>-]+$/.test(str);
 
 }
-
-
 
 /**
 
@@ -592,19 +498,13 @@ function parseReferenceRange(text: string): RefRange {
 
     }
 
-
-
     const original = text;
-
-
 
     // Strip units first (everything after last digit)
 
     let cleanText = text.replace(/[a-zA-Z/%*°]+\s*$/, '').trim();
 
     cleanText = cleanText.replace(/,/g, '.'); // Normalize decimal separator
-
-
 
     // Pattern 1: "5.0 - 21.0" or "140 - 175"
 
@@ -624,8 +524,6 @@ function parseReferenceRange(text: string): RefRange {
 
     }
 
-
-
     // Pattern 2: "< 87.0" or "<87"
 
     match = cleanText.match(/<\s*([0-9.]+)/);
@@ -641,8 +539,6 @@ function parseReferenceRange(text: string): RefRange {
         }
 
     }
-
-
 
     // Pattern 3: "> 10.0" or ">10"
 
@@ -660,13 +556,9 @@ function parseReferenceRange(text: string): RefRange {
 
     }
 
-
-
     return { min: null, max: null, original };
 
 }
-
-
 
 /**
 
@@ -690,8 +582,6 @@ function extractTestDate(pageText: string, previousDate?: string): string | null
 
     ];
 
-
-
     for (const { pattern } of datePatterns) {
 
         const match = pageText.match(pattern);
@@ -703,8 +593,6 @@ function extractTestDate(pageText: string, previousDate?: string): string | null
             const month = parseInt(match[2]);
 
             const day = parseInt(match[3]);
-
-
 
             // STRICT: Only accept test dates (2016-2030), not birth dates
 
@@ -718,23 +606,17 @@ function extractTestDate(pageText: string, previousDate?: string): string | null
 
     }
 
-
-
     // Fallback: Use previous page date if available (sticky date)
 
     return previousDate || null;
 
 }
 
-
-
 // ============================================================================
 
 // PAGE PARSING
 
 // ============================================================================
-
-
 
 interface PageResults {
 
@@ -746,8 +628,6 @@ interface PageResults {
 
 }
 
-
-
 function parsePageContent(textContent: any, pageNum: number, previousDate?: string): PageResults {
 
     const results: BloodTestResult[] = [];
@@ -756,15 +636,11 @@ function parsePageContent(textContent: any, pageNum: number, previousDate?: stri
 
     const items = textContent.items;
 
-
-
     // Extract date from page
 
     const allText = items.map((item: any) => item.str).join(' ');
 
     const pageDate = extractTestDate(allText, previousDate);
-
-
 
     if (!pageDate && !previousDate) {
 
@@ -782,21 +658,15 @@ function parsePageContent(textContent: any, pageNum: number, previousDate?: stri
 
     }
 
-
-
     // Group items by Y coordinate (rows)
 
     const rows = groupItemsByRow(items);
-
-
 
     // Try to identify table structure
 
     let headerRow: RowData | null = null;
 
     let columnMap: ColumnMap | null = null;
-
-
 
     for (const row of rows) {
 
@@ -817,8 +687,6 @@ function parsePageContent(textContent: any, pageNum: number, previousDate?: stri
             }
 
         }
-
-
 
         // If we have a column map, try to parse data rows
 
@@ -852,13 +720,9 @@ function parsePageContent(textContent: any, pageNum: number, previousDate?: stri
 
     }
 
-
-
     return { results, pageDate: pageDate ?? undefined, errors };
 
 }
-
-
 
 /**
 
@@ -870,27 +734,19 @@ function groupItemsByRow(items: any[]): RowData[] {
 
     const rowMap = new Map<number, TextItem[]>();
 
-
-
     for (const item of items) {
 
         const y = Math.round(item.transform[5]); // Y coordinate
 
         const str = item.str.trim();
 
-
-
         if (!str) continue;
-
-
 
         if (!rowMap.has(y)) {
 
             rowMap.set(y, []);
 
         }
-
-
 
         rowMap.get(y)!.push({
 
@@ -906,8 +762,6 @@ function groupItemsByRow(items: any[]): RowData[] {
 
     }
 
-
-
     // Convert to array and sort by Y coordinate (top to bottom)
 
     const rows: RowData[] = [];
@@ -922,17 +776,11 @@ function groupItemsByRow(items: any[]): RowData[] {
 
     }
 
-
-
     rows.sort((a, b) => b.y - a.y); // Top to bottom
-
-
 
     return rows;
 
 }
-
-
 
 /**
 
@@ -944,8 +792,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
     const texts = row.items.map(item => item.str.toLowerCase());
 
-
-
     let testNameIdx = -1;
 
     let resultIdx = -1;
@@ -956,15 +802,11 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
     let flagIdx = -1;
 
-
-
     // Look for column indicators
 
     for (let i = 0; i < row.items.length; i++) {
 
         const text = texts[i];
-
-
 
         // Test name column (Hungarian & English)
 
@@ -976,8 +818,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
         }
 
-
-
         // Result column (Hungarian & English)
 
         if ((text.includes('eredmény') || text.includes('érték') || text.includes('result') || text.includes('value')) && !text.includes('mérték')) {
@@ -985,8 +825,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
             if (resultIdx === -1) resultIdx = i;
 
         }
-
-
 
         // Unit column (Hungarian & English)
 
@@ -998,8 +836,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
         }
 
-
-
         // Reference range column (Hungarian & English)
 
         if (text.includes('referencia') || text.includes('ref.') || text.includes('tartomány') ||
@@ -1009,8 +845,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
             refIdx = i;
 
         }
-
-
 
         // Flag/Status column (Hungarian & English)
 
@@ -1023,8 +857,6 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
         }
 
     }
-
-
 
     // We need at least test name and result columns
 
@@ -1046,13 +878,9 @@ function identifyHeaderRow(row: RowData): ColumnMap | null {
 
     }
 
-
-
     return null;
 
 }
-
-
 
 /**
 
@@ -1064,8 +892,6 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     if (row.items.length === 0) return null;
 
-
-
     let testName = '';
 
     let resultText = '';
@@ -1076,8 +902,6 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     let flagText = '';
 
-
-
     // Extract values based on column map
 
     if (columnMap.testNameIdx < row.items.length) {
@@ -1086,15 +910,11 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     }
 
-
-
     if (columnMap.resultIdx < row.items.length) {
 
         resultText = row.items[columnMap.resultIdx].str.trim();
 
     }
-
-
 
     if (columnMap.unitIdx !== -1 && columnMap.unitIdx < row.items.length) {
 
@@ -1102,23 +922,17 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     }
 
-
-
     if (columnMap.refIdx !== -1 && columnMap.refIdx < row.items.length) {
 
         refRangeText = row.items[columnMap.refIdx].str.trim();
 
     }
 
-
-
     if (columnMap.flagIdx !== -1 && columnMap.flagIdx < row.items.length) {
 
         flagText = row.items[columnMap.flagIdx].str.trim();
 
     }
-
-
 
     // Filter out noise and invalid rows
 
@@ -1128,27 +942,19 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     if (isNoisyText(testName) || isNoisyText(resultText)) return null;
 
-
-
     // Parse result with smart parser
 
     const parsedResult = parseResultCell(resultText);
 
-
-
     // Resolve actual unit from multiple sources
 
     const actualUnit = resolveUnit(parsedResult, unitText, refRangeText);
-
-
 
     // IMPROVED: Parse reference range from multiple sources
 
     // Priority 1: Dedicated reference range column
 
     let refRange = parseReferenceRange(refRangeText);
-
-
 
     // Priority 2: Check flag column for reference ranges (common in some labs)
 
@@ -1168,13 +974,9 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     }
 
-
-
     // Get canonical test name for standardization
 
     const canonicalTestName = getCanonicalTestName(testName);
-
-
 
     // Priority 3: Use standardized reference range as fallback
 
@@ -1210,8 +1012,6 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     }
 
-
-
     // Build result object
 
     const bloodResult: BloodTestResult = {
@@ -1234,21 +1034,15 @@ function parseDataRow(row: RowData, columnMap: ColumnMap, date: string | null | 
 
     };
 
-
-
     // Add parsed reference values if available
 
     if (refRange.min !== null) bloodResult.ref_min = refRange.min;
 
     if (refRange.max !== null) bloodResult.ref_max = refRange.max;
 
-
-
     return bloodResult;
 
 }
-
-
 
 /**
 
@@ -1264,8 +1058,6 @@ function isNoisyRow(row: RowData): boolean {
 
 }
 
-
-
 /**
 
 * Check if text is likely noise/header/footer
@@ -1275,8 +1067,6 @@ function isNoisyRow(row: RowData): boolean {
 function isNoisyText(text: string): boolean {
 
     const lowerText = text.toLowerCase();
-
-
 
     const noisePhrases = [
 
@@ -1294,13 +1084,9 @@ function isNoisyText(text: string): boolean {
 
     ];
 
-
-
     return noisePhrases.some(phrase => lowerText.includes(phrase));
 
 }
-
-
 
 /**
 
@@ -1314,19 +1100,13 @@ function isDefinitelyJunk(testName: string): boolean {
 
     if (/^\d+$/.test(testName.trim())) return true;
 
-
-
     // Numbers with dashes (like "777-3", "32623-1")
 
     if (/^\d+[-]\d+$/.test(testName.trim())) return true;
 
-
-
     // Short garbage
 
     if (testName.length < 3) return true;
-
-
 
     // Contains junk phrases
 
@@ -1340,27 +1120,19 @@ function isDefinitelyJunk(testName: string): boolean {
 
     ];
 
-
-
     const lower = testName.toLowerCase();
 
     if (junkPhrases.some(phrase => lower.includes(phrase))) return true;
 
-
-
     return false;
 
 }
-
-
 
 // ============================================================================
 
 // PHASE 4: VALIDATION & QUALITY CONTROL
 
 // ============================================================================
-
-
 
 /**
 
@@ -1372,17 +1144,11 @@ function cleanAndNormalizeResults(results: BloodTestResult[]): BloodTestResult[]
 
     console.log(`=== Normalization: ${results.length} raw results ===`);
 
-
-
     const cleanedResults: BloodTestResult[] = [];
-
-
 
     for (const result of results) {
 
         const originalName = result.test_name;
-
-
 
         // Skip obvious junk
 
@@ -1394,13 +1160,9 @@ function cleanAndNormalizeResults(results: BloodTestResult[]): BloodTestResult[]
 
         }
 
-
-
         // Get canonical name
 
         const canonicalName = getCanonicalTestName(originalName);
-
-
 
         if (!canonicalName) {
 
@@ -1410,11 +1172,7 @@ function cleanAndNormalizeResults(results: BloodTestResult[]): BloodTestResult[]
 
         }
 
-
-
         console.log(`✅ "${originalName}" → "${canonicalName}"`);
-
-
 
         // KEEP ALL RESULTS - no deduplication for longitudinal data
 
@@ -1428,15 +1186,11 @@ function cleanAndNormalizeResults(results: BloodTestResult[]): BloodTestResult[]
 
     }
 
-
-
     console.log(`=== Result: ${cleanedResults.length} normalized results ===`);
 
     return cleanedResults;
 
 }
-
-
 
 /**
 
@@ -1452,8 +1206,6 @@ function deduplicateResults(results: BloodTestResult[]): { unique: BloodTestResu
 
     let duplicates = 0;
 
-
-
     for (const result of results) {
 
         // Create unique key
@@ -1465,8 +1217,6 @@ function deduplicateResults(results: BloodTestResult[]): { unique: BloodTestResu
             ? `${result.test_name}|${result.date}|${result.result}`
 
             : `${result.test_name}|NO_DATE|${result.result}|${Math.random()}`;
-
-
 
         if (!seen.has(key)) {
 
@@ -1494,13 +1244,9 @@ function deduplicateResults(results: BloodTestResult[]): { unique: BloodTestResu
 
     }
 
-
-
     return { unique, duplicates };
 
 }
-
-
 
 /**
 
@@ -1520,13 +1266,9 @@ async function saveErrorReport(errors: ParseError[]): Promise<void> {
 
     };
 
-
-
     console.log(`Generated error report with ${errors.length} issues`);
 
     console.log('Error report:', JSON.stringify(report, null, 2));
-
-
 
     // Note: In browser environment, we can't write files directly
 

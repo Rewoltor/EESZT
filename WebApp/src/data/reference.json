@@ -160,7 +160,7 @@
         "ref_max": 0.10
     },
     {
-        "test_name": "Magvas vörösvértestek %",
+        "test_name": "Magvas vörösvértestek",
         "result_type": "numeric",
         "unit": "/100 fvs",
         "ref_range": "< 0.10",
@@ -168,20 +168,12 @@
         "ref_max": 0.10
     },
     {
-        "test_name": "Glükóz (éhgyomri)",
+        "test_name": "Glükóz (éhgyomri,0 perces vércukor) - plazma",
         "result_type": "numeric",
         "unit": "mmol/L",
         "ref_range": "3.7 - 6.0",
         "ref_min": 3.7,
         "ref_max": 6.0
-    },
-    {
-        "test_name": "Glükóz, 120 perc",
-        "result_type": "numeric",
-        "unit": "mmol/L",
-        "ref_range": "< 7.8",
-        "ref_min": null,
-        "ref_max": 7.8
     },
     {
         "test_name": "Karbamid",
@@ -224,7 +216,7 @@
         "ref_max": 146
     },
     {
-        "test_name": "Kálium (K)",
+        "test_name": "Kálium",
         "result_type": "numeric",
         "unit": "mmol/L",
         "ref_range": "3.5 - 5.1",
@@ -235,9 +227,9 @@
         "test_name": "Kálcium",
         "result_type": "numeric",
         "unit": "mmol/L",
-        "ref_range": "2.20 - 2.65",
-        "ref_min": 2.20,
-        "ref_max": 2.65
+        "ref_range": "2.15 - 2.60",
+        "ref_min": 2.15,
+        "ref_max": 2.60
     },
     {
         "test_name": "Magnézium",
@@ -387,9 +379,9 @@
         "test_name": "Laktát dehidrogenáz (LDH)",
         "result_type": "numeric",
         "unit": "U/L",
-        "ref_range": "< 247",
-        "ref_min": null,
-        "ref_max": 247
+        "ref_range": "240-480",
+        "ref_min": 240,
+        "ref_max": 480
     },
     {
         "test_name": "Amiláz",
@@ -408,7 +400,7 @@
         "ref_max": 67
     },
     {
-        "test_name": "TSH (szuperszenzitív)",
+        "test_name": "TSH",
         "result_type": "numeric",
         "unit": "mIU/L",
         "ref_range": "0.550 - 4.780",
@@ -488,7 +480,7 @@
         "ref_max": null
     },
     {
-        "test_name": "Immunglobulin E (totál)",
+        "test_name": "Immunglobulin E",
         "result_type": "numeric",
         "unit": "kU/L",
         "ref_range": "< 87.0",
@@ -496,7 +488,7 @@
         "ref_max": 87.0
     },
     {
-        "test_name": "AST (Streptolizin O)",
+        "test_name": "AST meghatározása",
         "result_type": "numeric",
         "unit": "E/mL",
         "ref_range": "< 200",
@@ -552,14 +544,6 @@
         "ref_max": null
     },
     {
-        "test_name": "Protrombin %",
-        "result_type": "numeric",
-        "unit": "%",
-        "ref_range": "80 - 123",
-        "ref_min": 80,
-        "ref_max": 123
-    },
-    {
         "test_name": "Protrombin INR",
         "result_type": "numeric",
         "unit": "ratio",
@@ -576,7 +560,7 @@
         "ref_max": 9.70
     },
     {
-        "test_name": "APTI (Parc. tromboplasztin idő)",
+        "test_name": "Parc. tromboplasztin ido (APTI)",
         "result_type": "numeric",
         "unit": "sec",
         "ref_range": "25.9 - 36.6",
@@ -584,7 +568,7 @@
         "ref_max": 36.6
     },
     {
-        "test_name": "CEA (Tumormarker)",
+        "test_name": "CEA",
         "result_type": "numeric",
         "unit": "ug/L",
         "ref_range": "< 2.50",
@@ -592,7 +576,7 @@
         "ref_max": 2.50
     },
     {
-        "test_name": "PSA (Prosztata spec. antigén)",
+        "test_name": "PSA",
         "result_type": "numeric",
         "unit": "ug/L",
         "ref_range": "< 4.000",
@@ -600,15 +584,7 @@
         "ref_max": 4.000
     },
     {
-        "test_name": "Szérum fehérje Albumin",
-        "result_type": "numeric",
-        "unit": "%",
-        "ref_range": "55.8 - 66.1",
-        "ref_min": 55.8,
-        "ref_max": 66.1
-    },
-    {
-        "test_name": "Szérum fehérje Alfa1-globulin",
+        "test_name": "Alfa1-globulin",
         "result_type": "numeric",
         "unit": "%",
         "ref_range": "2.9 - 4.9",
@@ -616,7 +592,7 @@
         "ref_max": 4.9
     },
     {
-        "test_name": "Szérum fehérje Alfa2-globulin",
+        "test_name": "Alfa2-globulin",
         "result_type": "numeric",
         "unit": "%",
         "ref_range": "7.1 - 11.8",
@@ -624,7 +600,7 @@
         "ref_max": 11.8
     },
     {
-        "test_name": "Szérum fehérje Béta1-globulin",
+        "test_name": "Béta1-globulin",
         "result_type": "numeric",
         "unit": "%",
         "ref_range": "4.7 - 7.2",
@@ -632,7 +608,7 @@
         "ref_max": 7.2
     },
     {
-        "test_name": "Szérum fehérje Béta2-globulin",
+        "test_name": "Béta2-globulin",
         "result_type": "numeric",
         "unit": "%",
         "ref_range": "3.2 - 6.5",
@@ -640,19 +616,11 @@
         "ref_max": 6.5
     },
     {
-        "test_name": "Szérum fehérje Gammaglobulin",
+        "test_name": "Gammaglobulin",
         "result_type": "numeric",
         "unit": "%",
         "ref_range": "11.1 - 18.8",
         "ref_min": 11.1,
         "ref_max": 18.8
-    },
-    {
-        "test_name": "Allergén specifikus IgE (Élelmiszer/Inhalatív)",
-        "result_type": "numeric",
-        "unit": "kU/L",
-        "ref_range": "< 0.35",
-        "ref_min": null,
-        "ref_max": 0.35
     }
 ]

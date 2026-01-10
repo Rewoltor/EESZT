@@ -205,9 +205,41 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
     const minValue = Math.min(...validValues);
     const maxValue = Math.max(...validValues);
     const range = maxValue - minValue || 1;
-    const padding = range * 0.2; // Increased padding for better visibility
-    const chartMin = Math.max(0, minValue - padding); // Don't go below 0 for blood tests
-    const chartMax = maxValue + padding;
+
+    // Get reference ranges EARLY to include them in chart scaling
+    let refRangeMin: number | null = null;
+    let refRangeMax: number | null = null;
+    if (data[0].ref_min !== undefined) refRangeMin = data[0].ref_min;
+    if (data[0].ref_max !== undefined) refRangeMax = data[0].ref_max;
+
+    // Smart padding: ensure minimum padding for narrow ranges
+    // Use 20% of range, but at least 5% of the mean value to prevent clipping
+    const meanValue = (minValue + maxValue) / 2;
+    const proportionalPadding = range * 0.2;
+    const minimumPadding = Math.max(meanValue * 0.05, range * 0.1);
+    const padding = Math.max(proportionalPadding, minimumPadding);
+
+    // Calculate initial bounds
+    let chartMin = Math.max(0, minValue - padding);
+    let chartMax = maxValue + padding;
+
+    // IMPORTANT: Expand chart to include reference ranges for visual context
+    // This ensures users can always see where the danger zones are
+    if (refRangeMin !== null || refRangeMax !== null) {
+        // Add extra padding beyond reference ranges so they're clearly visible
+        const refPadding = padding * 0.3; // 30% of the data padding
+
+        if (refRangeMin !== null) {
+            // Extend chart to show below the minimum reference value
+            chartMin = Math.min(chartMin, Math.max(0, refRangeMin - refPadding));
+        }
+
+        if (refRangeMax !== null) {
+            // Extend chart to show above the maximum reference value
+            chartMax = Math.max(chartMax, refRangeMax + refPadding);
+        }
+    }
+
     const chartRange = chartMax - chartMin;
 
     const width = 800;
@@ -221,11 +253,6 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
 
     const scaleX = (index: number) => marginLeft + (index / (data.length - 1 || 1)) * plotWidth;
     const scaleY = (value: number) => marginTop + plotHeight - ((value - chartMin) / chartRange) * plotHeight;
-
-    let refRangeMin: number | null = null;
-    let refRangeMax: number | null = null;
-    if (data[0].ref_min !== undefined) refRangeMin = data[0].ref_min;
-    if (data[0].ref_max !== undefined) refRangeMax = data[0].ref_max;
 
     const yTicks = 5;
     const yStep = chartRange / yTicks;
@@ -243,31 +270,79 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
         <div className="line-chart">
             <svg width="100%" height="100%" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet">
                 {/* VISIBLE BACKGROUND ZONES - Red and Green */}
-                {refRangeMin !== null && refRangeMax !== null ? (
-                    <>
-                        {/* Red zone ABOVE max - More visible */}
-                        <rect x={marginLeft} y={marginTop} width={plotWidth} height={scaleY(refRangeMax) - marginTop} fill="rgba(239, 68, 68, 0.3)" />
-                        {/* Green zone (safe range) - More visible */}
-                        <rect x={marginLeft} y={scaleY(refRangeMax)} width={plotWidth} height={scaleY(refRangeMin) - scaleY(refRangeMax)} fill="rgba(34, 197, 94, 0.25)" />
-                        {/* Red zone BELOW min - More visible */}
-                        <rect x={marginLeft} y={scaleY(refRangeMin)} width={plotWidth} height={height - marginBottom - scaleY(refRangeMin)} fill="rgba(239, 68, 68, 0.3)" />
-                        {/* Border lines */}
-                        <line x1={marginLeft} y1={scaleY(refRangeMax)} x2={width - marginRight} y2={scaleY(refRangeMax)} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
-                        <line x1={marginLeft} y1={scaleY(refRangeMin)} x2={width - marginRight} y2={scaleY(refRangeMin)} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
-                    </>
-                ) : refRangeMax !== null ? (
-                    <>
-                        <rect x={marginLeft} y={scaleY(refRangeMax)} width={plotWidth} height={height - marginBottom - scaleY(refRangeMax)} fill="rgba(34, 197, 94, 0.25)" />
-                        <rect x={marginLeft} y={marginTop} width={plotWidth} height={scaleY(refRangeMax) - marginTop} fill="rgba(239, 68, 68, 0.3)" />
-                        <line x1={marginLeft} y1={scaleY(refRangeMax)} x2={width - marginRight} y2={scaleY(refRangeMax)} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
-                    </>
-                ) : refRangeMin !== null ? (
-                    <>
-                        <rect x={marginLeft} y={marginTop} width={plotWidth} height={scaleY(refRangeMin) - marginTop} fill="rgba(34, 197, 94, 0.25)" />
-                        <rect x={marginLeft} y={scaleY(refRangeMin)} width={plotWidth} height={height - marginBottom - scaleY(refRangeMin)} fill="rgba(239, 68, 68, 0.3)" />
-                        <line x1={marginLeft} y1={scaleY(refRangeMin)} x2={width - marginRight} y2={scaleY(refRangeMin)} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
-                    </>
-                ) : null}
+                {(() => {
+                    // Clamp reference range Y coordinates to visible plot area
+                    const plotTop = marginTop;
+                    const plotBottom = height - marginBottom;
+
+                    // Calculate Y positions, clamped to plot boundaries
+                    const refMaxY = refRangeMax !== null ? Math.max(plotTop, Math.min(plotBottom, scaleY(refRangeMax))) : null;
+                    const refMinY = refRangeMin !== null ? Math.max(plotTop, Math.min(plotBottom, scaleY(refRangeMin))) : null;
+
+                    if (refMaxY !== null && refMinY !== null) {
+                        // Both min and max defined
+                        return (
+                            <>
+                                {/* Red zone ABOVE max */}
+                                {refMaxY > plotTop && (
+                                    <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMaxY - plotTop} fill="rgba(239, 68, 68, 0.3)" />
+                                )}
+                                {/* Green zone (safe range) */}
+                                {refMinY > refMaxY && (
+                                    <rect x={marginLeft} y={refMaxY} width={plotWidth} height={refMinY - refMaxY} fill="rgba(34, 197, 94, 0.25)" />
+                                )}
+                                {/* Red zone BELOW min */}
+                                {refMinY < plotBottom && (
+                                    <rect x={marginLeft} y={refMinY} width={plotWidth} height={plotBottom - refMinY} fill="rgba(239, 68, 68, 0.3)" />
+                                )}
+                                {/* Border lines */}
+                                {refRangeMax !== null && refRangeMax >= chartMin && refRangeMax <= chartMax && (
+                                    <line x1={marginLeft} y1={refMaxY} x2={width - marginRight} y2={refMaxY} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
+                                )}
+                                {refRangeMin !== null && refRangeMin >= chartMin && refRangeMin <= chartMax && (
+                                    <line x1={marginLeft} y1={refMinY} x2={width - marginRight} y2={refMinY} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
+                                )}
+                            </>
+                        );
+                    } else if (refMaxY !== null) {
+                        // Only max defined (values below max are safe)
+                        return (
+                            <>
+                                {/* Green zone BELOW max */}
+                                {refMaxY < plotBottom && (
+                                    <rect x={marginLeft} y={refMaxY} width={plotWidth} height={plotBottom - refMaxY} fill="rgba(34, 197, 94, 0.25)" />
+                                )}
+                                {/* Red zone ABOVE max */}
+                                {refMaxY > plotTop && (
+                                    <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMaxY - plotTop} fill="rgba(239, 68, 68, 0.3)" />
+                                )}
+                                {/* Border line */}
+                                {refRangeMax !== null && refRangeMax >= chartMin && refRangeMax <= chartMax && (
+                                    <line x1={marginLeft} y1={refMaxY} x2={width - marginRight} y2={refMaxY} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
+                                )}
+                            </>
+                        );
+                    } else if (refMinY !== null) {
+                        // Only min defined (values above min are safe)
+                        return (
+                            <>
+                                {/* Green zone ABOVE min */}
+                                {refMinY > plotTop && (
+                                    <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMinY - plotTop} fill="rgba(34, 197, 94, 0.25)" />
+                                )}
+                                {/* Red zone BELOW min */}
+                                {refMinY < plotBottom && (
+                                    <rect x={marginLeft} y={refMinY} width={plotWidth} height={plotBottom - refMinY} fill="rgba(239, 68, 68, 0.3)" />
+                                )}
+                                {/* Border line */}
+                                {refRangeMin !== null && refRangeMin >= chartMin && refRangeMin <= chartMax && (
+                                    <line x1={marginLeft} y1={refMinY} x2={width - marginRight} y2={refMinY} stroke="rgba(34, 197, 94, 0.7)" strokeWidth="2" strokeDasharray="6 4" />
+                                )}
+                            </>
+                        );
+                    }
+                    return null;
+                })()}
 
                 {/* Grid */}
                 {Array.from({ length: yTicks + 1 }).map((_, i) => {
@@ -288,11 +363,18 @@ function LineChart({ data }: { data: BloodTestResult[] }) {
                     return <text key={i} x={marginLeft - 10} y={y + 4} textAnchor="end" fill="rgba(255, 255, 255, 0.7)" fontSize="12">{displayValue}</text>;
                 })}
 
+                {/* X-axis tick marks */}
+                {data.map((_, i) => {
+                    const x = scaleX(i);
+                    return <line key={`tick-${i}`} x1={x} y1={height - marginBottom} x2={x} y2={height - marginBottom + 6} stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.5" />;
+                })}
+
                 {/* X labels */}
                 {data.map((d, i) => {
                     const x = scaleX(i);
                     const label = hasValidDates && d.date ? formatDate(d.date) : `#${i + 1}`;
-                    return <text key={i} x={x} y={height - marginBottom + 20} textAnchor="end" fill="rgba(255, 255, 255, 0.7)" fontSize="11" transform={`rotate(-45, ${x}, ${height - marginBottom + 20})`}>{label}</text>;
+                    // Position label at tick, rotate around point slightly below and to the left
+                    return <text key={i} x={x - 2} y={height - marginBottom + 12} textAnchor="end" fill="rgba(255, 255, 255, 0.7)" fontSize="11" transform={`rotate(-45, ${x - 2}, ${height - marginBottom + 12})`}>{label}</text>;
                 })}
 
                 {/* LINE SEGMENTS - Single cyan color */}

@@ -74,7 +74,7 @@ export const CANONICAL_TEST_NAMES: Record<string, string> = {
     // Liver function
     'totál bilirubin': 'Totál bilirubin',
     'bilirubin': 'Totál bilirubin',
-    'got': 'GOT (AS AT)',
+    'got': 'GOT (ASAT)',
     'asat': 'GOT (ASAT)',
     'ast': 'GOT (ASAT)',
     'gpt': 'GPT (ALAT)',
@@ -82,14 +82,19 @@ export const CANONICAL_TEST_NAMES: Record<string, string> = {
     'alt': 'GPT (ALAT)',
     'gamma gt': 'Gamma GT (GGT)',
     'ggt': 'Gamma GT (GGT)',
-    'alkalikus foszfatáz': 'Alkalikus foszfatáz (ALP)',
-    'alp': 'Alkalikus foszfatáz (ALP)',
+    'alkalikus foszfatáz': 'Alkalikus foszfatáz',
+    'alp': 'Alkalikus foszfatáz',
     'laktát dehidrogenáz': 'Laktát dehidrogenáz (LDH)',
     'ldh': 'Laktát dehidrogenáz (LDH)',
 
     // Thyroid
     'tsh': 'TSH',
+    'tsh (szuperszenzitív)': 'TSH',
     'tireoidea stimuláló hormon': 'TSH',
+
+    // Insulin
+    'inzulin': 'Inzulin',
+    'insulin': 'Inzulin',
 
     // Other
     'vörösvérsejt süllyedés': 'Vörösvérsejt süllyedés (ESR)',
@@ -125,7 +130,9 @@ export const CANONICAL_TEST_NAMES: Record<string, string> = {
     // HbA1c
     'hemoglobin a1c': 'Hemoglobin A1c (NGSP)',
     'hba1c': 'Hemoglobin A1c (NGSP)',
+    'hba1c (ngsp)': 'Hemoglobin A1c (NGSP)',
     'hemoglobin a1c (ngsp)': 'Hemoglobin A1c (NGSP)',
+    'hba1c (ifcc)': 'Hemoglobin A1c (IFCC)',
     'hemoglobin a1c (ifcc)': 'Hemoglobin A1c (IFCC)',
 
     // Minerals
@@ -147,8 +154,9 @@ export const CANONICAL_TEST_NAMES: Record<string, string> = {
     'protrombin inr': 'Protrombin INR',
     'inr': 'Protrombin INR',
     'protrombin idő': 'Protrombin idő',
-    'apti': 'APTI (Alvadási idő)',
-    'aptt': 'APTI (Alvadási idő)',
+    'apti': 'Parc. tromboplasztin ido (APTI)',
+    'aptt': 'Parc. tromboplasztin ido (APTI)',
+    'parc. tromboplasztin idő': 'Parc. tromboplasztin ido (APTI)',
 
     // Urine
     'vizelet fajsúly': 'Vizelet fajsúly',
@@ -182,6 +190,13 @@ export function getCanonicalTestName(rawName: string): string | null {
     // Direct lookup
     if (CANONICAL_TEST_NAMES[cleaned]) {
         return CANONICAL_TEST_NAMES[cleaned];
+    }
+
+    // CRITICAL: Exclude allergen-specific tests before attempting partial matches
+    // These often contain food/substance names that could match regular blood tests
+    // Example: "Allergén specifikus IgE - Albumin" should NOT match "Albumin" (blood protein)
+    if (cleaned.match(/(allergén|allergen|ige.*-|ige.*spec)/i)) {
+        return null; // Don't match allergen tests to regular blood tests
     }
 
     // Try partial matches ONLY if cleaned name is at least 5 chars

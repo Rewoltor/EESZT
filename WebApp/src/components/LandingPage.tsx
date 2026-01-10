@@ -1,4 +1,80 @@
+import { LineChart } from './LineChart';
+import type { BloodTestResult } from '../types/blood-results';
 import './LandingPage.css';
+import './LandingPageExtra.css';
+
+const SAMPLE_DATA: BloodTestResult[] = [
+    {
+        test_name: "Vas (Fe)",
+        result: "7,3",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2023-10-16"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "8,8",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2024-02-14"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "18,1",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2024-02-29"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "12,1",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "LOW",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2024-04-15"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "20,5",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2024-07-05"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "20,3",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2025-03-14"
+    },
+    {
+        test_name: "Vas (Fe)",
+        result: "25,8",
+        unit: "umol/L",
+        ref_range: "12.5 - 32.2",
+        flag: "",
+        ref_min: 12.5,
+        ref_max: 32.2,
+        date: "2025-09-01"
+    }
+];
 
 export default function LandingPage() {
     return (
@@ -8,26 +84,38 @@ export default function LandingPage() {
                 <div className="container">
                     <div className="hero-content animate-fade-in">
                         <div className="privacy-badge badge">
-                            🔒 100% Privát & Helyi Feldolgozás
+                            🔒 100% Biztonságos & Privát
                         </div>
 
                         <h1 className="hero-title">
-                            Alakítsd át az EESZT fájljaidat
-                            <span className="gradient-text"> Vizuális Egészségügyi Betekintéssé</span>
+                            Nézdd meg a vérképed alakulását
+                            <span className="gradient-text"> egyszerűen és gyorsan</span>
                         </h1>
 
                         <p className="hero-description">
-                            Töltsd fel az orvosi archívumodat, és mi kibontjuk és vizualizáljuk a vérvizsgálati eredményeidet.
-                            <strong> Minden a készülékedén történik</strong> — nincs szerver, nincs adatbázis, nincs követés.
+                            Az EESZT-ben megtalálható leleteidet látványos grafikonokon mutatjuk meg. Lásdd meg, hogy alakul az egészséged.
+                            <strong> Adataid soha nem hagyják el a számítógépedet.</strong>
                         </p>
 
-                        <div className="hero-cta">
-                            <a href="#upload" className="btn btn-primary btn-lg">
-                                Fájlok Feltöltése
+                        <div className="hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                            <a href="#onboarding" className="btn btn-primary btn-lg">
+                                Kezdjük El
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M13 10L7 10M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
+                            <a href="#upload" className="btn btn-text secondary-cta-link">
+                                Már megvannak a fájlok? Ugrás a feltöltéshez
+                            </a>
+                        </div>
+
+                        <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.8s' }}>
+                            <div className="chart-preview-container glass" style={{ padding: '0', background: 'transparent', boxShadow: 'none', border: 'none' }}>
+                                <h3 className="chart-preview-title" style={{ marginTop: 0, color: 'var(--color-accent-primary)', textAlign: 'left', paddingLeft: '60px' }}>Vas (Fe)</h3>
+                                <div style={{ marginBottom: '5rem', height: '350px', width: '100%' }}>
+                                    <LineChart data={SAMPLE_DATA} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,82 +130,81 @@ export default function LandingPage() {
             {/* Privacy Guarantee Section */}
             <section className="privacy-section">
                 <div className="container">
+                    <h2 className="section-title text-center">Miért biztonságos?</h2>
                     <div className="privacy-cards">
                         <div className="card privacy-card">
-                            <div className="icon">🚫</div>
-                            <h3>Nincs Adatbázis</h3>
-                            <p>Az adataid sosem hagyják el a böngésződet. Semmit sem tárolunk.</p>
+                            <div className="icon">🛡️</div>
+                            <h3>Adataid nálad maradnak</h3>
+                            <p>Nem töltünk fel semmit a felhőbe. A feldolgozás teljes egészében a saját böngésződben történik, internetkapcsolat nélkül is működik.</p>
                         </div>
 
                         <div className="card privacy-card">
-                            <div className="icon">💻</div>
-                            <h3>100% Kliens Oldali</h3>
-                            <p>Minden feldolgozás lokálisan történik a böngésződben JavaScript-tel.</p>
+                            <div className="icon">🔒</div>
+                            <h3>Nincs regisztráció</h3>
+                            <p>Nem kérünk e-mail címet, jelszót vagy személyes adatokat. Azonnal használhatod az alkalmazást.</p>
                         </div>
 
                         <div className="card privacy-card">
-                            <div className="icon">🔄</div>
-                            <h3>Csak Munkamenet Tárolás</h3>
-                            <p>Az adatok megmaradnak frissítéskor, de törlődnek a böngésző bezárásakor.</p>
+                            <div className="icon">🗑️</div>
+                            <h3>Automatikus törlés</h3>
+                            <p>Amint bezárod az ablakot, minden betöltött adat törlődik. Nem tárolunk semmit hosszú távon.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* How It Works Section */}
-            <section className="how-it-works">
+            {/* FAQ Section */}
+            <section className="faq-section">
                 <div className="container">
-                    <h2 className="section-title text-center">Hogyan Működik</h2>
-
-                    <div className="steps">
-                        <div className="step">
-                            <div className="step-number">1</div>
-                            <div className="step-content">
-                                <h3>Töltsd le az EESZT Archívumodat</h3>
-                                <p>Jelentkezz be az EESZT portálra és töltsd le az orvosi dokumentumaidat PDF fájlokként.</p>
-                            </div>
+                    <h2 className="section-title text-center">Gyakori Kérdések</h2>
+                    <div className="faq-grid">
+                        <div className="faq-item card glass">
+                            <h3>Hogyan működik?</h3>
+                            <p>Az alkalmazás beolvassa a PDF formátumú leleteidet, felismeri bennük a vérvizsgálati eredményeket, és időrendi sorrendben, grafikonon ábrázolja őket.</p>
                         </div>
-
-                        <div className="step-divider">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 5v14m0 0l7-7m-7 7l-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                        <div className="faq-item card glass">
+                            <h3>Biztonságos a Chrome bővítmény?</h3>
+                            <p>Igen. A bővítmény kizárólag arra szolgál, hogy megkönnyítse a leletek letöltését az EESZT felületről. Nem fér hozzá más adathoz és nem küld adatokat sehova.</p>
                         </div>
-
-                        <div className="step">
-                            <div className="step-number">2</div>
-                            <div className="step-content">
-                                <h3>Töltsd fel a Mappát</h3>
-                                <p>Válaszd ki a PDF fájlokat tartalmazó mappát. Mi helyben összevonjuk és feldolgozzuk őket.</p>
-                            </div>
+                        <div className="faq-item card glass">
+                            <h3>Milyen fájlokat kezel?</h3>
+                            <p>Jelenleg a szabványos EESZT laborleleteket (PDF) támogatjuk. A rendszer automatikusan felismeri a releváns dokumentumokat.</p>
                         </div>
-
-                        <div className="step-divider">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 5v14m0 0l7-7m-7 7l-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-
-                        <div className="step">
-                            <div className="step-number">3</div>
-                            <div className="step-content">
-                                <h3>Nézd meg az Eredményeket</h3>
-                                <p>Lásd a vérvizsgálati eredményeidet vizualizálva trendekkel, referencia tartományokkal és jelölésekkel.</p>
-                            </div>
+                        <div className="faq-item card glass">
+                            <h3>Mi történik a fájljaimmal?</h3>
+                            <p>A fájlok tartalmát a böngésződ olvassa be a memóriába a megjelenítés idejére. Semmi nem kerül elküldésre külső szerverre.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Footer CTA */}
+            {/* Final CTA Section */}
             <section className="footer-cta">
                 <div className="container text-center">
                     <h2 className="mb-md">Készen állsz az egészségügyi adataid vizualizálására?</h2>
-                    <a href="#upload" className="btn btn-primary btn-lg">
+                    <a href="#onboarding" className="btn btn-primary btn-lg">
                         Kezdjük El Most
                     </a>
                 </div>
             </section>
+
+            {/* Footer */}
+            <footer className="site-footer">
+                <div className="container">
+                    <div className="footer-content">
+                        <div className="footer-logo">
+                            <div className="logo-icon">🩺</div>
+                            <span className="logo-text">EESZT Visualizer</span>
+                        </div>
+                        <p className="footer-disclaimer">
+                            Ez az alkalmazás nem helyettesíti az orvosi diagnózist. Az eredmények tájékoztató jellegűek. Egészségügyi kérdésekkel mindig fordulj szakorvoshoz.
+                        </p>
+                        <div className="footer-copyright">
+                            &copy; {new Date().getFullYear()} EESZT Visualizer. Minden jog fenntartva.
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }

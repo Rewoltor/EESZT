@@ -3,6 +3,9 @@ import LandingPage from './components/LandingPage';
 import UploadPage from './components/UploadPage';
 import ResultsPage from './components/ResultsPage';
 import DetailPage from './components/DetailPage';
+import OnboardingPage from './components/OnboardingPage';
+import Header from './components/Header';
+import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
 function App() {
@@ -31,12 +34,18 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      {currentPage === 'home' && <LandingPage />}
-      {currentPage === 'upload' && <UploadPage />}
-      {currentPage === 'results' && <ResultsPage />}
-      {currentPage === 'detail' && <DetailPage testName={detailTestName} />}
-    </div>
+    <ThemeProvider>
+      <div className="app flex flex-col" style={{ minHeight: '100vh' }}>
+        <Header />
+        <main style={{ flex: 1 }}>
+          {currentPage === 'home' && <LandingPage />}
+          {currentPage === 'onboarding' && <OnboardingPage />}
+          {currentPage === 'upload' && <UploadPage />}
+          {currentPage === 'results' && <ResultsPage />}
+          {currentPage === 'detail' && <DetailPage testName={detailTestName} />}
+        </main>
+      </div>
+    </ThemeProvider>
   );
 }
 

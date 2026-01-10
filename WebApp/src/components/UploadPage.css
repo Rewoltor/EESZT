@@ -53,13 +53,13 @@
 /* Dropzone */
 .dropzone {
     position: relative;
-    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border: 2px dashed var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--spacing-2xl) var(--spacing-lg);
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--color-bg-glass);
 }
 
 .dropzone:hover {
@@ -117,11 +117,11 @@
     gap: var(--spacing-sm);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.3s ease;
 }
 
 .file-item:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-bg-secondary);
 }
 
 .file-item svg {

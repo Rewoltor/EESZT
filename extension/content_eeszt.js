@@ -594,6 +594,35 @@ async function handleModalInteraction(modalRoot) {
         console.log(`Found ${downloadBtns.length} download buttons.`);
         for (const btn of downloadBtns) {
             console.log("Clicking Download button...", btn.value || btn.innerText);
+
+            // Construct filename from extracted metadata
+            if (eventData) {
+                let datePart = eventData["Ellátás vége"]; // Expecting: "2026.01.07. 09:24:00"
+                const idPart = eventData["Ellátás azonosítója"]; // Expecting: "232600210963621346"
+
+                if (datePart && idPart) {
+                    // Extract date part (e.g. "2026.01.07.")
+                    // If string is "2026.01.07. 09:24:00", split by space and take first part
+                    const parts = datePart.trim().split(/\s+/);
+                    if (parts.length > 0) {
+                        datePart = parts[0];
+                    }
+
+                    // Construct filename: DATE_ID.pdf
+                    // Example: "2026.01.07._232600210963621346.pdf"
+                    const filename = `${datePart}_${idPart}.pdf`;
+
+                    console.log(`Setting next filename to: ${filename}`);
+
+                    // Send message to background script
+                    try {
+                        await chrome.runtime.sendMessage({ action: "SET_NEXT_FILENAME", filename: filename });
+                    } catch (err) {
+                        console.error("Failed to send filename to background:", err);
+                    }
+                }
+            }
+
             btn.click();
             // Wait between multiple downloads to avoid browser throttling or race conditions
             await SLEEP(1500);

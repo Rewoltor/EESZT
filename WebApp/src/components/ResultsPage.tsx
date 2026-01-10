@@ -35,11 +35,13 @@ export default function ResultsPage() {
         }
     };
 
+
     const handleExportCSV = () => {
         if (!bloodData) return;
 
         const headers = ['Vizsgálat Neve', 'Eredmény', 'Mértékegység', 'Referencia Tartomány', 'Jelölés'];
-        const rows = filteredAndSortedResults.map(result => [
+        // Use displayResults - ensuring export matches the displayed table (latest values)
+        const rows = displayResults.map(result => [
             result.test_name,
             result.result,
             result.unit || '',
@@ -78,8 +80,27 @@ export default function ResultsPage() {
         );
     }
 
-    // Filter and sort results
-    const filteredAndSortedResults = bloodData.results
+    // 1. Group by test name and find the latest result for each test
+    // This ensures we only look at the most recent measurement for status colors
+    const latestResultsMap = new Map<string, BloodTestResult>();
+    for (const result of bloodData.results) {
+        const existing = latestResultsMap.get(result.test_name);
+        if (!existing) {
+            latestResultsMap.set(result.test_name, result);
+        } else {
+            // Compare dates to find the latest
+            const existingDate = existing.date ? new Date(existing.date).getTime() : 0;
+            const newDate = result.date ? new Date(result.date).getTime() : 0;
+
+            if (newDate > existingDate) {
+                latestResultsMap.set(result.test_name, result);
+            }
+        }
+    }
+    const latestResults = Array.from(latestResultsMap.values());
+
+    // 2. Filter and sort the latest results
+    const displayResults = latestResults
         .filter(result => {
             // Only show results with numeric values
             const numericValue = parseFloat(result.result.replace(',', '.'));
@@ -120,15 +141,6 @@ export default function ResultsPage() {
             }
             return sortOrder === 'asc' ? comparison : -comparison;
         });
-
-    // Deduplicate for display - show each test once with latest value
-    const uniqueTests = new Map<string, BloodTestResult>();
-    for (const result of filteredAndSortedResults) {
-        if (!uniqueTests.has(result.test_name)) {
-            uniqueTests.set(result.test_name, result);
-        }
-    }
-    const displayResults = Array.from(uniqueTests.values());
 
     const processedDate = new Date(bloodData.processedAt).toLocaleString('hu-HU');
 

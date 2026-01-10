@@ -480,7 +480,7 @@
         "ref_max": null
     },
     {
-        "test_name": "Immunglobulin E",
+        "test_name": "Immunglobulin E (totál)",
         "result_type": "numeric",
         "unit": "kU/L",
         "ref_range": "< 87.0",

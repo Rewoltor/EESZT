@@ -1,0 +1,3358 @@
+{
+  "extractedAt": "2026-01-08T22:18:26.512Z",
+  "fileCount": 118,
+  "totalResults": 458,
+  "results": [
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "6,9",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "63,2",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "25,5",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "8,7",
+      "unit": "%",
+      "ref_range": "8,0",
+      "flag": ""
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,3",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,3",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Magvas vörösvértestek (NRBC)",
+      "result": "0",
+      "unit": "/100 fvs",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "4,35",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,76",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,6",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,16",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,02",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,6",
+      "unit": "10*12/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "168",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,48",
+      "unit": "L/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCV",
+      "result": "86",
+      "unit": "fL",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCH",
+      "result": "30",
+      "unit": "pg",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCHC",
+      "result": "349",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13,3",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "314",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MPV",
+      "result": "10,2",
+      "unit": "fL",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet fajsúly",
+      "result": "1,025",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet pH",
+      "result": "6",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet fehérje",
+      "result": "Neg",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Neg",
+      "unit": "mmol/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "Neg",
+      "unit": "umol/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "602",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,1",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "153",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,46",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "90",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "336",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "240",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "11,2",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "55,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "33,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,3",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,8",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,68",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,47",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,11",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,01",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "49",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,4",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "30,6",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "1,98",
+      "unit": "g/L",
+      "ref_range": "2.00 - 3.60",
+      "flag": "-",
+      "ref_min": 2,
+      "ref_max": 3.6
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "62",
+      "unit": "%",
+      "ref_range": "20 - 55",
+      "flag": "+",
+      "ref_min": 20,
+      "ref_max": 55
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,9",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,45",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "18,6",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "32",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "17",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "53",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "71",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "24",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "4",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "6,1",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "166",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,51",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "92",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "323",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "244",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13,6",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "60,3",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "28",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,1",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,4",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "3,7",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,72",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,56",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,15",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "4,9",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.7 - 6.0"
+    },
+    {
+      "test_name": "Karbamid (Urea)",
+      "result": "6,4",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "2.8 - 7.2"
+    },
+    {
+      "test_name": "Kreatinin",
+      "result": "78",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "64 - 104"
+    },
+    {
+      "test_name": "eGFR-EPI",
+      "result": "90",
+      "unit": "",
+      "ref_range": "mL/min/1.73m2",
+      "flag": "> 90"
+    },
+    {
+      "test_name": "Húgysav",
+      "result": "356",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "208 - 428"
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "139",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "136 - 146"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "4,1",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.5 - 5.1"
+    },
+    {
+      "test_name": "Összfehérje",
+      "result": "75",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "66 - 83"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "47",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "19,8",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "1,91",
+      "unit": "g/L",
+      "ref_range": "2.00 - 3.60",
+      "flag": "-",
+      "ref_min": 2,
+      "ref_max": 3.6
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "41",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "4,1",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,88",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "HDL koleszterin",
+      "result": "1,27",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "> 1.04"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "14",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "27",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "15",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "47",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "69",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "3",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "282",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Hisztamin intolerancia (DAO)",
+      "result": "6,5",
+      "unit": "U/mL",
+      "ref_range": "> 10.0",
+      "flag": "-",
+      "ref_min": 10
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "28,6",
+      "unit": "ug/g",
+      "ref_range": "ug/g",
+      "flag": "< 50.0"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,5",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,2",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "155",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "MCV",
+      "result": "91",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "325",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "265",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,7",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "10,8",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "51,9",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "36,6",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "1,5",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,7",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,85",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "2,01",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,51",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,08",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,04",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Összfehérje",
+      "result": "73",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "66 - 83"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "48",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,6",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "20,4",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "2,01",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "2.00 - 3.60"
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "40",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,6",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "14,8",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "37",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "22",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "48",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "63",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "45",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,8",
+      "unit": "Giga/L",
+      "ref_range": "4.4 - 11.3 Giga/L",
+      "flag": "",
+      "ref_min": 4.4,
+      "ref_max": 11.3
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,4",
+      "unit": "Tera/L",
+      "ref_range": "4.5 - 5.9 Tera/L",
+      "flag": "",
+      "ref_min": 4.5,
+      "ref_max": 5.9
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "0",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "158",
+      "unit": "g/L",
+      "ref_range": "140 - 175 g/L",
+      "flag": "",
+      "ref_min": 140,
+      "ref_max": 175
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,46",
+      "unit": "L/L",
+      "ref_range": "0.40 - 0.52 L/L",
+      "flag": "",
+      "ref_min": 0.4,
+      "ref_max": 0.52
+    },
+    {
+      "test_name": "MCV",
+      "result": "86",
+      "unit": "fL",
+      "ref_range": "80 - 96 fL",
+      "flag": "",
+      "ref_min": 80,
+      "ref_max": 96
+    },
+    {
+      "test_name": "MCH",
+      "result": "29",
+      "unit": "pg",
+      "ref_range": "28 - 33 pg",
+      "flag": "",
+      "ref_min": 28,
+      "ref_max": 33
+    },
+    {
+      "test_name": "MCHC",
+      "result": "341",
+      "unit": "g/L",
+      "ref_range": "310 - 365 g/L",
+      "flag": "",
+      "ref_min": 310,
+      "ref_max": 365
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "262",
+      "unit": "Giga/L",
+      "ref_range": "150 - 450 Giga/L",
+      "flag": "",
+      "ref_min": 150,
+      "ref_max": 450
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,8",
+      "unit": "%",
+      "ref_range": "11.6 - 15.6 %",
+      "flag": "",
+      "ref_min": 11.6,
+      "ref_max": 15.6
+    },
+    {
+      "test_name": "MPV",
+      "result": "10,4",
+      "unit": "fL",
+      "ref_range": "7.2 - 13.0 fL",
+      "flag": "",
+      "ref_min": 7.2,
+      "ref_max": 13
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "55,6",
+      "unit": "%",
+      "ref_range": "50.0 - 70.0 %",
+      "flag": "",
+      "ref_min": 50,
+      "ref_max": 70
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "33,6",
+      "unit": "%",
+      "ref_range": "25.0 - 40.0 %",
+      "flag": "",
+      "ref_min": 25,
+      "ref_max": 40
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "8,4",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0 %",
+      "flag": "",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,1",
+      "unit": "%",
+      "ref_range": "1.0 - 4.0 %",
+      "flag": "",
+      "ref_min": 1,
+      "ref_max": 4
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,3",
+      "unit": "%",
+      "ref_range": "0.0 - 1.0 %",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 1
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "3,24",
+      "unit": "Giga/L",
+      "ref_range": "2.20 - 7.90 Giga/L",
+      "flag": "",
+      "ref_min": 2.2,
+      "ref_max": 7.9
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,96",
+      "unit": "Giga/L",
+      "ref_range": "1.10 - 4.50 Giga/L",
+      "flag": "",
+      "ref_min": 1.1,
+      "ref_max": 4.5
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,49",
+      "unit": "Giga/L",
+      "ref_range": "0.10 - 0.90 Giga/L",
+      "flag": "",
+      "ref_min": 0.1,
+      "ref_max": 0.9
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,12",
+      "unit": "Giga/L",
+      "ref_range": "0.05 - 0.45 Giga/L",
+      "flag": "",
+      "ref_min": 0.05,
+      "ref_max": 0.45
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,02",
+      "unit": "Giga/L",
+      "ref_range": "0.00 - 0.10 Giga/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.1
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "4,4",
+      "unit": "mmol/L",
+      "ref_range": "3.7 - 6.0 mmol/L",
+      "flag": "",
+      "ref_min": 3.7,
+      "ref_max": 6
+    },
+    {
+      "test_name": "Karbamid (Urea)",
+      "result": "6,4",
+      "unit": "mmol/L",
+      "ref_range": "2.8 - 7.2 mmol/L",
+      "flag": "",
+      "ref_min": 2.8,
+      "ref_max": 7.2
+    },
+    {
+      "test_name": "Kreatinin",
+      "result": "100",
+      "unit": "umol/L",
+      "ref_range": "64 - 104 umol/L",
+      "flag": "",
+      "ref_min": 64,
+      "ref_max": 104
+    },
+    {
+      "test_name": "Húgysav",
+      "result": "336",
+      "unit": "umol/L",
+      "ref_range": "208 - 428 umol/L",
+      "flag": "",
+      "ref_min": 208,
+      "ref_max": 428
+    },
+    {
+      "test_name": "eGFR-EPI",
+      "result": "88",
+      "unit": "mL/min/1.73m2",
+      "ref_range": "> 90 mL/min/1.73m2",
+      "flag": "",
+      "ref_min": 90
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "139",
+      "unit": "mmol/L",
+      "ref_range": "136 - 146 mmol/L",
+      "flag": "",
+      "ref_min": 136,
+      "ref_max": 146
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "4,2",
+      "unit": "mmol/L",
+      "ref_range": "3.5 - 5.1 mmol/L",
+      "flag": "",
+      "ref_min": 3.5,
+      "ref_max": 5.1
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "25,8",
+      "unit": "umol/L",
+      "ref_range": "12.5 - 32.2 umol/L",
+      "flag": "",
+      "ref_min": 12.5,
+      "ref_max": 32.2
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,6",
+      "unit": "mmol/L",
+      "ref_range": "< 5.2 mmol/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 5.2
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,9",
+      "unit": "mmol/L",
+      "ref_range": "< 1.71 mmol/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 1.71
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "17,8",
+      "unit": "umol/L",
+      "ref_range": "5.0 - 21.0 umol/L",
+      "flag": "",
+      "ref_min": 5,
+      "ref_max": 21
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "102",
+      "unit": "U/L",
+      "ref_range": "< 50 U/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 50
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "35",
+      "unit": "U/L",
+      "ref_range": "< 50 U/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 50
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "22",
+      "unit": "U/L",
+      "ref_range": "< 55 U/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 55
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "52",
+      "unit": "U/L",
+      "ref_range": "40 - 129 U/L",
+      "flag": "",
+      "ref_min": 40,
+      "ref_max": 129
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "272",
+      "unit": "U/L",
+      "ref_range": "< 247 U/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 247
+    },
+    {
+      "test_name": "TSH",
+      "result": "4,694",
+      "unit": "mIU/L",
+      "ref_range": "0.550 - 4.780 mIU/L",
+      "flag": "",
+      "ref_min": 0.55,
+      "ref_max": 4.78
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "2",
+      "unit": "mm/óra",
+      "ref_range": "2 - 10 mm/óra",
+      "flag": "",
+      "ref_min": 2,
+      "ref_max": 10
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "169",
+      "unit": "kU/L",
+      "ref_range": "< 87.0 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "0,35",
+      "unit": "kU/L",
+      "ref_range": "< 0.35 kU/L",
+      "flag": "",
+      "ref_min": 0,
+      "ref_max": 0.35
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "602",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,1",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "153",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,46",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "90",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCH",
+      "result": "30",
+      "unit": "pg",
+      "ref_range": "pg",
+      "flag": "28 - 33"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "336",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "240",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "11,2",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "55,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "33,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,3",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,8",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,68",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,47",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,11",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,01",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "49",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,4",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "30,6",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "1,98",
+      "unit": "g/L",
+      "ref_range": "2.00 - 3.60",
+      "flag": "-",
+      "ref_min": 2,
+      "ref_max": 3.6
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "62",
+      "unit": "%",
+      "ref_range": "20 - 55",
+      "flag": "+",
+      "ref_min": 20,
+      "ref_max": 55
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,9",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,45",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "18,6",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "32",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "17",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "53",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "71",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "24",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "4",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "6,1",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,6",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "166",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,51",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "92",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "323",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "244",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13,6",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "60,3",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "28",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,1",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,4",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "3,7",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,72",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,56",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,15",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "4,9",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.7 - 6.0"
+    },
+    {
+      "test_name": "Karbamid (Urea)",
+      "result": "6,4",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "2.8 - 7.2"
+    },
+    {
+      "test_name": "Kreatinin",
+      "result": "78",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "64 - 104"
+    },
+    {
+      "test_name": "eGFR-EPI",
+      "result": "90",
+      "unit": "",
+      "ref_range": "mL/min/1.73m2",
+      "flag": "> 90"
+    },
+    {
+      "test_name": "Húgysav",
+      "result": "356",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "208 - 428"
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "139",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "136 - 146"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "4,1",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.5 - 5.1"
+    },
+    {
+      "test_name": "Összfehérje",
+      "result": "75",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "66 - 83"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "47",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "19,8",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "1,91",
+      "unit": "g/L",
+      "ref_range": "2.00 - 3.60",
+      "flag": "-",
+      "ref_min": 2,
+      "ref_max": 3.6
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "41",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "4,1",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,88",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "HDL koleszterin",
+      "result": "1,27",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "> 1.04"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "14",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "27",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "15",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "47",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "69",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "3",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "Elvégezve",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "54,7",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "33,5",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,2",
+      "unit": "%",
+      "ref_range": "8,0",
+      "flag": ""
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,2",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,4",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Magvas vörösvértestek (NRBC)",
+      "result": "0",
+      "unit": "/100 fvs",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,74",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,68",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,46",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,11",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,02",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,4",
+      "unit": "10*12/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "161",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,48",
+      "unit": "L/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCV",
+      "result": "89",
+      "unit": "fL",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCH",
+      "result": "30",
+      "unit": "pg",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MCHC",
+      "result": "336",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "13",
+      "unit": "%",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "274",
+      "unit": "10*9/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "MPV",
+      "result": "10,9",
+      "unit": "fL",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet fajsúly",
+      "result": "1,01",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet pH",
+      "result": "7",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Vizelet fehérje",
+      "result": "Neg",
+      "unit": "g/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Neg",
+      "unit": "mmol/L",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "kémiai paraméternél 2023. szeptember folyamán kisebb mértékű pontosítás történik.",
+      "unit": "",
+      "ref_range": "kémiai paraméternél 2023. szeptember folyamán kisebb mértékű pontosítás történik.",
+      "flag": ""
+    },
+    {
+      "test_name": "Széklet zonulin",
+      "result": "71,6",
+      "unit": "ng/mL",
+      "ref_range": "ng/mL",
+      "flag": "14 - 108"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "79,1",
+      "unit": "ug/g",
+      "ref_range": "< 50.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 50
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "7",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "164",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,49",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "91",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "335",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "282",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,9",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "10,5",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "59,7",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "29,4",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "8,4",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "4,17",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "2,06",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,59",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,15",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,03",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "4,8",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.7 - 6.0"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "8",
+      "unit": "",
+      "ref_range": "",
+      "flag": "mmol/L"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "6",
+      "unit": "",
+      "ref_range": "",
+      "flag": "mmol/L"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "3,8",
+      "unit": "",
+      "ref_range": "",
+      "flag": "mmol/L"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "3,5",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 7.8"
+    },
+    {
+      "test_name": "Karbamid (Urea)",
+      "result": "5,2",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "2.8 - 7.2"
+    },
+    {
+      "test_name": "Kreatinin",
+      "result": "80",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "64 - 104"
+    },
+    {
+      "test_name": "eGFR-EPI",
+      "result": "90",
+      "unit": "",
+      "ref_range": "mL/min/1.73m2",
+      "flag": "> 90"
+    },
+    {
+      "test_name": "Húgysav",
+      "result": "282",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "208 - 428"
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "139",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "136 - 146"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "4,7",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.5 - 5.1"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "2,59",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "2.20 - 2.65"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "1,14",
+      "unit": "mg/L",
+      "ref_range": "0.10 - 1.00",
+      "flag": "+",
+      "ref_min": 0.1,
+      "ref_max": 1
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "17,3",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "2,2",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "2.00 - 3.60"
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "31",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "132",
+      "unit": "ug/L",
+      "ref_range": "ug/L",
+      "flag": "20 - 250"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "4,5",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "1,26",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "11,2",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "2,2",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "< 3.4"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "30",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "18",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "16",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "52",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "364",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "240 - 480"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "77",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "37",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "9",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "62,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "55.8 - 66.1"
+    },
+    {
+      "test_name": "Vizelet fajsúly",
+      "result": "1010",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "1005 - 1030"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": "negatív"
+    },
+    {
+      "test_name": "Glükóz (Vércukor)",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": "negatív"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": "negatív"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": "negatív"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "negatív",
+      "unit": "",
+      "ref_range": "",
+      "flag": "negatív"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "0",
+      "unit": "/HPF",
+      "ref_range": "/HPF",
+      "flag": "< 4"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0",
+      "unit": "/HPF",
+      "ref_range": "/HPF",
+      "flag": "----"
+    },
+    {
+      "test_name": "Hisztamin intolerancia (DAO)",
+      "result": "4,4",
+      "unit": "U/mL",
+      "ref_range": "> 10.0",
+      "flag": "-",
+      "ref_min": 10
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "1402",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,2",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,2",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "154",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,47",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "326",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "220",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "11,2",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "49,9",
+      "unit": "%",
+      "ref_range": "50.0 - 70.0",
+      "flag": "-",
+      "ref_min": 50,
+      "ref_max": 70
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "39,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "7,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "2.0 - 8.0"
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,3",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,61",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "2,05",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,41",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,12",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,04",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "48",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,6",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "12,1",
+      "unit": "umol/L",
+      "ref_range": "12.5 - 32.2",
+      "flag": "-",
+      "ref_min": 12.5,
+      "ref_max": 32.2
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "2,12",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "2.00 - 3.60"
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "23",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,5",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,57",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "10,5",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "34",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "24",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "53",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "63",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "36",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "3",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,3",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,5",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "164",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,5",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "90",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCH",
+      "result": "30",
+      "unit": "pg",
+      "ref_range": "pg",
+      "flag": "28 - 33"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "330",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "249",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,1",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "11",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "53,5",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "50.0 - 70.0"
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "35",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "9,4",
+      "unit": "%",
+      "ref_range": "2.0 - 8.0",
+      "flag": "+",
+      "ref_min": 2,
+      "ref_max": 8
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "1,5",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,6",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,84",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "1,86",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,5",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,08",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,03",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Karbamid (Urea)",
+      "result": "5,3",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "2.8 - 7.2"
+    },
+    {
+      "test_name": "Kreatinin",
+      "result": "89",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "64 - 104"
+    },
+    {
+      "test_name": "eGFR-EPI",
+      "result": "90",
+      "unit": "",
+      "ref_range": "mL/min/1.73m2",
+      "flag": "> 90"
+    },
+    {
+      "test_name": "Húgysav",
+      "result": "309",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "208 - 428"
+    },
+    {
+      "test_name": "Nátrium (Na)",
+      "result": "140",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "136 - 146"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "4,4",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "3.5 - 5.1"
+    },
+    {
+      "test_name": "Összfehérje",
+      "result": "79",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "66 - 83"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "52",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,5",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "20,2",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "12.5 - 32.2"
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "2,11",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "2.00 - 3.60"
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "38",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "4,1",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,67",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "HDL koleszterin",
+      "result": "1,26",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "> 1.04"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "15",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "35",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "19",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "15",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "51",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Vörösvérsejt süllyedés (ESR)",
+      "result": "3",
+      "unit": "ra",
+      "ref_range": "mm/óra",
+      "flag": "2 - 10"
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "130",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "Vélemény-javaslat",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Felírt vények",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "szakorvos O55446",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Nyilatkozat",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Jelen nyilatkozatban vállalom, hogy amennyiben más intézetben fekvőbeteg ellátásban részesülök, úgy a kezelésemet",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "Beteg, vagy törvényes képviselőjének aláírása",
+      "unit": "",
+      "ref_range": "",
+      "flag": ""
+    },
+    {
+      "test_name": "Immunglobulin E (totál IgE)",
+      "result": "602",
+      "unit": "kU/L",
+      "ref_range": "< 87.0",
+      "flag": "+",
+      "ref_min": 0,
+      "ref_max": 87
+    },
+    {
+      "test_name": "Széklet zonulin",
+      "result": "71,6",
+      "unit": "ng/mL",
+      "ref_range": "ng/mL",
+      "flag": "14 - 108"
+    },
+    {
+      "test_name": "Fehérvérsejtszám (WBC)",
+      "result": "5,2",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "4.4 - 11.3"
+    },
+    {
+      "test_name": "Vörösvérsejtszám (RBC)",
+      "result": "5,2",
+      "unit": "Tera/L",
+      "ref_range": "Tera/L",
+      "flag": "4.5 - 5.9"
+    },
+    {
+      "test_name": "Hemoglobin",
+      "result": "154",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "140 - 175"
+    },
+    {
+      "test_name": "Hematokrit",
+      "result": "0,47",
+      "unit": "L/L",
+      "ref_range": "L/L",
+      "flag": "0.40 - 0.52"
+    },
+    {
+      "test_name": "MCV",
+      "result": "91",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "80 - 96"
+    },
+    {
+      "test_name": "MCHC",
+      "result": "326",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "310 - 370"
+    },
+    {
+      "test_name": "Trombocitaszám (Platelets)",
+      "result": "220",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "150 - 450"
+    },
+    {
+      "test_name": "RDW-CV",
+      "result": "12,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "11.6 - 15.6"
+    },
+    {
+      "test_name": "MPV",
+      "result": "11,2",
+      "unit": "fL",
+      "ref_range": "fL",
+      "flag": "7.2 - 13.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita %",
+      "result": "49,9",
+      "unit": "%",
+      "ref_range": "50.0 - 70.0",
+      "flag": "-",
+      "ref_min": 50,
+      "ref_max": 70
+    },
+    {
+      "test_name": "Limfocita %",
+      "result": "39,2",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "25.0 - 40.0"
+    },
+    {
+      "test_name": "Monocita %",
+      "result": "7,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "2.0 - 8.0"
+    },
+    {
+      "test_name": "Eozinofil granulocita %",
+      "result": "2,3",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "1.0 - 4.0"
+    },
+    {
+      "test_name": "Bazofil granulocita %",
+      "result": "0,8",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "0.0 - 1.0"
+    },
+    {
+      "test_name": "Neutrofil granulocita #",
+      "result": "2,61",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "2.20 - 7.90"
+    },
+    {
+      "test_name": "Limfocita #",
+      "result": "2,05",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "1.10 - 4.50"
+    },
+    {
+      "test_name": "Monocita #",
+      "result": "0,41",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.10 - 0.90"
+    },
+    {
+      "test_name": "Eozinofil granulocita #",
+      "result": "0,12",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.05 - 0.45"
+    },
+    {
+      "test_name": "Bazofil granulocita #",
+      "result": "0,04",
+      "unit": "Giga/L",
+      "ref_range": "Giga/L",
+      "flag": "0.00 - 0.10"
+    },
+    {
+      "test_name": "Albumin",
+      "result": "48",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "35 - 52"
+    },
+    {
+      "test_name": "Kálium (K)",
+      "result": "0,6",
+      "unit": "mg/L",
+      "ref_range": "mg/L",
+      "flag": "< 5.0"
+    },
+    {
+      "test_name": "Vas (Fe)",
+      "result": "12,1",
+      "unit": "umol/L",
+      "ref_range": "12.5 - 32.2",
+      "flag": "-",
+      "ref_min": 12.5,
+      "ref_max": 32.2
+    },
+    {
+      "test_name": "Transzferrin",
+      "result": "2,12",
+      "unit": "g/L",
+      "ref_range": "g/L",
+      "flag": "2.00 - 3.60"
+    },
+    {
+      "test_name": "Transzferrin szaturáció",
+      "result": "23",
+      "unit": "%",
+      "ref_range": "%",
+      "flag": "20 - 55"
+    },
+    {
+      "test_name": "Koleszterin",
+      "result": "3,5",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 5.2"
+    },
+    {
+      "test_name": "Trigliceridek",
+      "result": "0,57",
+      "unit": "mmol/L",
+      "ref_range": "mmol/L",
+      "flag": "< 1.71"
+    },
+    {
+      "test_name": "Totál bilirubin",
+      "result": "10,5",
+      "unit": "umol/L",
+      "ref_range": "umol/L",
+      "flag": "5.0 - 21.0"
+    },
+    {
+      "test_name": "GOT (AS AT)",
+      "result": "34",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "GPT (ALAT)",
+      "result": "24",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 50"
+    },
+    {
+      "test_name": "Gamma GT (GGT)",
+      "result": "14",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 55"
+    },
+    {
+      "test_name": "Alkalikus foszfatáz (ALP)",
+      "result": "53",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "40 - 129"
+    },
+    {
+      "test_name": "Amiláz",
+      "result": "63",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "28 - 100"
+    },
+    {
+      "test_name": "Lipáz",
+      "result": "36",
+      "unit": "U/L",
+      "ref_range": "U/L",
+      "flag": "< 67"
+    }
+  ]
+}

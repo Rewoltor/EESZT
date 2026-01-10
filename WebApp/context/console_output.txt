@@ -1,0 +1,1120 @@
+Merged: EESZT_Letoltes_2026-01-09T16-38-41-235Z_246.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-38-46-312Z_612.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-39-46-280Z_911.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-40-42-447Z_764.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-40-45-980Z_914.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-40-49-591Z_394.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-40-55-274Z_50.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-00-774Z_928.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-29-178Z_985.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-32-835Z_409.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-36-427Z_228.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-40-020Z_647.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-43-705Z_365.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-48-753Z_287.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-50-295Z_421.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-53-915Z_210.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-41-57-558Z_793.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-06-780Z_603.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-11-026Z_217.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-14-011Z_787.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-17-650Z_216.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-41-509Z_632.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-45-153Z_854.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-48-836Z_717.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-52-391Z_841.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-42-57-461Z_885.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-22-167Z_524.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-25-759Z_628.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-29-398Z_87.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-41-136Z_391.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-54-920Z_431.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-43-58-491Z_878.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-44-02-092Z_81.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-44-05-684Z_380.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-44-09-295Z_861.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T16-44-14-407Z_38.pdf
+pdfMerger.ts:30 Merged: EESZT_Letoltes_2026-01-09T17-38-32-215Z_492.pdf
+pdfMerger.ts:40 Successfully merged 37 PDF files
+bloodResultExtractor.ts:37 [SimpleExtractor] Starting extraction...
+bloodResultExtractor.ts:42 [SimpleExtractor] Processing 60 pages...
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Fehérvérsejtszám"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Fehérvérsejtszám" = 6.9 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Fehérvérsejtszám" = 5.1 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Fehérvérsejtszám" = 6.1 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Fehérvérsejtszám" = 5 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Fehérvérsejtszám" = 7 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Fehérvérsejtszám" = 5.5 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Fehérvérsejtszám" = 5.2 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Fehérvérsejtszám" = 5.8 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Fehérvérsejtszám": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vörösvérsejtszám"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Vörösvérsejtszám" = 5.6 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Vörösvérsejtszám" = 5 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Vörösvérsejtszám" = 5.6 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Vörösvérsejtszám" = 5.4 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Vörösvérsejtszám" = 5.4 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Vörösvérsejtszám" = 5.2 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Vörösvérsejtszám" = 5.2 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Vörösvérsejtszám" = 5.4 Tera/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Vörösvérsejtszám": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Hemoglobin"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Hemoglobin" = 168 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Hemoglobin" = 153 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Hemoglobin" = 166 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Hemoglobin" = 161 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Hemoglobin" = 164 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Hemoglobin" = 155 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Hemoglobin" = 154 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Hemoglobin" = 158 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Hemoglobin": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Hematokrit"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Hematokrit" = 0.48 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Hematokrit" = 0.46 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Hematokrit" = 0.51 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Hematokrit" = 0.48 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Hematokrit" = 0.49 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Hematokrit" = 0.48 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Hematokrit" = 0.47 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Hematokrit" = 0.46 L/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Hematokrit": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "MCV"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "MCV" = 86 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "MCV" = 90 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "MCV" = 92 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "MCV" = 89 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "MCV" = 91 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "MCV" = 91 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "MCV" = 91 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "MCV" = 86 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "MCV": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "MCH"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "MCH" = 30 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "MCH" = 29 pg
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "MCH": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "MCHC"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "MCHC" = 349 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "MCHC" = 336 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "MCHC" = 323 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "MCHC" = 336 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "MCHC" = 335 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "MCHC" = 325 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "MCHC" = 326 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "MCHC" = 341 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "MCHC": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Trombocitaszám"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Trombocitaszám" = 314 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Trombocitaszám" = 240 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Trombocitaszám" = 244 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Trombocitaszám" = 274 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Trombocitaszám" = 282 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Trombocitaszám" = 265 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Trombocitaszám" = 220 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Trombocitaszám" = 262 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Trombocitaszám": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "RDW-CV"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "RDW-CV" = 13.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "RDW-CV" = 13.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "RDW-CV" = 13.6 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "RDW-CV" = 13 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "RDW-CV" = 12.9 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "RDW-CV" = 12.7 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "RDW-CV" = 12.8 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "RDW-CV" = 12.8 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "RDW-CV": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "MPV"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "MPV" = 10.2 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "MPV" = 11.2 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "MPV" = 11.2 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "MPV" = 10.9 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "MPV" = 10.5 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "MPV" = 10.8 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "MPV" = 11.2 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "MPV" = 10.4 fL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "MPV": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Neutrofil granulocita %"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Neutrofil granulocita %" = 63.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Neutrofil granulocita %" = 55.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Neutrofil granulocita %" = 60.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Neutrofil granulocita %" = 54.7 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Neutrofil granulocita %" = 59.7 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Neutrofil granulocita %" = 51.9 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Neutrofil granulocita %" = 49.9 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Neutrofil granulocita %" = 55.6 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Neutrofil granulocita %": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Limfocita %"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Limfocita %" = 25.5 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Limfocita %" = 33.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Limfocita %" = 28 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Limfocita %" = 33.5 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Limfocita %" = 29.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Limfocita %" = 36.6 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Limfocita %" = 39.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Limfocita %" = 33.6 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Limfocita %": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Monocita %"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Monocita %" = 8.7 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Monocita %" = 9.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Monocita %" = 9.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Monocita %" = 9.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Monocita %" = 8.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Monocita %" = 9.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Monocita %" = 7.8 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Monocita %" = 8.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Monocita %": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Eozinofil granulocita %"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Eozinofil granulocita %" = 2.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Eozinofil granulocita %" = 2.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Eozinofil granulocita %" = 2.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Eozinofil granulocita %" = 2.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Eozinofil granulocita %" = 2.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Eozinofil granulocita %" = 1.5 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Eozinofil granulocita %" = 2.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Eozinofil granulocita %" = 2.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Eozinofil granulocita %": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Bazofil granulocita %"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Bazofil granulocita %" = 0.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Bazofil granulocita %" = 0.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Bazofil granulocita %" = 0.2 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Bazofil granulocita %" = 0.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Bazofil granulocita %" = 0.4 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Bazofil granulocita %" = 0.7 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Bazofil granulocita %" = 0.8 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Bazofil granulocita %" = 0.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Bazofil granulocita %": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Neutrofil granulocita #"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Neutrofil granulocita #" = 4.35 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Neutrofil granulocita #" = 2.8 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Neutrofil granulocita #" = 3.7 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Neutrofil granulocita #" = 2.74 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Neutrofil granulocita #" = 4.17 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Neutrofil granulocita #" = 2.85 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Neutrofil granulocita #" = 2.61 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Neutrofil granulocita #" = 3.24 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Neutrofil granulocita #": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Limfocita #"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Limfocita #" = 1.76 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Limfocita #" = 1.68 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Limfocita #" = 1.72 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Limfocita #" = 1.68 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Limfocita #" = 2.06 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Limfocita #" = 2.01 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Limfocita #" = 2.05 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Limfocita #" = 1.96 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Limfocita #": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Monocita #"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Monocita #" = 0.6 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Monocita #" = 0.47 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Monocita #" = 0.56 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Monocita #" = 0.46 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Monocita #" = 0.59 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Monocita #" = 0.51 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Monocita #" = 0.41 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Monocita #" = 0.49 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Monocita #": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Eozinofil granulocita #"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Eozinofil granulocita #" = 0.16 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Eozinofil granulocita #" = 0.11 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Eozinofil granulocita #" = 0.15 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Eozinofil granulocita #" = 0.11 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Eozinofil granulocita #" = 0.15 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Eozinofil granulocita #" = 0.08 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Eozinofil granulocita #" = 0.12 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Eozinofil granulocita #" = 0.12 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Eozinofil granulocita #": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Bazofil granulocita #"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Bazofil granulocita #" = 0.02 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 12: "Bazofil granulocita #" = 0.01 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 12
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 14: "Bazofil granulocita #" = 0.01 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 14
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Bazofil granulocita #" = 0.02 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 29: "Bazofil granulocita #" = 0.03 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 29
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 36: "Bazofil granulocita #" = 0.04 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 36
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 38: "Bazofil granulocita #" = 0.04 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 38
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Bazofil granulocita #" = 0.02 Giga/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Bazofil granulocita #": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Magvas vörösvértestek"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Glükóz (éhgyomri,0 perces vércukor) - plazma"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Glükóz (éhgyomri,0 perces vércukor) - plazma" = 4.9 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Glükóz (éhgyomri,0 perces vércukor) - plazma" = 4.8 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Glükóz (éhgyomri,0 perces vércukor) - plazma": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Karbamid"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Karbamid" = 5.5 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Karbamid" = 6.4 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Karbamid" = 3.9 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Karbamid" = 5.2 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Karbamid" = 6.4 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Karbamid": 5
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Kreatinin"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Kreatinin" = 86 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Kreatinin" = 78 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Kreatinin" = 89 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Kreatinin" = 80 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Kreatinin" = 100 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Kreatinin": 5
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "eGFR-EPI"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "eGFR-EPI" = 90 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "eGFR-EPI" = 90 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "eGFR-EPI" = 90 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "eGFR-EPI" = 90 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "eGFR-EPI" = 88 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2025-03-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 48: "eGFR-EPI" = 90 mL/min/1.73m2
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 48
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "eGFR-EPI": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Húgysav"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Húgysav" = 340 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Húgysav" = 356 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Húgysav" = 282 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Húgysav" = 336 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Húgysav": 4
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Nátrium (Na)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Nátrium (Na)" = 139 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Nátrium (Na)" = 139 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Nátrium (Na)" = 139 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Nátrium (Na)": 3
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Kálium"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Kálium" = 4.9 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Kálium" = 4.1 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Kálium": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Kálcium"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Kálcium" = 2.53 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Kálcium": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Magnézium"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Magnézium" = 0.83 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Magnézium": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Összfehérje"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Összfehérje" = 75 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Összfehérje" = 73 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Összfehérje": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Albumin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Albumin" = 49 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Albumin" = 47 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Albumin" = 62.1 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Albumin" = 48 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Albumin" = 48 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Albumin": 5
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "C reaktív protein (CRP)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "C reaktív protein (CRP)" = 0.4 mg/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "C reaktív protein (CRP)" = 0.4 mg/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "C reaktív protein (CRP)" = 0.6 mg/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "C reaktív protein (CRP)" = 0.6 mg/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "C reaktív protein (CRP)": 4
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "C reaktiv protein ultraszenzitív (hsCRP)"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vas (Fe)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Vas (Fe)" = 30.6 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Vas (Fe)" = 19.8 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Vas (Fe)" = 17.3 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Vas (Fe)" = 20.4 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Vas (Fe)" = 12.1 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Vas (Fe)" = 25.8 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Vas (Fe)": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Transzferrin"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Transzferrin" = 2.35 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Transzferrin" = 1.98 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Transzferrin" = 1.91 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Transzferrin" = 2.2 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Transzferrin" = 2.01 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Transzferrin" = 2.12 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Transzferrin": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Transzferrin szaturáció"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Transzferrin szaturáció" = 62 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Transzferrin szaturáció" = 41 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Transzferrin szaturáció" = 31 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Transzferrin szaturáció" = 40 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Transzferrin szaturáció" = 23 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2025-03-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 48: "Transzferrin szaturáció" = 38 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 48
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Transzferrin szaturáció": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Ferritin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Ferritin" = 132 ug/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Ferritin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Koleszterin"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Koleszterin" = 4.6 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Koleszterin" = 3.9 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Koleszterin" = 4.1 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Koleszterin" = 4.5 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Koleszterin" = 3.6 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Koleszterin" = 3.5 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Koleszterin" = 3.6 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Koleszterin": 7
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Trigliceridek"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Trigliceridek" = 0.45 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Trigliceridek" = 0.88 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Trigliceridek" = 1.26 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Trigliceridek" = 0.45 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Trigliceridek" = 0.57 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 44: "Trigliceridek" = 0.9 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 44
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Trigliceridek": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "HDL koleszterin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "HDL koleszterin" = 1.27 mmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "HDL koleszterin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Totál bilirubin"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Totál bilirubin" = 14 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Totál bilirubin" = 18.6 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Totál bilirubin" = 14 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Totál bilirubin" = 13.1 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Totál bilirubin" = 11.2 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Totál bilirubin" = 14.8 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Totál bilirubin" = 10.5 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "Totál bilirubin" = 17.8 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Totál bilirubin": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Direkt bilirubin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Direkt bilirubin" = 2.2 umol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Direkt bilirubin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "GOT (ASAT)"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "GOT (ASAT)" = 29 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "GOT (ASAT)" = 32 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "GOT (ASAT)" = 27 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "GOT (ASAT)" = 33 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "GOT (ASAT)" = 30 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "GOT (ASAT)" = 37 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "GOT (ASAT)" = 34 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "GOT (ASAT)" = 102 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "GOT (ASAT)": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "GPT (ALAT)"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "GPT (ALAT)" = 18 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "GPT (ALAT)" = 17 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "GPT (ALAT)" = 14 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "GPT (ALAT)" = 18 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "GPT (ALAT)" = 18 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "GPT (ALAT)" = 22 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "GPT (ALAT)" = 24 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "GPT (ALAT)" = 35 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "GPT (ALAT)": 8
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Gamma GT (GGT)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Gamma GT (GGT)" = 14 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Gamma GT (GGT)" = 15 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Gamma GT (GGT)" = 16 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Gamma GT (GGT)" = 14 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Gamma GT (GGT)" = 14 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "Gamma GT (GGT)" = 22 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Gamma GT (GGT)": 6
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Alkalikus foszfatáz"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Alkalikus foszfatáz" = 49 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Alkalikus foszfatáz" = 53 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Alkalikus foszfatáz" = 47 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Alkalikus foszfatáz" = 52 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Alkalikus foszfatáz" = 48 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Alkalikus foszfatáz" = 53 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "Alkalikus foszfatáz" = 52 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Alkalikus foszfatáz": 7
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Laktát dehidrogenáz (LDH)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Laktát dehidrogenáz (LDH)" = 364 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "Laktát dehidrogenáz (LDH)" = 272 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Laktát dehidrogenáz (LDH)": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Amiláz"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Amiláz" = 71 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Amiláz" = 69 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Amiláz" = 77 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Amiláz" = 63 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Amiláz" = 63 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Amiláz": 5
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Lipáz"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Lipáz" = 24 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Lipáz" = 37 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Lipáz" = 45 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Lipáz" = 36 U/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Lipáz": 4
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "TSH"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "D vitamin (25OH)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "D vitamin (25OH)" = 71.3 nmol/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "D vitamin (25OH)": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Inzulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Inzulin" = 4.6 mIU/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Inzulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Inzulin rezisztencia (HOMA index)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 30: "Inzulin rezisztencia (HOMA index)" = 0.98 
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 30
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Inzulin rezisztencia (HOMA index)": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Hemoglobin A1C (NGSP)"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Hemoglobin A1C (NGSP)" = 4.6 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Hemoglobin A1C (NGSP)": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Hemoglobin A1C (IFCC)"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "Hemoglobin A1C (IFCC)" = 26.8 mmol/mol
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Hemoglobin A1C (IFCC)": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vörösvérsejt süllyedés"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-29
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 13: "Vörösvérsejt süllyedés" = 4 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 13
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-02-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 15: "Vörösvérsejt süllyedés" = 3 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 15
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Vörösvérsejt süllyedés" = 9 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-05
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 37: "Vörösvérsejt süllyedés" = 3 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 37
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-04-15
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 39: "Vörösvérsejt süllyedés" = 3 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 39
+bloodResultExtractor.ts:225 [SimpleExtractor] Found date (Létrehozás): 2025-09-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 45: "Vörösvérsejt süllyedés" = 2 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 45
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2025-03-14
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 48: "Vörösvérsejt süllyedés" = 3 mm/óra
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 48
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Vörösvérsejt süllyedés": 7
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Széklet zonulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-11-01
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 25: "Széklet zonulin" = 71.6 ng/mL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 25
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Széklet zonulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Széklet kalprotektin"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Hisztamin intolerancia (DAO)"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Hisztamin intolerancia (DAO)" = 4.4 U/mL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2024-07-12
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 34: "Hisztamin intolerancia (DAO)" = 6.5 U/mL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 34
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Hisztamin intolerancia (DAO)": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Immunglobulin E"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "AST meghatározása"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 8: "AST meghatározása" = 938 E/mL
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 8
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "AST meghatározása": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet fajsúly"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Vizelet fajsúly" = 1.025 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Vizelet fajsúly" = 1.01 g/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Vizelet fajsúly": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet pH"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 7: "Vizelet pH" = 6 
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 7
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 23: "Vizelet pH" = 7 
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 23
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Vizelet pH": 2
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet fehérje"
+2bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet cukor"
+2bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet aceton"
+2bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Vizelet urobilinogén"
+2bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Protrombin INR"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Protrombin INR" = 1.05 ratio
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Protrombin INR": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Protrombin idő"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Parc. tromboplasztin ido (APTI)"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "Parc. tromboplasztin ido (APTI)" = 33 sec
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Parc. tromboplasztin ido (APTI)": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "CEA"
+bloodResultExtractor.ts:240 [SimpleExtractor] No date found at bottom of page
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 24: "CEA" = 0.7 ug/L
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 24
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "CEA": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "PSA"
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Alfa1-globulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Alfa1-globulin" = 3.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Alfa1-globulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Alfa2-globulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Alfa2-globulin" = 7.3 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Alfa2-globulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Béta1-globulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Béta1-globulin" = 5.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Béta1-globulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Béta2-globulin"
+bloodResultExtractor.ts:236 [SimpleExtractor] Found date (Leletnyomtatás): 2023-10-16
+bloodResultExtractor.ts:106 [SimpleExtractor] Page 31: "Béta2-globulin" = 6.1 %
+bloodResultExtractor.ts:56 [SimpleExtractor] Found 1 result(s) on page 31
+bloodResultExtractor.ts:65 [SimpleExtractor] Total found for "Béta2-globulin": 1
+bloodResultExtractor.ts:46 [SimpleExtractor] Searching for: "Gammaglobulin"
+bloodResultExtractor.ts:69 [SimpleExtractor] Extraction complete. Total results: 309
+UploadPage.tsx:50 === DEBUG: Extracted Results ===
+UploadPage.tsx:51 Total results: 309
+UploadPage.tsx:75 ✅ Debug file downloaded
+20:5173/#results:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received

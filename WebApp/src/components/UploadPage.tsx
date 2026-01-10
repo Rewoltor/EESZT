@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { mergePDFs } from '../lib/pdfMerger';
-import { extractBloodResults } from '../lib/bloodExtractor';
+import { extractBloodResultsSimple } from '../lib/bloodResultExtractor'; // NEW SIMPLE EXTRACTOR
 import './UploadPage.css';
 
 export default function UploadPage() {
@@ -43,8 +43,8 @@ export default function UploadPage() {
             const mergedPdfBytes = await mergePDFs(files);
             setProgress(`${files.length} PDF fájl sikeresen egyesítve. Vérvizsgálati eredmények kibontása...`);
 
-            // Step 2: Extract blood results
-            const results = await extractBloodResults(mergedPdfBytes);
+            // Step 2: Extract blood results with NEW SIMPLE EXTRACTOR
+            const results = await extractBloodResultsSimple(mergedPdfBytes);
 
             // DEBUG: Save results for troubleshooting
             console.log('=== DEBUG: Extracted Results ===');

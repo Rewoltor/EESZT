@@ -321,6 +321,9 @@
     },
     {
         "test_name": "HDL koleszterin",
+        "aliases": [
+            "HDL-koleszterin"
+        ],
         "result_type": "numeric",
         "unit": "mmol/L",
         "ref_range": "> 1.04",

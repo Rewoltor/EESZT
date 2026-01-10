@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { mergePDFs } from '../lib/pdfMerger';
-import { extractBloodResultsSimple } from '../lib/bloodResultExtractor'; // NEW SIMPLE EXTRACTOR
+import { extractBloodResultsSimple } from '../lib/bloodExtractor'; // NEW SIMPLE EXTRACTOR
 import './UploadPage.css';
 
 export default function UploadPage() {

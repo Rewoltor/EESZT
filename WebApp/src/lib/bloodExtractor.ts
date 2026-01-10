@@ -261,9 +261,9 @@ function buildResult(
     // Determine flag based on reference ranges
     let flag = '';
 
-    if (testDef.ref_min !== undefined && value < testDef.ref_min) {
+    if (testDef.ref_min != null && value < testDef.ref_min) {
         flag = 'LOW';
-    } else if (testDef.ref_max !== undefined && value > testDef.ref_max) {
+    } else if (testDef.ref_max != null && value > testDef.ref_max) {
         flag = 'HIGH';
     }
 

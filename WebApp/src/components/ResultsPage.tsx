@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
+import { useTheme } from '../context/ThemeContext';
 import { LineChart } from './LineChart';
 import './ResultsPage.css';
 
@@ -10,6 +11,7 @@ interface BloodData {
 }
 
 export default function ResultsPage() {
+    const { theme, toggleTheme } = useTheme();
     const [bloodData, setBloodData] = useState<BloodData | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortBy, setSortBy] = useState<'name' | 'result'>('name');
@@ -143,8 +145,18 @@ export default function ResultsPage() {
             return sortOrder === 'asc' ? comparison : -comparison;
         });
 
-    const abnormalResults = displayResults.filter(r => checkIfOutOfRange(r) || r.flag);
-    const normalResults = displayResults.filter(r => !checkIfOutOfRange(r) && !r.flag);
+    // Helper to determine if a result is truly out of range
+    // Prioritize calculated status for numeric values to fix potential data flag errors (like HDL)
+    const isEffectiveOutOfRange = (result: BloodTestResult) => {
+        const isNumeric = !isNaN(parseFloat(result.result.replace(',', '.')));
+        if (isNumeric) {
+            return checkIfOutOfRange(result);
+        }
+        return !!result.flag || checkIfOutOfRange(result);
+    };
+
+    const abnormalResults = displayResults.filter(r => isEffectiveOutOfRange(r));
+    const normalResults = displayResults.filter(r => !isEffectiveOutOfRange(r));
 
     const processedDate = new Date(bloodData.processedAt).toLocaleString('hu-HU');
 
@@ -160,6 +172,23 @@ export default function ResultsPage() {
                         </p>
                     </div>
                     <div className="header-actions">
+                        <button className="btn btn-secondary" onClick={toggleTheme} title="Téma váltása">
+                            {theme === 'light' ? (
+                                <>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                    </svg>
+                                    <span style={{ marginLeft: '8px' }}>Sötét Mód</span>
+                                </>
+                            ) : (
+                                <>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                    <span style={{ marginLeft: '8px' }}>Világos Mód</span>
+                                </>
+                            )}
+                        </button>
                         <button className="btn btn-secondary" onClick={handleExportCSV}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 15l-3-3m0 0l3-3m-3 3h12M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -172,9 +201,9 @@ export default function ResultsPage() {
                             </svg>
                             Adatok Törlése
                         </button>
-                        <a href="#home" className="btn btn-secondary">
+                        {/* <a href="#home" className="btn btn-secondary">
                             Vissza a Főoldalra
-                        </a>
+                        </a> */}
                     </div>
                 </div>
 
@@ -314,13 +343,14 @@ export default function ResultsPage() {
 }
 
 function checkIfOutOfRange(result: BloodTestResult): boolean {
-    if (!result.ref_min && !result.ref_max) return false;
+    if (result.ref_min == null && result.ref_max == null) return false;
 
     const value = parseFloat(result.result.replace(',', '.'));
     if (isNaN(value)) return false;
 
-    if (result.ref_min !== undefined && value < result.ref_min) return true;
-    if (result.ref_max !== undefined && value > result.ref_max) return true;
+    // Check strict inequality with explicit null check to avoid 'null being treated as 0'
+    if (result.ref_min != null && value < result.ref_min) return true;
+    if (result.ref_max != null && value > result.ref_max) return true;
 
     return false;
 }

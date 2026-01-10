@@ -5,6 +5,7 @@ import ResultsPage from './components/ResultsPage';
 import DetailPage from './components/DetailPage';
 import OnboardingPage from './components/OnboardingPage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
@@ -36,7 +37,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="app flex flex-col" style={{ minHeight: '100vh' }}>
-        <Header />
+        {currentPage === 'home' && <Header />}
         <main style={{ flex: 1 }}>
           {currentPage === 'home' && <LandingPage />}
           {currentPage === 'onboarding' && <OnboardingPage />}
@@ -44,6 +45,7 @@ function App() {
           {currentPage === 'results' && <ResultsPage />}
           {currentPage === 'detail' && <DetailPage testName={detailTestName} />}
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );

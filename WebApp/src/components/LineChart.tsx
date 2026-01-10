@@ -40,23 +40,38 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
     let chartMin = Math.max(0, minValue - padding);
     let chartMax = maxValue + padding;
 
-    if (refRangeMin !== null || refRangeMax !== null) {
-        const refPadding = padding * 0.3;
-        if (refRangeMin !== null) chartMin = Math.min(chartMin, Math.max(0, refRangeMin - refPadding));
-        if (refRangeMax !== null) chartMax = Math.max(chartMax, refRangeMax + refPadding);
-    }
-
-    const chartRange = chartMax - chartMin;
     const width = 800;
     const height = 400;
-    const marginLeft = 60;
-    const marginRight = 40;
-    const marginTop = 40;
-    const marginBottom = 100;
+    const marginLeft = 75; // Increased to prevent Y-axis label overlap
+    const marginRight = 30;
+    const marginTop = 30;
+    const marginBottom = 90;
     const plotWidth = width - marginLeft - marginRight;
     const plotHeight = height - marginTop - marginBottom;
 
-    const scaleX = (index: number) => marginLeft + (index / (data.length - 1 || 1)) * plotWidth;
+    // Ensure chart range encompasses reference limits so "safe zones" are visible
+    if (refRangeMin !== null || refRangeMax !== null) {
+        // Use a minimum padding to ensure the green zone isn't just a thin line at the edge
+        const expansionPadding = Math.max(padding, (maxValue - minValue) * 0.15);
+
+        if (refRangeMin !== null) {
+            chartMin = Math.min(chartMin, Math.max(0, refRangeMin - expansionPadding));
+            chartMax = Math.max(chartMax, refRangeMin + expansionPadding);
+        }
+        if (refRangeMax !== null) {
+            chartMin = Math.min(chartMin, Math.max(0, refRangeMax - expansionPadding));
+            chartMax = Math.max(chartMax, refRangeMax + expansionPadding);
+        }
+    }
+
+    const chartRange = chartMax - chartMin;
+
+    // If there's only one point, place it at 1/3 of the width instead of on the Y-axis
+    const scaleX = (index: number) => {
+        if (data.length === 1) return marginLeft + plotWidth / 3;
+        return marginLeft + (index / (data.length - 1)) * plotWidth;
+    };
+
     const scaleY = (value: number) => marginTop + plotHeight - ((value - chartMin) / chartRange) * plotHeight;
 
     const yTicks = 5;
@@ -98,7 +113,7 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
                     } else if (refMaxY !== null) {
                         return (
                             <>
-                                {refMaxY < plotBottom && <rect x={marginLeft} y={refMaxY} width={plotWidth} height={plotBottom - refMaxY} fill="transparent" />}
+                                {refMaxY < plotBottom && <rect x={marginLeft} y={refMaxY} width={plotWidth} height={plotBottom - refMaxY} fill={successColor} />}
                                 {refMaxY > plotTop && <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMaxY - plotTop} fill={failureColor} />}
                                 {refRangeMax !== null && refRangeMax >= chartMin && refRangeMax <= chartMax && <line x1={marginLeft} y1={refMaxY} x2={width - marginRight} y2={refMaxY} stroke={borderStroke} strokeWidth="1" strokeDasharray="4 4" />}
                             </>
@@ -106,7 +121,7 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
                     } else if (refMinY !== null) {
                         return (
                             <>
-                                {refMinY > plotTop && <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMinY - plotTop} fill="transparent" />}
+                                {refMinY > plotTop && <rect x={marginLeft} y={plotTop} width={plotWidth} height={refMinY - plotTop} fill={successColor} />}
                                 {refMinY < plotBottom && <rect x={marginLeft} y={refMinY} width={plotWidth} height={plotBottom - refMinY} fill={failureColor} />}
                                 {refRangeMin !== null && refRangeMin >= chartMin && refRangeMin <= chartMax && <line x1={marginLeft} y1={refMinY} x2={width - marginRight} y2={refMinY} stroke={borderStroke} strokeWidth="1" strokeDasharray="4 4" />}
                             </>
@@ -164,7 +179,7 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
                     );
                 })}
 
-                <text x={width / 2} y={height - 5} textAnchor="middle" fill="var(--color-text-secondary)" fontSize="13" fontWeight="500">{hasValidDates ? 'Dátum' : 'Mérés sorszáma'}</text>
+                <text x={width / 2} y={height - 2} textAnchor="middle" fill="var(--color-text-secondary)" fontSize="13" fontWeight="500">{hasValidDates ? 'Dátum' : 'Mérés sorszáma'}</text>
                 <text x={15} y={height / 2} textAnchor="middle" fill="var(--color-text-secondary)" fontSize="13" fontWeight="500" transform={`rotate(-90, 15, ${height / 2})`}>{data[0]?.unit || 'Érték'}</text>
             </svg>
         </div>

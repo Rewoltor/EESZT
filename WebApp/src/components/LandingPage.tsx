@@ -188,23 +188,6 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="site-footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <div className="footer-logo">
-                            <div className="logo-icon">🩺</div>
-                            <span className="logo-text">EESZT Visualizer</span>
-                        </div>
-                        <p className="footer-disclaimer">
-                            Ez az alkalmazás nem helyettesíti az orvosi diagnózist. Az eredmények tájékoztató jellegűek. Egészségügyi kérdésekkel mindig fordulj szakorvoshoz.
-                        </p>
-                        <div className="footer-copyright">
-                            &copy; {new Date().getFullYear()} EESZT Visualizer. Minden jog fenntartva.
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

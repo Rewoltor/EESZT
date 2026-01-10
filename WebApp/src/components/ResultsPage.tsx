@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
+import { LineChart } from './LineChart';
 import './ResultsPage.css';
 
 interface BloodData {
@@ -142,6 +143,9 @@ export default function ResultsPage() {
             return sortOrder === 'asc' ? comparison : -comparison;
         });
 
+    const abnormalResults = displayResults.filter(r => checkIfOutOfRange(r) || r.flag);
+    const normalResults = displayResults.filter(r => !checkIfOutOfRange(r) && !r.flag);
+
     const processedDate = new Date(bloodData.processedAt).toLocaleString('hu-HU');
 
     return (
@@ -222,35 +226,63 @@ export default function ResultsPage() {
                     </div>
                 </div>
 
-                {/* Results count */}
-                <div className="results-count">
-                    {displayResults.length} vizsgálat típus megjelenítve
-                    {displayResults.length !== bloodData.results.length &&
-                        ` (${bloodData.results.length} összes mérés)`
-                    }
-                </div>
-
-                {/* Results table */}
-                <div className="results-table-container">
-                    <table className="results-table">
-                        <thead>
-                            <tr>
-                                <th>Vizsgálat Neve</th>
-                                <th>Legutóbbi Érték</th>
-                                <th>Mértékegység</th>
-                                <th>Referencia Tartomány</th>
-                                <th>Jelölés</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {displayResults.map((result, index) => {
-                                const isOutOfRange = checkIfOutOfRange(result);
+                {/* Abnormal Results Section */}
+                {abnormalResults.length > 0 && (
+                    <div className="abnormal-section">
+                        <h2 className="section-title-start">Figyelmet Igénylő Eredmények ({abnormalResults.length})</h2>
+                        <div className="abnormal-grid">
+                            {abnormalResults.map((result, index) => {
+                                const history = getTestHistory(result.test_name, bloodData.results);
                                 return (
+                                    <div key={index} className="abnormal-card glass">
+                                        <div className="abnormal-header">
+                                            <div className="abnormal-info">
+                                                <h3>{result.test_name}</h3>
+                                                <div className="abnormal-value">
+                                                    {result.result} <span className="unit">{result.unit}</span>
+                                                </div>
+                                                <div className="abnormal-ref">
+                                                    Referencia: {result.ref_range}
+                                                </div>
+                                            </div>
+                                            <div className="abnormal-action">
+                                                <button
+                                                    className="btn btn-sm btn-secondary"
+                                                    onClick={() => window.location.hash = `detail/${encodeURIComponent(result.test_name)}`}
+                                                >
+                                                    Részletek
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="abnormal-chart">
+                                            <LineChart data={history} />
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {/* Normal Results Table */}
+                {normalResults.length > 0 && (
+                    <div className="results-table-container">
+                        <h3 className="table-section-title">További Eredmények</h3>
+                        <table className="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Vizsgálat Neve</th>
+                                    <th>Legutóbbi Érték</th>
+                                    <th>Mértékegység</th>
+                                    <th>Referencia Tartomány</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {normalResults.map((result, index) => (
                                     <tr
                                         key={index}
-                                        className={`${isOutOfRange || result.flag ? 'out-of-range' : ''} clickable-row`}
+                                        className="clickable-row"
                                         onClick={() => {
-                                            // Navigate to detail page with test name
                                             window.location.hash = `detail/${encodeURIComponent(result.test_name)}`;
                                         }}
                                         title="Kattints a részletekért"
@@ -261,23 +293,15 @@ export default function ResultsPage() {
                                                 <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </td>
-                                        <td className="result-value">{result.result}</td>
+                                        <td className="result-value" style={{ color: 'var(--color-text-primary)' }}>{result.result}</td>
                                         <td className="unit">{result.unit || '—'}</td>
                                         <td className="ref-range">{result.ref_range || '—'}</td>
-                                        <td className="flag">
-                                            {result.flag && (
-                                                <span className="flag-badge">{result.flag}</span>
-                                            )}
-                                            {isOutOfRange && !result.flag && (
-                                                <span className="flag-badge warning">⚠</span>
-                                            )}
-                                        </td>
                                     </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
-                </div>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
 
                 {displayResults.length === 0 && (
                     <div className="no-results">
@@ -299,4 +323,14 @@ function checkIfOutOfRange(result: BloodTestResult): boolean {
     if (result.ref_max !== undefined && value > result.ref_max) return true;
 
     return false;
+}
+
+function getTestHistory(testName: string, allResults: BloodTestResult[]): BloodTestResult[] {
+    return allResults
+        .filter(r => r.test_name === testName)
+        .sort((a, b) => {
+            const dateA = a.date ? new Date(a.date).getTime() : 0;
+            const dateB = b.date ? new Date(b.date).getTime() : 0;
+            return dateA - dateB;
+        });
 }

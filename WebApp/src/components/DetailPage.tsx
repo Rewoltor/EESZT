@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
 import { LineChart } from './LineChart';
 import './DetailPage.css';
+import { translateFlag } from '../utils/formatting';
+import markerDescriptions from '../data/markerDescription.json';
 
 interface BloodData {
     results: BloodTestResult[];
@@ -66,35 +68,54 @@ export default function DetailPage({ testName }: { testName: string }) {
     const latestResult = historicalData[historicalData.length - 1];
     const isOutOfRange = checkIfOutOfRange(latestResult);
 
+    // Find description
+    const markerInfo = markerDescriptions.find(m => m.marker_name === decodedTestName);
+
     return (
         <div className="detail-page">
             <div className="container">
-                <div className="detail-header">
+                <div className="detail-nav">
                     <a href="#results" className="back-link">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M10 13L7 10M7 10L10 7M7 10L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         Vissza az Eredményekhez
                     </a>
+                </div>
 
-                    <h1 className="detail-title">{decodedTestName}</h1>
+                <h1 className="detail-title">{decodedTestName}</h1>
 
-                    <div className={`value-card glass ${isOutOfRange || latestResult.flag ? 'out-of-range' : ''}`}>
-                        <div className="value-label">Legutóbbi Érték</div>
-                        <div className="value-number">{latestResult.result} {latestResult.unit}</div>
-                        {latestResult.ref_range && (
-                            <div className="value-reference">Referencia: {formatRefRange(latestResult.ref_range, latestResult.unit)}</div>
-                        )}
-                        {(isOutOfRange || latestResult.flag) && (
-                            <div className="value-warning">
-                                {latestResult.flag ? (
-                                    <span className="flag-badge">{latestResult.flag}</span>
-                                ) : (
-                                    <span className="flag-badge warning">⚠ Tartományon kívül</span>
-                                )}
-                            </div>
-                        )}
+                <div className="summary-grid">
+                    <div className={`summary-card value-card glass ${isOutOfRange || latestResult.flag ? 'out-of-range' : ''}`}>
+                        <div className="card-content">
+                            <div className="value-label">Legutóbbi Érték</div>
+                            <div className="value-number">{latestResult.result} <span className="unit-small">{latestResult.unit}</span></div>
+                            {latestResult.ref_range && (
+                                <div className="value-reference">Referencia: {formatRefRange(latestResult.ref_range, latestResult.unit)}</div>
+                            )}
+                            {(isOutOfRange || latestResult.flag) && (
+                                <div className="value-warning">
+                                    {latestResult.flag ? (
+                                        <span className="flag-badge">{translateFlag(latestResult.flag)}</span>
+                                    ) : (
+                                        <span className="flag-badge warning">⚠ Tartományon kívül</span>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </div>
+
+                    {markerInfo && (
+                        <div className="summary-card info-card glass">
+                            <h3 className="info-title">A vizsgálatról</h3>
+                            <div className="info-body">
+                                <p className="info-text">{markerInfo.description}</p>
+                            </div>
+                            <div className="info-footer">
+                                Forrás: <a href={markerInfo.source_link} target="_blank" rel="noopener noreferrer">{markerInfo.source_name}</a>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div className="timeline-section">
@@ -140,7 +161,7 @@ export default function DetailPage({ testName }: { testName: string }) {
                                                     <td>{entry.unit}</td>
                                                     <td>{entry.ref_range || '—'}</td>
                                                     <td>
-                                                        {entry.flag && <span className="flag-badge">{entry.flag}</span>}
+                                                        {entry.flag && <span className="flag-badge">{translateFlag(entry.flag)}</span>}
                                                         {entryOutOfRange && !entry.flag && <span className="flag-badge warning">⚠</span>}
                                                     </td>
                                                 </tr>

@@ -1,50 +1,15 @@
 /**
- * Blood Extractor - Main Entry Point
- * 
- * This file now serves as a re-export from the modular implementation.
- * The actual implementation is in /bloodExtractor/ directory.
+ * Blood Extractor - Simple Exact-Match Approach
  * 
  * Architecture:
- * - config.ts: Configuration constants
- * - logger.ts: Structured logging
- * - types.ts: Type definitions
- * - error-recovery.ts: Retry mechanisms & quarantine
- * - cell-parsers.ts: Parse result cells & reference ranges
- * - field-resolvers.ts: Resolve units & dates from multiple sources
- * - validators.ts: Multi-stage validation
- * - pdf-parser.ts: PDF text → rows
- * - table-detector.ts: Hybrid table structure detection
- * - row-parser.ts: Parse individual data rows
- * - page-parser.ts: Orchestrate page-level parsing
- * - cleaners.ts: Name normalization
- * - deduplicator.ts: Duplicate removal
- * - index.ts: Main extraction pipeline
+ * - Searches for exact test names from reference.json in PDF text
+ * - Extracts numbers in the same row as matched test name
+ * - Gets dates from bottom of page  
+ * - Uses reference.json as single source of truth for units and ref ranges
+ * 
+ * This replaces the previous complex table-detection approach with a simpler,
+ * more reliable exact-matching strategy.
  */
 
-// Re-export main extraction function
-export { extractBloodResults } from './bloodExtractor/index';
-
-// Re-export commonly used utilities
-export {
-    parseResultCell,
-    parseReferenceRange,
-    resolveUnit,
-    extractTestDate,
-    validateBloodTestResult,
-    getStandardRefRange,
-    createLogger
-} from './bloodExtractor/index';
-
-// Re-export types if needed by consumers
-export type {
-    TextItem,
-    RowData,
-    ColumnMap,
-    ParsedResult,
-    RefRange,
-    ParseError,
-    ValidationResult,
-    ValidationWarning,
-    ValidationError,
-    ExtractionMetrics
-} from './bloodExtractor/types';
+// Re-export main extraction function from simple extractor
+export { extractBloodResultsSimple as extractBloodResults } from './bloodResultExtractor';

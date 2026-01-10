@@ -115,6 +115,7 @@ async function extractTestFromPage(
 /**
  * Find exact matches of test name in text items
  * Case-insensitive exact match
+ * Handles Hungarian "(A)" suffix (e.g., "Albumin (A)" matches "Albumin")
  */
 function findExactMatches(items: TextItem[], testName: string): MatchPosition[] {
     const matches: MatchPosition[] = [];
@@ -122,7 +123,13 @@ function findExactMatches(items: TextItem[], testName: string): MatchPosition[] 
 
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-        const itemText = item.str.toLowerCase().trim();
+        let itemText = item.str.toLowerCase().trim();
+
+        // Strip Hungarian "(A)" suffix if present
+        // This appears in some medical notes but doesn't change the test meaning
+        if (itemText.endsWith(' (a)')) {
+            itemText = itemText.slice(0, -4).trim();
+        }
 
         // Exact match (case-insensitive)
         if (itemText === searchTerm) {

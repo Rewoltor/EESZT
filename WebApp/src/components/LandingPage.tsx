@@ -88,18 +88,18 @@ export default function LandingPage() {
                         </div>
 
                         <h1 className="hero-title">
-                            Nézdd meg a vérképed alakulását
+                            Nézd meg a vérképed alakulását
                             <span className="gradient-text"> egyszerűen és gyorsan</span>
                         </h1>
 
                         <p className="hero-description">
-                            Az EESZT-ben megtalálható leleteidet látványos grafikonokon mutatjuk meg. Lásdd meg, hogy alakul az egészséged.
+                            Az EESZT-ben megtalálható leleteidet látványos grafikonokon mutatjuk meg. Lásd meg, hogy alakul az egészséged.
                             <strong> Adataid soha nem hagyják el a számítógépedet.</strong>
                         </p>
 
                         <div className="hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
                             <a href="#onboarding" className="btn btn-primary btn-lg">
-                                Kezdjük El
+                                Kezdjük el
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M13 10L7 10M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
@@ -160,7 +160,7 @@ export default function LandingPage() {
                     <div className="faq-grid">
                         <div className="faq-item card glass">
                             <h3>Hogyan működik?</h3>
-                            <p>Az alkalmazás beolvassa a PDF formátumú leleteidet, felismeri bennük a vérvizsgálati eredményeket, és időrendi sorrendben, grafikonon ábrázolja őket.</p>
+                            <p>Az alkalmazás beolvassa a PDF formátumú leleteidet, felismeri bennük a vérvizsgálati eredményeket és időrendi sorrendben, grafikonon ábrázolja őket.</p>
                         </div>
                         <div className="faq-item card glass">
                             <h3>Biztonságos a Chrome bővítmény?</h3>

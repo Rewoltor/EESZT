@@ -13,17 +13,19 @@ export default function UploadPage() {
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFiles = event.target.files;
         if (selectedFiles && selectedFiles.length > 0) {
-            // Filter for PDF files only
-            const pdfFiles = Array.from(selectedFiles).filter(file =>
-                file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
-            );
+            // Filter for PDF and JSON files
+            const validFiles = Array.from(selectedFiles).filter(file => {
+                const name = file.name.toLowerCase();
+                return file.type === 'application/pdf' || name.endsWith('.pdf') ||
+                    file.type === 'application/json' || name.endsWith('.json');
+            });
 
-            if (pdfFiles.length === 0) {
-                setError('Nem találtunk PDF fájlokat. Kérlek, válassz egy PDF fájlokat tartalmazó mappát.');
+            if (validFiles.length === 0) {
+                setError('Nem találtunk támogatott fájlokat (PDF vagy JSON).');
                 return;
             }
 
-            setFiles(pdfFiles);
+            setFiles(validFiles);
             setError('');
         }
     };
@@ -36,55 +38,95 @@ export default function UploadPage() {
 
         setIsProcessing(true);
         setError('');
-        setProgress('PDF fájlok egyesítése...');
 
         try {
-            // Step 1: Merge PDFs
-            const mergedPdfBytes = await mergePDFs(files);
-            setProgress(`${files.length} PDF fájl sikeresen egyesítve. Vérvizsgálati eredmények kibontása...`);
+            const pdfFiles = files.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+            const jsonFiles = files.filter(f => f.name.toLowerCase().endsWith('.json'));
 
-            // Step 2: Extract blood results with NEW SIMPLE EXTRACTOR
-            const results = await extractBloodResultsSimple(mergedPdfBytes);
+            let allResults: any[] = []; // Using any[] temporarily to allow merging
 
-            // DEBUG: Save results for troubleshooting
-            console.log('=== DEBUG: Extracted Results ===');
-            console.log(`Total results: ${results.length}`);
+            // 1. Process JSON files
+            if (jsonFiles.length > 0) {
+                setProgress(`${jsonFiles.length} JSON fájl feldolgozása...`);
+                for (const file of jsonFiles) {
+                    try {
+                        const text = await new Promise<string>((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = () => resolve(reader.result as string);
+                            reader.onerror = reject;
+                            reader.readAsText(file);
+                        });
 
-            // Create downloadable debug JSON
-            const debugData = {
-                extractedAt: new Date().toISOString(),
-                fileCount: files.length,
-                totalResults: results.length,
-                results: results.map(r => ({
-                    test_name: r.test_name,
-                    result: r.result,
-                    unit: r.unit,
-                    ref_range: r.ref_range,
-                    flag: r.flag,
-                    ref_min: r.ref_min,
-                    ref_max: r.ref_max
-                }))
-            };
+                        const data = JSON.parse(text);
+                        // Support both direct array and wrapped { results: [] } format
+                        let rawData: any[] = [];
+                        if (data.results && Array.isArray(data.results)) {
+                            rawData = data.results;
+                        } else if (Array.isArray(data)) {
+                            rawData = data;
+                        }
 
-            // Auto-download debug file
-            const debugBlob = new Blob([JSON.stringify(debugData, null, 2)], { type: 'application/json' });
-            const debugLink = document.createElement('a');
-            debugLink.href = URL.createObjectURL(debugBlob);
-            debugLink.download = `debug_blood_results_${new Date().toISOString().split('T')[0]}.json`;
-            debugLink.click();
-            console.log('✅ Debug file downloaded');
+                        // Sanitize and map to BloodTestResult
+                        const cleanData = rawData.map(item => ({
+                            test_name: item.test_name || 'Ismeretlen vizsgálat',
+                            result: item.result != null ? String(item.result) : '',
+                            unit: item.unit || '',
+                            ref_range: item.ref_range || '',
+                            flag: item.flag || '',
+                            ref_min: item.ref_min,
+                            ref_max: item.ref_max,
+                            date: item.date
+                        })).filter(item => item.result !== ''); // Filter out items with no result
 
-            if (results.length === 0) {
+                        allResults = [...allResults, ...cleanData];
+                    } catch (e) {
+                        console.error(`Error parsing JSON file ${file.name}:`, e);
+                    }
+                }
+            }
+
+            // 2. Process PDF files
+            if (pdfFiles.length > 0) {
+                setProgress(`${pdfFiles.length} PDF fájl egyesítése...`);
+                const mergedPdfBytes = await mergePDFs(pdfFiles);
+                setProgress(`PDF feldolgozása...`);
+                const pdfResults = await extractBloodResultsSimple(mergedPdfBytes);
+                allResults = [...allResults, ...pdfResults];
+            }
+
+            // DEBUG output & Auto-download
+            if (allResults.length > 0) {
+                console.log('=== DEBUG: Processed Results ===');
+                console.log(`Total results: ${allResults.length}`);
+
+                // Create downloadable debug JSON
+                // This allows saving the extracted data (especially from PDFs) for easier reloading
+                const debugData = {
+                    extractedAt: new Date().toISOString(),
+                    fileCount: files.length,
+                    totalResults: allResults.length,
+                    results: allResults
+                };
+
+                const debugBlob = new Blob([JSON.stringify(debugData, null, 2)], { type: 'application/json' });
+                const debugLink = document.createElement('a');
+                debugLink.href = URL.createObjectURL(debugBlob);
+                debugLink.download = `debug_blood_results_${new Date().toISOString().split('T')[0]}.json`;
+                debugLink.click();
+                console.log('✅ Debug file downloaded');
+            }
+
+            if (allResults.length === 0) {
                 setError('Nem találtunk vérvizsgálati eredményeket a feltöltött fájlokban.');
                 setIsProcessing(false);
                 return;
             }
 
-            setProgress(`${results.length} vérvizsgálati eredmény sikeresen kibontva!`);
+            setProgress(`${allResults.length} eredmény sikeresen feldolgozva!`);
 
             // Step 3: Store in SessionStorage
             const bloodData = {
-                results,
+                results: allResults,
                 processedAt: new Date().toISOString(),
                 fileCount: files.length
             };
@@ -93,7 +135,7 @@ export default function UploadPage() {
             // Step 4: Navigate to results page
             setTimeout(() => {
                 window.location.hash = 'results';
-            }, 1500);
+            }, 1000);
 
         } catch (err) {
             console.error('Processing error:', err);
@@ -111,15 +153,17 @@ export default function UploadPage() {
         e.preventDefault();
         e.stopPropagation();
 
-        const droppedFiles = Array.from(e.dataTransfer.files).filter(file =>
-            file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
-        );
+        const droppedFiles = Array.from(e.dataTransfer.files).filter(file => {
+            const name = file.name.toLowerCase();
+            return file.type === 'application/pdf' || name.endsWith('.pdf') ||
+                file.type === 'application/json' || name.endsWith('.json');
+        });
 
         if (droppedFiles.length > 0) {
             setFiles(droppedFiles);
             setError('');
         } else {
-            setError('Kérlek, csak PDF fájlokat húzz ide.');
+            setError('Kérlek, csak PDF vagy JSON fájlokat húzz ide.');
         }
     };
 
@@ -134,10 +178,10 @@ export default function UploadPage() {
                         Vissza a főoldalra
                     </a>
 
-                    <h1 className="upload-title">EESZT Fájlok Feltöltése</h1>
+                    <h1 className="upload-title">Fájlok Feltöltése</h1>
                     <p className="upload-description">
-                        Válaszd ki a letöltött EESZT PDF fájlokat tartalmazó mappát.
-                        A rendszer automatikusan egyesíti és feldolgozza őket.
+                        Válaszd ki a letöltött EESZT PDF fájlokat vagy a mentett JSON adatfájlt.
+                        A rendszer automatikusan feldolgozza őket.
                     </p>
 
                     {/* Privacy reminder */}
@@ -159,7 +203,7 @@ export default function UploadPage() {
                             ref={fileInputRef}
                             type="file"
                             multiple
-                            accept="application/pdf,.pdf"
+                            accept="application/pdf,.pdf,application/json,.json"
                             onChange={handleFileSelect}
                             style={{ display: 'none' }}
                             // @ts-ignore - webkitdirectory is not in the TS types
@@ -172,15 +216,15 @@ export default function UploadPage() {
                                 <svg className="upload-icon" width="64" height="64" viewBox="0 0 24 24" fill="none">
                                     <path d="M7 18v-1a5 5 0 015-5v0a5 5 0 015 5v1M16 7l-4-4m0 0L8 7m4-4v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <h3>Húzd ide a mappát vagy kattints a kiválasztáshoz</h3>
-                                <p>PDF fájlok (akár egyszerre több is)</p>
+                                <h3>Húzd ide a fájlokat vagy kattints a kiválasztáshoz</h3>
+                                <p>PDF vagy JSON fájlok</p>
                             </>
                         ) : (
                             <>
                                 <svg className="check-icon" width="64" height="64" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <h3>{files.length} PDF fájl kiválasztva</h3>
+                                <h3>{files.length} fájl kiválasztva</h3>
                                 <button className="btn btn-secondary mt-sm" onClick={(e) => {
                                     e.stopPropagation();
                                     setFiles([]);

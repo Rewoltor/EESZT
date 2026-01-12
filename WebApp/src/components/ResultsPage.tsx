@@ -106,6 +106,7 @@ export default function ResultsPage() {
     const displayResults = latestResults
         .filter(result => {
             // Only show results with numeric values
+            if (!result.result) return false;
             const numericValue = parseFloat(result.result.replace(',', '.'));
             if (isNaN(numericValue)) {
                 return false;

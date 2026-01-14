@@ -4,6 +4,8 @@ import UploadPage from './components/UploadPage';
 import ResultsPage from './components/ResultsPage';
 import DetailPage from './components/DetailPage';
 import OnboardingPage from './components/OnboardingPage';
+import ChoicePage from './components/ChoicePage';
+import ChatPage from './components/ChatPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
@@ -42,6 +44,8 @@ function App() {
           {currentPage === 'home' && <LandingPage />}
           {currentPage === 'onboarding' && <OnboardingPage />}
           {currentPage === 'upload' && <UploadPage />}
+          {currentPage === 'choice' && <ChoicePage />}
+          {currentPage === 'chat' && <ChatPage />}
           {currentPage === 'results' && <ResultsPage />}
           {currentPage === 'detail' && <DetailPage testName={detailTestName} />}
         </main>

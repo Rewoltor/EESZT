@@ -287,3 +287,37 @@ function buildResult(
 
     return result;
 }
+
+/**
+ * Extract FULL text content from PDF for LLM context
+ */
+export async function extractFullText(
+    pdfData: Uint8Array | ArrayBuffer
+): Promise<string> {
+    console.log('[SimpleExtractor] Starting FULL TEXT extraction...');
+
+    try {
+        const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+        let fullText = '';
+
+        console.log(`[SimpleExtractor] Extracting text from ${pdf.numPages} pages...`);
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const textContent = await page.getTextContent();
+
+            // Join items with spaces, add newlines for visual structure roughly
+            const pageText = textContent.items
+                .map((item: any) => item.str)
+                .join(' ');
+
+            fullText += `--- Page ${pageNum} ---\n${pageText}\n\n`;
+        }
+
+        console.log(`[SimpleExtractor] Full text extracted (${fullText.length} chars).`);
+        return fullText;
+    } catch (e) {
+        console.error('Error extracting full text:', e);
+        return 'Error extracting text from document.';
+    }
+}

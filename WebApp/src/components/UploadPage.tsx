@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { mergePDFs } from '../lib/pdfMerger';
-import { extractBloodResultsSimple } from '../lib/bloodExtractor'; // NEW SIMPLE EXTRACTOR
+import { extractBloodResultsSimple, extractFullText } from '../lib/bloodExtractor'; // NEW SIMPLE EXTRACTOR
 import './UploadPage.css';
 
 export default function UploadPage() {
@@ -44,6 +44,7 @@ export default function UploadPage() {
             const jsonFiles = files.filter(f => f.name.toLowerCase().endsWith('.json'));
 
             let allResults: any[] = []; // Using any[] temporarily to allow merging
+            let fullDocumentText = '';
 
             // 1. Process JSON files
             if (jsonFiles.length > 0) {
@@ -83,15 +84,28 @@ export default function UploadPage() {
                         console.error(`Error parsing JSON file ${file.name}:`, e);
                     }
                 }
+
+                // For JSON files, we might not have the original text context easily unless it was saved.
+                // We'll append a note about this.
+                fullDocumentText += `--- JSON Import ---\nJSON files processed: ${jsonFiles.map(f => f.name).join(', ')}\n(Original detailed text content not available from JSON import)\n\n`;
             }
 
-            // 2. Process PDF files
             if (pdfFiles.length > 0) {
                 setProgress(`${pdfFiles.length} PDF fájl egyesítése...`);
                 const mergedPdfBytes = await mergePDFs(pdfFiles);
-                setProgress(`PDF feldolgozása...`);
-                const pdfResults = await extractBloodResultsSimple(mergedPdfBytes);
+
+                // Create two independent copies immediately to avoid buffer detachment issues
+                // (pdf.js transfers buffers to workers, which detaches them)
+                const pdfBytesForExtraction = new Uint8Array(mergedPdfBytes);
+                const pdfBytesForText = new Uint8Array(mergedPdfBytes);
+
+                setProgress(`PDF feldolgozása (Adatok)...`);
+                const pdfResults = await extractBloodResultsSimple(pdfBytesForExtraction);
                 allResults = [...allResults, ...pdfResults];
+
+                setProgress(`PDF feldolgozása (Teljes szöveg)...`);
+                const pdfText = await extractFullText(pdfBytesForText);
+                fullDocumentText += pdfText;
             }
 
             // DEBUG output & Auto-download
@@ -132,9 +146,12 @@ export default function UploadPage() {
             };
             sessionStorage.setItem('bloodResults', JSON.stringify(bloodData));
 
-            // Step 4: Navigate to results page
+            // Store full text for AI Chat
+            sessionStorage.setItem('bloodFullText', fullDocumentText);
+
+            // Step 4: Navigate to choice page
             setTimeout(() => {
-                window.location.hash = 'results';
+                window.location.hash = 'choice';
             }, 1000);
 
         } catch (err) {

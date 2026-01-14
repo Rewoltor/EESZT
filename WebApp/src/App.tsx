@@ -9,7 +9,6 @@ import ChatPage from './components/ChatPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
-import './index.css';
 
 function App() {
   // Simple hash-based routing
@@ -49,7 +48,7 @@ function App() {
           {currentPage === 'results' && <ResultsPage />}
           {currentPage === 'detail' && <DetailPage testName={detailTestName} />}
         </main>
-        <Footer />
+        {currentPage !== 'chat' && <Footer />}
       </div>
     </ThemeProvider>
   );

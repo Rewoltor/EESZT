@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { getStoredApiKey, saveApiKey, validateApiKey, sendChatRequest, clearApiKey } from '../lib/openai';
 import type { ChatMessage } from '../lib/openai';
-import systemPromptText from '../data/system_prompt.md?raw'; // Vite raw import
+import { ChatMessageItem } from './ChatMessageItem';
+import systemPromptText from '../data/system_prompt.md?raw';
 import './ChatPage.css';
 
 export default function ChatPage() {
@@ -14,10 +15,8 @@ export default function ChatPage() {
     const [inputMsg, setInputMsg] = useState('');
     const [isTyping, setIsTyping] = useState(false);
 
-    // Auto-scroll ref
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    // Initial Load - Check for Key & Document Context
     useEffect(() => {
         const storedKey = getStoredApiKey();
         if (storedKey) {
@@ -26,18 +25,15 @@ export default function ChatPage() {
         }
     }, []);
 
-    // Scroll to bottom effect
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages, isTyping]);
-
 
     const initializeChat = () => {
         const docText = sessionStorage.getItem('bloodFullText');
 
         if (!docText) {
             console.error('Chat context missing: bloodFullText is null');
-            // Should not happen if flow is correct, but handle it
             setMessages([{ role: 'assistant', content: 'Hiba: Nem található dokumentum tartalom. Kérlek töltsd fel újra a fájlokat.' }]);
             return;
         }
@@ -80,7 +76,7 @@ export default function ChatPage() {
         if (!inputMsg.trim() || !apiKey || isTyping) return;
 
         const userMsg = inputMsg;
-        setInputMsg(''); // Clear input immediately
+        setInputMsg('');
 
         const newHistory: ChatMessage[] = [
             ...messages,
@@ -107,7 +103,7 @@ export default function ChatPage() {
         setMessages([]);
     }
 
-    // 1. STATE: API Key Entry
+    // API Key Entry State
     if (!apiKey) {
         return (
             <div className="chat-auth-container">
@@ -151,60 +147,85 @@ export default function ChatPage() {
         );
     }
 
-    // 2. STATE: Chat Interface
+    // Chat Interface (ChatGPT-style)
     return (
-        <div className="chat-page">
-            <div className="chat-header">
-                <h3>Orvosi Asszisztens</h3>
-                <div className="header-actions">
-                    <button className="btn btn-sm btn-outline" onClick={() => window.location.hash = 'results'}>Adatok Megtekintése</button>
-                    <button className="btn btn-sm btn-ghost" onClick={handleLogout} title="Kulcs törlése">Kilépés</button>
+        <div className="chat-container">
+            {/* Minimal Header */}
+            <header className="chat-header-minimal">
+                <div className="header-left">
+                    <h1>Orvosi Asszisztens</h1>
+                </div>
+                <div className="header-right">
+                    <button className="icon-btn" onClick={() => window.location.hash = 'results'} title="Adatok megtekintése">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </button>
+                    <button className="icon-btn" onClick={handleLogout} title="Kilépés">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            {/* Messages Area */}
+            <div className="messages-wrapper">
+                <div className="messages-content">
+                    {messages.filter(m => m.role !== 'system').map((msg, idx) => (
+                        <ChatMessageItem key={idx} msg={msg} />
+                    ))}
+
+                    {isTyping && (
+                        <div className="message-row assistant">
+                            <div className="message-container">
+                                <div className="message-avatar">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <div className="message-content">
+                                    <div className="typing-indicator">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    <div ref={messagesEndRef} />
                 </div>
             </div>
 
-            <div className="messages-container">
-                {messages.filter(m => m.role !== 'system').map((msg, idx) => (
-                    <div key={idx} className={`message ${msg.role}`}>
-                        <div className="message-bubble">
-                            {msg.content}
-                        </div>
+            {/* Input Area (sticky bottom, centered) */}
+            <div className="input-area-wrapper">
+                <div className="input-area-container">
+                    <div className="input-box">
+                        <textarea
+                            value={inputMsg}
+                            onChange={(e) => setInputMsg(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' && !e.shiftKey) {
+                                    e.preventDefault();
+                                    handleSendMessage();
+                                }
+                            }}
+                            placeholder="Írj egy üzenetet..."
+                            rows={1}
+                        />
+                        <button
+                            className="send-button"
+                            onClick={handleSendMessage}
+                            disabled={!inputMsg.trim() || isTyping}
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </button>
                     </div>
-                ))}
-
-                {isTyping && (
-                    <div className="message assistant">
-                        <div className="message-bubble typing-indicator">
-                            <span>.</span><span>.</span><span>.</span>
-                        </div>
+                    <div className="disclaimer">
+                        A mesterséges intelligencia hibázhat. Súlyos egészségügyi kérdésekben mindig konzultálj orvosoddal.
                     </div>
-                )}
-
-                <div ref={messagesEndRef} />
-            </div>
-
-            <div className="chat-input-area">
-                <div className="input-wrapper">
-                    <textarea
-                        value={inputMsg}
-                        onChange={(e) => setInputMsg(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' && !e.shiftKey) {
-                                e.preventDefault();
-                                handleSendMessage();
-                            }
-                        }}
-                        placeholder="Írj egy üzenetet..."
-                        rows={1}
-                    />
-                    <button
-                        className="send-btn"
-                        onClick={handleSendMessage}
-                        disabled={!inputMsg.trim() || isTyping}
-                    >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>

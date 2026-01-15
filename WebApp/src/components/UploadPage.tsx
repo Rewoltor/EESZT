@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { mergePDFs } from '../lib/pdfMerger';
 import { extractBloodResultsSimple, extractFullText } from '../lib/bloodExtractor'; // NEW SIMPLE EXTRACTOR
+import { storage } from '../lib/storage';
 import './UploadPage.css';
 
 export default function UploadPage() {
@@ -138,16 +139,15 @@ export default function UploadPage() {
 
             setProgress(`${allResults.length} eredmény sikeresen feldolgozva!`);
 
-            // Step 3: Store in SessionStorage
+            // Step 3: Store in IndexedDB
             const bloodData = {
                 results: allResults,
                 processedAt: new Date().toISOString(),
                 fileCount: files.length
             };
-            sessionStorage.setItem('bloodResults', JSON.stringify(bloodData));
 
-            // Store full text for AI Chat
-            sessionStorage.setItem('bloodFullText', fullDocumentText);
+            await storage.saveBloodResults(bloodData);
+            await storage.saveFullText(fullDocumentText);
 
             // Step 4: Navigate to choice page
             setTimeout(() => {

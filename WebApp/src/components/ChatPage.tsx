@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { getStoredApiKey, saveApiKey, validateApiKey, sendChatStream, clearApiKey } from '../lib/openai';
 import type { ChatMessage } from '../lib/openai';
+import { storage } from '../lib/storage';
 import { ChatMessageItem } from './ChatMessageItem';
 import systemPromptText from '../data/system_prompt.md?raw';
 import './ChatPage.css';
@@ -32,8 +33,23 @@ export default function ChatPage() {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages, isTyping]);
 
-    const initializeChat = () => {
-        const docText = sessionStorage.getItem('bloodFullText');
+    // Save messages to storage whenever they change
+    useEffect(() => {
+        if (messages.length > 0) {
+            storage.saveChatHistory(messages);
+        }
+    }, [messages]);
+
+    const initializeChat = async () => {
+        // Try to load existing chat history first
+        const storedHistory = await storage.getChatHistory();
+        if (storedHistory && storedHistory.length > 0) {
+            setMessages(storedHistory);
+            return;
+        }
+
+        // If no history, load full text and start fresh
+        const docText = await storage.getFullText();
 
         if (!docText) {
             console.error('Chat context missing: bloodFullText is null');
@@ -55,6 +71,7 @@ export default function ChatPage() {
             }
         ];
         setMessages(initialMessages);
+        await storage.saveChatHistory(initialMessages);
     };
 
     const handleKeySubmit = async () => {
@@ -98,19 +115,18 @@ export default function ChatPage() {
         setIsTyping(true);
 
         try {
-            // Add placeholder for assistant message
-            const tempHistory: ChatMessage[] = [...newHistory, { role: 'assistant', content: '' }];
-            setMessages(tempHistory);
-
             await sendChatStream(newHistory, apiKey, (chunk) => {
                 setMessages(prev => {
                     const lastMsg = prev[prev.length - 1];
-                    // Ensure we are updating the last message which should be the assistant's
-                    if (lastMsg.role === 'assistant') {
+
+                    // If the last message is already from the assistant, append to it
+                    if (lastMsg && lastMsg.role === 'assistant') {
                         const updatedMsg = { ...lastMsg, content: lastMsg.content + chunk };
                         return [...prev.slice(0, -1), updatedMsg];
                     }
-                    return prev;
+
+                    // Otherwise, this is the first chunk, so append a new assistant message
+                    return [...prev, { role: 'assistant', content: chunk }];
                 });
             });
         } catch (error) {
@@ -158,10 +174,11 @@ export default function ChatPage() {
         setIsExitModalOpen(true);
     };
 
-    const confirmExit = () => {
+    const confirmExit = async () => {
         clearApiKey();
         setApiKey(null);
         setMessages([]);
+        await storage.clear();
         setIsExitModalOpen(false);
     };
 

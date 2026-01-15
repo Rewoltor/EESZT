@@ -2,38 +2,39 @@ import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
 import { useTheme } from '../context/ThemeContext';
 import { LineChart } from './LineChart';
+import { storage } from '../lib/storage';
+import type { StoredBloodData } from '../lib/storage';
 import './ResultsPage.css';
-
-interface BloodData {
-    results: BloodTestResult[];
-    processedAt: string;
-    fileCount: number;
-}
 
 export default function ResultsPage() {
     const { theme, toggleTheme } = useTheme();
-    const [bloodData, setBloodData] = useState<BloodData | null>(null);
+    const [bloodData, setBloodData] = useState<StoredBloodData | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortBy, setSortBy] = useState<'name' | 'result'>('name');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const [filterFlag, setFilterFlag] = useState<'all' | 'flagged'>('all');
 
     useEffect(() => {
-        // Load data from SessionStorage
-        const storedData = sessionStorage.getItem('bloodResults');
-        if (storedData) {
+        const loadData = async () => {
             try {
-                const parsed = JSON.parse(storedData);
-                setBloodData(parsed);
+                const data = await storage.getBloodResults();
+                if (data) {
+                    setBloodData(data);
+                }
             } catch (error) {
-                console.error('Error parsing stored data:', error);
+                console.error('Error loading data from storage:', error);
+            } finally {
+                setIsLoading(false);
             }
-        }
+        };
+        loadData();
     }, []);
 
-    const handleClearSession = () => {
+    const handleClearSession = async () => {
         if (confirm('Biztosan törölni szeretnéd az összes adatot? Ez a művelet nem vonható vissza.')) {
-            sessionStorage.removeItem('bloodResults');
+            await storage.clear();
+            setBloodData(null);
             window.location.hash = 'home';
         }
     };
@@ -63,6 +64,19 @@ export default function ResultsPage() {
         link.download = `eeszt_vereredmenyek_${new Date().toISOString().split('T')[0]}.csv`;
         link.click();
     };
+
+    if (isLoading) {
+        return (
+            <div className="results-page">
+                <div className="container">
+                    <div className="loading-state">
+                        <div className="spinner"></div>
+                        <p>Adatok betöltése...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     if (!bloodData) {
         return (

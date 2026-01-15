@@ -1,10 +1,10 @@
-import './Header.css';
+
 
 export default function Header() {
     return (
         <header className="site-header glass">
             <div className="container header-inner">
-                <div className="logo-container" onClick={() => window.location.hash = ''} style={{ cursor: 'pointer' }}>
+                <div className="logo-container" onClick={() => window.location.hash = ''}>
                     <div className="logo-icon">🩺</div>
                     <span className="logo-text">EESZT Visualizer</span>
                 </div>

@@ -1,0 +1,355 @@
+/* ============================================
+   FORM COMPONENTS
+   ============================================ */
+
+/* Text Inputs */
+.input,
+.api-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base) ease;
+}
+
+.input:focus,
+.api-input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px var(--color-accent-glow);
+}
+
+.input::placeholder,
+.api-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* Textarea */
+textarea.input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Select Dropdowns */
+select.input,
+.filter-controls select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+select.input:hover,
+.filter-controls select:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+select.input:focus,
+.filter-controls select:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box svg {
+    position: absolute;
+    left: var(--spacing-sm);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.search-box input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 40px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-base);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.search-box input::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* Input Box (Chat) */
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    padding: 0.6rem 0.8rem;
+    transition: all var(--transition-slow) var(--transition-easing-default);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.input-box:focus-within {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px var(--color-accent-glow), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.input-box textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    resize: none;
+    padding: var(--spacing-xs);
+    line-height: 24px;
+    max-height: 400px;
+    outline: none;
+    font-family: inherit;
+    font-size: var(--font-size-base);
+    overflow-y: hidden;
+}
+
+.input-box textarea.has-expand-btn {
+    padding-right: 2rem;
+    overflow-y: auto;
+}
+
+.input-box textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* Dropzone */
+.dropzone {
+    position: relative;
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-slow) ease;
+    background: var(--color-bg-glass);
+}
+
+.dropzone:hover {
+    border-color: var(--color-accent-primary);
+    background: rgba(6, 182, 212, 0.05);
+}
+
+.dropzone.has-files {
+    border-color: var(--color-success);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.dropzone h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.dropzone p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.upload-icon,
+.check-icon {
+    color: var(--color-accent-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.dropzone.has-files .check-icon {
+    color: var(--color-success);
+}
+
+/* File List */
+.file-list {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+}
+
+.file-list h4 {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--color-text-secondary);
+}
+
+.files-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-base), color var(--transition-slow) ease;
+}
+
+.file-item:hover {
+    background: var(--color-bg-secondary);
+}
+
+.file-item svg {
+    color: var(--color-accent-primary);
+    flex-shrink: 0;
+}
+
+.file-item span:first-of-type {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-size {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.file-item-more {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+/* Privacy Reminder */
+.privacy-reminder {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-accent-primary);
+    font-size: 0.9rem;
+}
+
+.privacy-reminder svg {
+    flex-shrink: 0;
+}
+
+/* Error & Success Messages */
+.error-msg,
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-md);
+    color: #fca5a5;
+}
+
+.error-msg svg,
+.error-message svg {
+    flex-shrink: 0;
+}
+
+.error-msg {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    background: rgba(220, 38, 38, 0.1);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-danger);
+    font-size: 0.9rem;
+}
+
+.progress-message {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: var(--radius-md);
+    color: var(--color-accent-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.help-text {
+    margin-top: var(--spacing-md);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.help-text a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+
+/* Process Button */
+.process-btn {
+    width: 100%;
+    margin-top: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.process-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.process-btn svg {
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-box {
+        min-width: 100%;
+    }
+
+    .filter-controls {
+        flex-wrap: wrap;
+    }
+
+    .dropzone {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+}

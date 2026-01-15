@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './OnboardingPage.css';
 
 interface Step {
     title: string;

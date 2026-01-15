@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
-import { useTheme } from '../context/ThemeContext';
 import { LineChart } from './LineChart';
+import { UnifiedHeader } from './UnifiedHeader';
 import { storage } from '../lib/storage';
 import type { StoredBloodData } from '../lib/storage';
-import './ResultsPage.css';
 
 export default function ResultsPage() {
-    const { theme, toggleTheme } = useTheme();
     const [bloodData, setBloodData] = useState<StoredBloodData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
@@ -177,52 +175,20 @@ export default function ResultsPage() {
 
     return (
         <div className="results-page">
+            {/* Unified Header */}
+            <UnifiedHeader
+                currentView="results"
+                onExport={handleExportCSV}
+                onDelete={handleClearSession}
+            />
+
             <div className="container">
-                {/* Header */}
-                <div className="results-header">
-                    <div>
-                        <h1 className="results-title">Vérvizsgálati Eredmények</h1>
-                        <p className="results-meta">
-                            {bloodData.results.length} eredmény • {bloodData.fileCount} fájl feldolgozva • {processedDate}
-                        </p>
-                    </div>
-                    <div className="header-actions">
-                        <button className="btn btn-secondary" onClick={toggleTheme} title="Téma váltása">
-                            {theme === 'light' ? (
-                                <>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                    </svg>
-                                    <span style={{ marginLeft: '8px' }}>Sötét Mód</span>
-                                </>
-                            ) : (
-                                <>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                                    </svg>
-                                    <span style={{ marginLeft: '8px' }}>Világos Mód</span>
-                                </>
-                            )}
-                        </button>
-                        <button className="btn btn-secondary" onClick={handleExportCSV}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 15l-3-3m0 0l3-3m-3 3h12M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            Exportálás CSV-be
-                        </button>
-                        <button className="btn btn-secondary" onClick={handleClearSession}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            Adatok Törlése
-                        </button>
-                        <button className="btn btn-primary" onClick={() => window.location.hash = 'chat'}>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                            </svg>
-                            AI Csevegés
-                        </button>
-                    </div>
+                {/* Page Meta */}
+                <div className="results-meta-section">
+                    <h1 className="results-title">Vérvizsgálati Eredmények</h1>
+                    <p className="results-meta">
+                        {bloodData.results.length} eredmény • {bloodData.fileCount} fájl feldolgozva • {processedDate}
+                    </p>
                 </div>
 
                 {/* Controls */}
@@ -340,7 +306,7 @@ export default function ResultsPage() {
                                                 <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </td>
-                                        <td className="result-value" style={{ color: 'var(--color-text-primary)' }}>{result.result}</td>
+                                        <td className="result-value">{result.result}</td>
                                         <td className="unit">{result.unit || '—'}</td>
                                         <td className="ref-range">{result.ref_range || '—'}</td>
                                     </tr>

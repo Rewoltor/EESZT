@@ -142,7 +142,7 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
                     const value = chartMin + i * yStep;
                     const y = scaleY(value);
                     const displayValue = value.toFixed(1).replace('.', ',');
-                    return <text key={i} x={marginLeft - 10} y={y + 4} textAnchor="end" fill="var(--color-text-secondary)" fontSize="12" style={{ opacity: 0.7 }}>{displayValue}</text>;
+                    return <text key={i} x={marginLeft - 10} y={y + 4} textAnchor="end" fill="var(--color-text-secondary)" fontSize="12" className="svg-text-muted">{displayValue}</text>;
                 })}
 
                 {data.map((_, i) => {
@@ -173,8 +173,8 @@ export function LineChart({ data }: { data: BloodTestResult[] }) {
                         <g key={i} className="data-point-group">
                             <circle cx={cx} cy={cy} r="15" fill="transparent" stroke="transparent" style={{ cursor: 'pointer' }} />
                             <circle cx={cx} cy={cy} r="5" fill="var(--color-accent-primary)" stroke="var(--color-bg-primary)" strokeWidth="2" className="data-point" style={{ cursor: 'pointer' }} />
-                            <text x={cx} y={cy - 20} textAnchor="middle" fill="var(--color-text-primary)" fontSize="12" fontWeight="600" className="tooltip-text" style={{ opacity: 0, pointerEvents: 'none', transition: 'opacity 0.2s' }}>{d.result} {d.unit}</text>
-                            <rect x={cx - 35} y={cy - 35} width="70" height="22" rx="4" fill="var(--color-bg-card)" stroke="var(--color-border)" className="tooltip-bg" style={{ opacity: 0, pointerEvents: 'none', transition: 'opacity 0.2s' }} />
+                            <text x={cx} y={cy - 20} textAnchor="middle" fill="var(--color-text-primary)" fontSize="12" fontWeight="600" className="tooltip-text svg-tooltip-text">{d.result} {d.unit}</text>
+                            <rect x={cx - 35} y={cy - 35} width="70" height="22" rx="4" fill="var(--color-bg-card)" stroke="var(--color-border)" className="tooltip-bg svg-tooltip-bg" />
                         </g>
                     );
                 })}

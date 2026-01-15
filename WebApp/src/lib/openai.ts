@@ -45,7 +45,7 @@ export async function sendChatRequest(messages: ChatMessage[], apiKey: string): 
             'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-            model: 'gpt-5-mini',
+            model: 'gpt-4o-mini',
             messages: messages,
             temperature: 1
         })
@@ -75,7 +75,7 @@ export async function sendChatStream(
             'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-            model: 'gpt-5-mini',
+            model: 'gpt-4o-mini',
             messages: messages,
             temperature: 1,
             stream: true

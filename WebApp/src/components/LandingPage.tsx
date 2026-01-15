@@ -1,7 +1,5 @@
 import { LineChart } from './LineChart';
 import type { BloodTestResult } from '../types/blood-results';
-import './LandingPage.css';
-import './LandingPageExtra.css';
 
 const SAMPLE_DATA: BloodTestResult[] = [
     {
@@ -97,22 +95,22 @@ export default function LandingPage() {
                             <strong> Adataid soha nem hagyják el a számítógépedet.</strong>
                         </p>
 
-                        <div className="hero-cta" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                        <div className="hero-cta">
                             <a href="#onboarding" className="btn btn-primary btn-lg">
                                 Kezdjük el
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M13 10L7 10M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
-                            <a href="#upload" className="btn btn-text secondary-cta-link">
+                            <a href="#upload" className="secondary-cta-link">
                                 Már megvannak a fájlok? Ugrás a feltöltéshez
                             </a>
                         </div>
 
-                        <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.8s' }}>
-                            <div className="chart-preview-container glass" style={{ padding: '0', background: 'transparent', boxShadow: 'none', border: 'none' }}>
-                                <h3 className="chart-preview-title" style={{ marginTop: 0, color: 'var(--color-accent-primary)', textAlign: 'left', paddingLeft: '60px' }}>Vas (Fe)</h3>
-                                <div style={{ marginBottom: '5rem', height: '350px', width: '100%' }}>
+                        <div className="hero-visual animate-fade-in">
+                            <div className="chart-preview-container">
+                                <h3 className="chart-preview-title">Vas (Fe)</h3>
+                                <div className="chart-container" style={{ marginBottom: '5rem', height: '350px' }}>
                                     <LineChart data={SAMPLE_DATA} />
                                 </div>
                             </div>

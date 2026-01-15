@@ -3,8 +3,8 @@ import { getStoredApiKey, saveApiKey, validateApiKey, sendChatStream, clearApiKe
 import type { ChatMessage } from '../lib/openai';
 import { storage } from '../lib/storage';
 import { ChatMessageItem } from './ChatMessageItem';
+import { UnifiedHeader } from './UnifiedHeader';
 import systemPromptText from '../data/system_prompt.md?raw';
-import './ChatPage.css';
 
 export default function ChatPage() {
     const [apiKey, setApiKey] = useState<string | null>(null);
@@ -222,7 +222,7 @@ export default function ChatPage() {
                         <p>Nincs még kulcsod? <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">Kérj egyet itt</a>.</p>
                     </div>
 
-                    <div style={{ marginTop: '1rem' }}>
+                    <div className="mt-md">
                         <a href="#choice" className="link-muted">Vissza</a>
                     </div>
                 </div>
@@ -233,30 +233,11 @@ export default function ChatPage() {
     // Chat Interface (ChatGPT-style)
     return (
         <div className="chat-container">
-            {/* Minimal Header */}
-            <header className="chat-header-minimal">
-                <div className="header-left">
-                    <button className="icon-btn" onClick={() => window.location.hash = 'choice'} title="Vissza">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m7 7-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <h1>Orvosi Asszisztens</h1>
-                </div>
-                <div className="header-right">
-                    <button className="icon-btn with-text" onClick={() => window.location.hash = 'results'} title="Adatok megtekintése">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                        <span>Eredmények</span>
-                    </button>
-                    <button className="icon-btn" onClick={handleExitClick} title="Kilépés">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                        </svg>
-                    </button>
-                </div>
-            </header>
+            {/* Unified Header */}
+            <UnifiedHeader
+                currentView="chat"
+                onDelete={handleExitClick}
+            />
 
             {/* Messages Area */}
             <div className="messages-wrapper">

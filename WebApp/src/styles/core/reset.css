@@ -1,0 +1,67 @@
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color var(--transition-slower) ease,
+        border-color var(--transition-slower) ease,
+        color var(--transition-slower) ease,
+        fill var(--transition-slower) ease,
+        stroke var(--transition-slower) ease,
+        box-shadow var(--transition-slower) ease;
+}
+
+html {
+    /* Scale down the entire UI */
+    font-size: 14px;
+    /* Default is usually 16px. 14px makes 1rem = 14px */
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-bg-primary);
+    background-image: var(--gradient-hero);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-weight-normal);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* ============================================
+   RESPONSIVE BASE FONT SIZE
+   ============================================ */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 13px;
+        /* Further reduction on mobile */
+    }
+}

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
 import { LineChart } from './LineChart';
 import { storage } from '../lib/storage';
-import './DetailPage.css';
 import { translateFlag } from '../utils/formatting';
 import markerDescriptions from '../data/markerDescription.json';
 

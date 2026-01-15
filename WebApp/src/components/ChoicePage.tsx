@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../lib/storage';
-import './ChoicePage.css';
 
 export default function ChoicePage() {
     const [hasResults, setHasResults] = useState(false);

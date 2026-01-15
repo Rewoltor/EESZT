@@ -1,243 +1,37 @@
-/* Variable definitions moved to src/theme/tokens.css */
+/* ============================================
+   EESZT Web Application - Centralized Styles
+   ============================================
+   
+   This is the main CSS entry point. All styles are organized
+   in a modular architecture for maintainability and scalability.
+   
+   Structure:
+   - Core: Design tokens, reset, typography
+   - Layout: Page layouts and structural components
+   - Components: Reusable UI components
+   - Utilities: Single-purpose utility classes
+   - Animations: Keyframes and animation utilities
+   ============================================ */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: background-color 0.8s ease, border-color 0.8s ease, color 0.8s ease, fill 0.8s ease, stroke 0.8s ease, box-shadow 0.8s ease;
-}
+/* Core */
+@import './styles/core/tokens.css';
+@import './styles/core/reset.css';
+@import './styles/core/typography.css';
 
-html {
-  /* Scale down the entire UI */
-  font-size: 14px;
-  /* Default is usually 16px. 14px makes 1rem = 14px */
-}
+/* Layout */
+@import './styles/layout/layout.css';
 
-body {
-  min-height: 100vh;
-  background: var(--color-bg-primary);
-  /* Changed from gradient-hero to allow bg switching */
-  background-image: var(--gradient-hero);
-  /* Optional if we want gradient only in some places, but let's keep it generally */
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-text-primary);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2.5rem;
-  /* Reduced from 3.5rem */
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 2rem;
-  /* Reduced from 2.5rem */
-  letter-spacing: -0.01em;
-}
-
-h3 {
-  font-size: 1.5rem;
-  /* Reduced from 1.875rem */
-}
-
-p {
-  color: var(--color-text-secondary);
-}
-
-/* Glass morphism effect */
-.glass {
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-}
-
-/* Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  padding: 0.75rem 1.5rem;
-  /* Fixed padding instead of ref to spacing-sm/lg for better consistency */
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: var(--gradient-accent);
-  color: white;
-  box-shadow: var(--shadow-glow);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px var(--color-accent-glow);
-  opacity: 0.95;
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-.btn-secondary {
-  background: var(--color-bg-glass);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-}
-
-.btn-secondary:hover {
-  background: rgba(150, 150, 150, 0.1);
-  border-color: var(--color-text-secondary);
-}
-
-.btn-lg {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-}
-
-/* Card Styles */
-.card {
-  background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  border: 1px solid var(--color-border);
-  transition: transform 0.8s ease, box-shadow 0.8s ease, background-color 0.8s ease, border-color 0.8s ease, color 0.8s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--color-accent-primary);
-}
-
-/* Badge Styles */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding: 0.25rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: var(--radius-full);
-  background: rgba(6, 182, 212, 0.1);
-  color: var(--color-accent-primary);
-  border: 1px solid rgba(6, 182, 212, 0.8);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
+/* Components */
+@import './styles/components/buttons.css';
+@import './styles/components/cards.css';
+@import './styles/components/forms.css';
+@import './styles/components/badges.css';
+@import './styles/components/tables.css';
+@import './styles/components/navigation.css';
+@import './styles/components/messages.css';
 
 /* Utilities */
-.text-center {
-  text-align: center;
-}
+@import './styles/utilities/utilities.css';
 
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.gap-sm {
-  gap: var(--spacing-sm);
-}
-
-.gap-md {
-  gap: var(--spacing-md);
-}
-
-.mt-md {
-  margin-top: var(--spacing-md);
-}
-
-.mb-md {
-  margin-bottom: var(--spacing-md);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  html {
-    font-size: 13px;
-    /* Further reduction on mobile */
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
-}
+/* Animations */
+@import './styles/animations/animations.css';

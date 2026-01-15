@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { mergePDFs } from '../lib/pdfMerger';
 import { extractBloodResultsSimple, extractFullText } from '../lib/bloodExtractor'; // NEW SIMPLE EXTRACTOR
 import { storage } from '../lib/storage';
-import './UploadPage.css';
 
 export default function UploadPage() {
     const [files, setFiles] = useState<File[]>([]);
@@ -226,7 +225,7 @@ export default function UploadPage() {
                             multiple
                             accept="application/pdf,.pdf,application/json,.json"
                             onChange={handleFileSelect}
-                            style={{ display: 'none' }}
+                            className="hidden"
                             // @ts-ignore - webkitdirectory is not in the TS types
                             webkitdirectory=""
                             directory=""

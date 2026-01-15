@@ -49,7 +49,7 @@ export function ChatMessageItem({ msg }: ChatMessageItemProps) {
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth="2"
-                                style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
+                                className={isExpanded ? 'rotated' : ''}
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                             </svg>

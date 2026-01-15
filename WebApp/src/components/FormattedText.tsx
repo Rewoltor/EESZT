@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import './FormattedText.css';
+
 
 interface FormattedTextProps {
     content: string;

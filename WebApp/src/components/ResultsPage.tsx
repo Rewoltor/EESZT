@@ -12,6 +12,7 @@ export default function ResultsPage() {
     const [sortBy, setSortBy] = useState<'name' | 'result'>('name');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const [filterFlag, setFilterFlag] = useState<'all' | 'flagged'>('all');
+    const [isExitModalOpen, setIsExitModalOpen] = useState(false);
 
     useEffect(() => {
         const loadData = async () => {
@@ -29,12 +30,19 @@ export default function ResultsPage() {
         loadData();
     }, []);
 
-    const handleClearSession = async () => {
-        if (confirm('Biztosan törölni szeretnéd az összes adatot? Ez a művelet nem vonható vissza.')) {
-            await storage.clear();
-            setBloodData(null);
-            window.location.hash = 'home';
-        }
+    const handleExitClick = () => {
+        setIsExitModalOpen(true);
+    };
+
+    const confirmExit = async () => {
+        await storage.clear();
+        setBloodData(null);
+        setIsExitModalOpen(false);
+        window.location.hash = 'home';
+    };
+
+    const cancelExit = () => {
+        setIsExitModalOpen(false);
     };
 
 
@@ -179,7 +187,7 @@ export default function ResultsPage() {
             <UnifiedHeader
                 currentView="results"
                 onExport={handleExportCSV}
-                onDelete={handleClearSession}
+                onDelete={handleExitClick}
             />
 
             <div className="container">
@@ -322,6 +330,27 @@ export default function ResultsPage() {
                     </div>
                 )}
             </div>
+
+            {/* Confirmation Modal */}
+            {isExitModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content glass">
+                        <h3>Biztosan kilépsz?</h3>
+                        <p>
+                            Ez a művelet <strong>törli az összes beszélgetést és a feltöltött adatokat</strong> a jelenlegi munkamenetből.
+                            <br />Az adatok véglegesen elvesznek.
+                        </p>
+                        <div className="modal-actions">
+                            <button className="btn btn-secondary" onClick={cancelExit}>
+                                Mégse
+                            </button>
+                            <button className="btn btn-danger" onClick={confirmExit}>
+                                Kilépés és Törlés
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

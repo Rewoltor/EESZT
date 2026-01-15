@@ -9,6 +9,7 @@ import ChatPage from './components/ChatPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
+import { storage } from './lib/storage';
 
 function App() {
   // Simple hash-based routing
@@ -16,8 +17,20 @@ function App() {
   const [detailTestName, setDetailTestName] = useState('');
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+    const handleHashChange = async () => {
+      let hash = window.location.hash.slice(1) || 'home';
+
+      // Auto-redirect logic: If going to onboarding or upload, check if we have data
+      if (hash === 'onboarding' || hash === 'upload') {
+        const storedData = await storage.getBloodResults();
+        if (storedData && storedData.results && storedData.results.length > 0) {
+          // Check if user explicitly wants to start over? 
+          // For now, per spec, redirect to choice if data exists.
+          // Users can delete data from the choice page or landing page if we add that later.
+          window.location.hash = 'choice';
+          return; // The hash change will trigger this handler again with 'choice'
+        }
+      }
 
       // Check if it's a detail page
       if (hash.startsWith('detail/')) {

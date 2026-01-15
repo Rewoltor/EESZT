@@ -1,5 +1,6 @@
 import { useState, useRef, useLayoutEffect } from 'react';
 import type { ChatMessage } from '../lib/openai';
+import { FormattedText } from './FormattedText';
 
 interface ChatMessageItemProps {
     msg: ChatMessage;
@@ -57,9 +58,9 @@ export function ChatMessageItem({ msg }: ChatMessageItemProps) {
 
                     <div
                         ref={textRef}
-                        className={`message-text ${isUser && !isExpanded ? 'collapsed' : ''}`}
+                        className={`message-text ${isUser && isOverflowing && !isExpanded ? 'collapsed' : ''}`}
                     >
-                        {msg.content}
+                        <FormattedText content={msg.content} />
                     </div>
                 </div>
 

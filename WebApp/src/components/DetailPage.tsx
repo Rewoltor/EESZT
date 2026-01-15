@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { BloodTestResult } from '../types/blood-results';
 import { LineChart } from './LineChart';
+import { storage } from '../lib/storage';
 import './DetailPage.css';
 import { translateFlag } from '../utils/formatting';
 import markerDescriptions from '../data/markerDescription.json';
@@ -14,41 +15,60 @@ interface BloodData {
 export default function DetailPage({ testName }: { testName: string }) {
     const [bloodData, setBloodData] = useState<BloodData | null>(null);
     const [historicalData, setHistoricalData] = useState<BloodTestResult[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const storedData = sessionStorage.getItem('bloodResults');
-        if (storedData) {
+        const loadData = async () => {
             try {
-                const parsed = JSON.parse(storedData);
-                setBloodData(parsed);
+                const parsed = await storage.getBloodResults();
+                if (parsed) {
+                    setBloodData(parsed);
 
-                const decodedName = decodeURIComponent(testName);
-                let testResults = parsed.results.filter(
-                    (r: BloodTestResult) => r.test_name === decodedName
-                );
+                    const decodedName = decodeURIComponent(testName);
+                    let testResults = parsed.results.filter(
+                        (r: BloodTestResult) => r.test_name === decodedName
+                    );
 
-                // Deduplicate by date
-                const seenDates = new Map<string, BloodTestResult>();
-                for (const result of testResults) {
-                    const dateKey = result.date || `unknown-${Math.random()}`;
-                    if (!seenDates.has(dateKey)) {
-                        seenDates.set(dateKey, result);
+                    // Deduplicate by date
+                    const seenDates = new Map<string, BloodTestResult>();
+                    for (const result of testResults) {
+                        const dateKey = result.date || `unknown-${Math.random()}`;
+                        if (!seenDates.has(dateKey)) {
+                            seenDates.set(dateKey, result);
+                        }
                     }
+                    testResults = Array.from(seenDates.values());
+
+                    // Sort chronologically
+                    const sortedResults = testResults.sort((a: BloodTestResult, b: BloodTestResult) => {
+                        if (!a.date || !b.date) return 0;
+                        return new Date(a.date).getTime() - new Date(b.date).getTime();
+                    });
+
+                    setHistoricalData(sortedResults);
                 }
-                testResults = Array.from(seenDates.values());
-
-                // Sort chronologically
-                const sortedResults = testResults.sort((a: BloodTestResult, b: BloodTestResult) => {
-                    if (!a.date || !b.date) return 0;
-                    return new Date(a.date).getTime() - new Date(b.date).getTime();
-                });
-
-                setHistoricalData(sortedResults);
             } catch (error) {
                 console.error('Error parsing stored data:', error);
+            } finally {
+                setIsLoading(false);
             }
-        }
+        };
+
+        loadData();
     }, [testName]);
+
+    if (isLoading) {
+        return (
+            <div className="detail-page">
+                <div className="container">
+                    <div className="loading-state">
+                        <div className="spinner"></div>
+                        <p>Adatok betöltése...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     if (!bloodData || historicalData.length === 0) {
         return (

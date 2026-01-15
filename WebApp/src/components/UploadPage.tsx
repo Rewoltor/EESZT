@@ -146,6 +146,10 @@ export default function UploadPage() {
                 fileCount: files.length
             };
 
+            // Clear legacy session storage to avoid confusion
+            sessionStorage.removeItem('bloodResults');
+            sessionStorage.removeItem('bloodFullText');
+
             await storage.saveBloodResults(bloodData);
             await storage.saveFullText(fullDocumentText);
 

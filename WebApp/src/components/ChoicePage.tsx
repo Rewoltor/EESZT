@@ -1,17 +1,48 @@
 import { useState, useEffect } from 'react';
+import { storage } from '../lib/storage';
 import './ChoicePage.css';
 
 export default function ChoicePage() {
     const [hasResults, setHasResults] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Check if we actually have data to work with
-        const results = sessionStorage.getItem('bloodResults');
-        const text = sessionStorage.getItem('bloodFullText');
-        if (results && text) {
-            setHasResults(true);
-        }
+        const checkData = async () => {
+            try {
+                console.log("Checking storage for existing data...");
+                // Check if we actually have data to work with
+                const results = await storage.getBloodResults();
+                const text = await storage.getFullText(); // Load this just to log it
+
+                console.log("Storage check:", {
+                    hasResults: !!results,
+                    resultCount: results?.results?.length,
+                    hasText: !!text
+                });
+
+                // If we have results, that's enough to proceed.
+                if (results) {
+                    setHasResults(true);
+                } else {
+                    console.log("No results found in storage.");
+                }
+            } catch (error) {
+                console.error("Error checking storage:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        checkData();
     }, []);
+
+    if (isLoading) {
+        return (
+            <div className="choice-container">
+                <div className="spinner"></div>
+            </div>
+        );
+    }
 
     if (!hasResults) {
         return (

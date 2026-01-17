@@ -9,6 +9,35 @@ export default function UploadPage() {
     const [progress, setProgress] = useState('');
     const [error, setError] = useState('');
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const folderInputRef = useRef<HTMLInputElement>(null);
+
+    // Helper to traverse directories recursively
+    const traverseFileTree = async (item: any): Promise<File[]> => {
+        return new Promise((resolve) => {
+            if (item.isFile) {
+                item.file((file: File) => resolve([file]));
+            } else if (item.isDirectory) {
+                const dirReader = item.createReader();
+                const entries: any[] = [];
+
+                const readEntries = () => {
+                    dirReader.readEntries(async (result: any[]) => {
+                        if (result.length === 0) {
+                            const nestedPromises = entries.map(entry => traverseFileTree(entry));
+                            const nestedFiles = await Promise.all(nestedPromises);
+                            resolve(nestedFiles.flat());
+                        } else {
+                            entries.push(...result);
+                            readEntries();
+                        }
+                    });
+                };
+                readEntries();
+            } else {
+                resolve([]);
+            }
+        });
+    };
 
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFiles = event.target.files;
@@ -169,18 +198,32 @@ export default function UploadPage() {
         e.stopPropagation();
     };
 
-    const handleDrop = (e: React.DragEvent) => {
+    const handleDrop = async (e: React.DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
 
-        const droppedFiles = Array.from(e.dataTransfer.files).filter(file => {
+        const items = Array.from(e.dataTransfer.items);
+        const promises = items.map(item => {
+            const entry = item.webkitGetAsEntry ? item.webkitGetAsEntry() : null;
+            if (entry) {
+                return traverseFileTree(entry);
+            }
+            // Fallback for non-entry supporting browsers
+            const file = item.getAsFile();
+            return file ? Promise.resolve([file]) : Promise.resolve([]);
+        });
+
+        const fileArrays = await Promise.all(promises);
+        const allFiles = fileArrays.flat();
+
+        const validFiles = allFiles.filter(file => {
             const name = file.name.toLowerCase();
             return file.type === 'application/pdf' || name.endsWith('.pdf') ||
                 file.type === 'application/json' || name.endsWith('.json');
         });
 
-        if (droppedFiles.length > 0) {
-            setFiles(droppedFiles);
+        if (validFiles.length > 0) {
+            setFiles(validFiles);
             setError('');
         } else {
             setError('Kérlek, csak PDF vagy JSON fájlokat húzz ide.');
@@ -217,7 +260,6 @@ export default function UploadPage() {
                         className={`dropzone ${files.length > 0 ? 'has-files' : ''}`}
                         onDragOver={handleDragOver}
                         onDrop={handleDrop}
-                        onClick={() => fileInputRef.current?.click()}
                     >
                         <input
                             ref={fileInputRef}
@@ -226,9 +268,16 @@ export default function UploadPage() {
                             accept="application/pdf,.pdf,application/json,.json"
                             onChange={handleFileSelect}
                             className="hidden"
+                        />
+                        <input
+                            ref={folderInputRef}
+                            type="file"
+                            multiple
                             // @ts-ignore - webkitdirectory is not in the TS types
                             webkitdirectory=""
                             directory=""
+                            onChange={handleFileSelect}
+                            className="hidden"
                         />
 
                         {files.length === 0 ? (
@@ -236,8 +285,22 @@ export default function UploadPage() {
                                 <svg className="upload-icon" width="64" height="64" viewBox="0 0 24 24" fill="none">
                                     <path d="M7 18v-1a5 5 0 015-5v0a5 5 0 015 5v1M16 7l-4-4m0 0L8 7m4-4v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <h3>Húzd ide a fájlokat vagy kattints a kiválasztáshoz</h3>
-                                <p>PDF vagy JSON fájlok</p>
+                                <h3>Húzd ide a fájlokat</h3>
+                                <div className="flex flex-wrap justify-center gap-3 mt-4">
+                                    <button
+                                        className="btn btn-secondary"
+                                        onClick={() => fileInputRef.current?.click()}
+                                    >
+                                        Fájlok kiválasztása
+                                    </button>
+                                    <button
+                                        className="btn btn-secondary"
+                                        onClick={() => folderInputRef.current?.click()}
+                                    >
+                                        Mappa kiválasztása
+                                    </button>
+                                </div>
+                                <p className="mt-2 text-sm text-gray-400">PDF vagy JSON fájlok</p>
                             </>
                         ) : (
                             <>

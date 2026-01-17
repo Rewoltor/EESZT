@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    /* Light mode custom properties */
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+
+    /* Accent Colors */
+    --accent-primary: #0891b2;
+    --accent-secondary: #2563eb;
+    --accent-glow: rgba(8, 145, 178, 0.1);
+
+    /* Text Colors */
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+
+    /* Semantic Colors */
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    /* Gradients */
+    --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  }
+
+  .dark {
+    /* Dark mode premium properties */
+    --background: #0a0e1a;
+    --foreground: #f8fafc;
+    --card-bg: rgba(17, 24, 39, 0.8);
+    --border: rgba(255, 255, 255, 0.1);
+
+    /* Accent Colors */
+    --accent-primary: #06b6d4;
+    --accent-secondary: #3b82f6;
+    --accent-glow: rgba(6, 182, 212, 0.2);
+
+    /* Text Colors */
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+
+    /* Semantic Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    /* Gradients */
+    --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+
+  /* Simple util for consistent transition */
+  .trans-all {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .glass-card {
+    @apply bg-card backdrop-blur-md border border-border;
+  }
+
+  .btn-gradient {
+    @apply bg-[length:200%_auto] transition-all duration-300 hover:bg-right;
+    background-image: var(--gradient-accent);
+  }
+}

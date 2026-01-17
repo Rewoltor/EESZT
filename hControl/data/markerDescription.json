@@ -1,0 +1,470 @@
+[
+    {
+        "marker_name": "Fehérvérsejtszám",
+        "description": "Az immunrendszer sejtjei, amelyek a szervezetet védik a fertőző betegségek és az idegen anyagok ellen. Számuk emelkedése gyulladást vagy fertőzést jelezhet, míg csökkenése gyengült immunrendszerre utalhat. Különböző típusaik specifikus védelmi funkciókat látnak el a szervezetben a kórokozók ellen. A laborleletben az össz-fehérvérsejtszám a vér egy adott térfogatában található sejtek mennyiségét mutatja meg.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Feh%C3%A9rv%C3%A9rsejt"
+    },
+    {
+        "marker_name": "Vörösvérsejtszám",
+        "description": "A vörösvértestek feladata az oxigén szállítása a tüdőből a szövetekbe és a szén-dioxid visszaszállítása. Számuk változása vérszegénységre, oxigénhiányos állapotra vagy kiszáradásra utalhat a szervezetben. Élettartamuk körülbelül 120 nap, ezután a lépben és a májban bomlanak le. Mennyiségüket a vörösvértest-képződést serkentő eritropoetin hormon szabályozza a szervezet aktuális igényei szerint.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%B6r%C3%B6sv%C3%A9rtest"
+    },
+    {
+        "marker_name": "Hemoglobin",
+        "description": "A vörösvértestekben található vastartalmú fehérje, amely az oxigénmolekulák megkötéséért és szállításáért felelős. Meghatározza a vér oxigénszállító kapacitását és a vörösvértestek jellegzetes piros színét adja. Alacsony szintje vashiányos vagy egyéb típusú vérszegénységet jelezhet a páciensnél. Magas értéke utalhat dohányzásra, krónikus tüdőbetegségre vagy nagy tengerszint feletti magasságra.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Hemoglobin"
+    },
+    {
+        "marker_name": "Hematokrit",
+        "description": "Megmutatja a vérben lévő alakos elemek, elsősorban a vörösvértestek térfogatarányát a teljes vérmennyiséghez képest. Segít diagnosztizálni a vérszegénységet vagy a szervezet túlzott folyadékvesztését, azaz a kiszáradást. Értéke függ a vörösvértestek számától és azok átlagos méretétől is. Magas értéke a vér besűrűsödését jelzi, ami növelheti a trombózis kialakulásának kockázatát.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Hematokrit"
+    },
+    {
+        "marker_name": "MCV",
+        "description": "A vörösvértestek átlagos térfogatát jelző mutató, amely segít a vérszegénység típusainak elkülönítésében. Alacsony értéke esetén mikrocitás, azaz kis méretű vörösvértestekkel járó vérszegénységről beszélünk. Magas értéke makrocitás állapotot jelez, ami gyakran B12-vitamin vagy folsav hiányára utal. Ez az érték alapvető fontosságú a morfológiai diagnózis felállításakor a laboratóriumi gyakorlatban.",
+        "source_name": "Wikipedia",
+        "source_link": "https://en.wikipedia.org/wiki/Mean_corpuscular_volume"
+    },
+    {
+        "marker_name": "MCH",
+        "description": "Az egy vörösvértestre jutó átlagos hemoglobintartalmat adja meg súlyegységben kifejezve a mérés során. Értéke szorosan összefügg az MCV-vel, mivel a nagyobb sejtek általában több hemoglobint tartalmaznak. Alacsony szintje leggyakrabban vashiányos állapotokban fordul elő a klinikai kép részeként. Segítségével meghatározható, hogy a vörösvértestek megfelelően telítettek-e az oxigénszállító fehérjével.",
+        "source_name": "Wikipedia",
+        "source_link": "https://en.wikipedia.org/wiki/Mean_corpuscular_hemoglobin"
+    },
+    {
+        "marker_name": "MCHC",
+        "description": "A vörösvértestek átlagos hemoglobinkoncentrációját mutatja meg egy adott egységnyi vörösvértest-térfogatra vonatkoztatva. Ez a mutató azt jelzi, hogy a sejtek térfogatukhoz képest mennyi hemoglobint hordoznak. Alacsony értéke hipokróm állapotot jelez, ami vashiányra vagy szintézis-zavarra utalhat. Magas értéke ritka, de előfordulhat örökletes sejtalaki rendellenességek, például szferocitózis esetén.",
+        "source_name": "Wikipedia",
+        "source_link": "https://en.wikipedia.org/wiki/Mean_corpuscular_hemoglobin_concentration"
+    },
+    {
+        "marker_name": "Trombocitaszám",
+        "description": "A vérlemezkék a véralvadás folyamatában játszanak központi szerepet a sérült érfalak lezárásával. Alacsony számuk esetén fokozott vérzékenység, kék foltok vagy ínyvérzés jelentkezhet a betegnél. Magas számuk, vagyis a trombocitózis, növelheti a vérrögök kialakulásának és az érelzáródásnak a veszélyét. Mennyiségüket a csontvelőben lévő óriássejtekből való leválással szabályozza a szervezet folyamatosan.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%A9rlemezke"
+    },
+    {
+        "marker_name": "RDW-CV",
+        "description": "A vörösvértestek méretbeli eloszlásának variációját mutató statisztikai érték a laboratóriumi vérképben. Magas értéke azt jelzi, hogy a vörösvértestek mérete jelentősen eltér egymástól a mintában. Fontos diagnosztikai eszköz a különböző eredetű vérszegénységek korai stádiumú megkülönböztetésében és szűrésében. Segítségével felismerhető a vegyes típusú anémia, amikor egyszerre többféle hiányállapot áll fenn.",
+        "source_name": "Wikipedia",
+        "source_link": "https://en.wikipedia.org/wiki/Red_blood_cell_distribution_width"
+    },
+    {
+        "marker_name": "MPV",
+        "description": "A vérlemezkék átlagos térfogatát megadó paraméter, amely a sejtek átlagos méretére utal. A fiatalabb vérlemezkék általában nagyobbak, így a magas érték fokozott termelést jelezhet. Alacsony értéke a csontvelő elégtelen működésére vagy bizonyos gyógyszerek mellékhatására utalhat. Értelmezése minden esetben a teljes trombocitaszámmal összefüggésben történik a klinikai diagnózis során.",
+        "source_name": "Wikipedia",
+        "source_link": "https://en.wikipedia.org/wiki/Mean_platelet_volume"
+    },
+    {
+        "marker_name": "Neutrofil granulocita %",
+        "description": "A fehérvérsejtek legnépesebb csoportja, amely az első vonalbeli védekezést biztosítja a baktériumok ellen. Százalékos arányuk megmutatja, hogy az összes fehérvérsejten belül mekkora részt képviselnek a mintában. Emelkedett szintjük akut bakteriális fertőzésekre, gyulladásos folyamatokra vagy fizikai stresszre utalhat. Alacsony arányuk vírusfertőzések vagy bizonyos gyógyszerek okozta csontvelői gátlás jele is lehet.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Neutrofil_granulocita"
+    },
+    {
+        "marker_name": "Limfocita %",
+        "description": "Az immunrendszer specifikus védekezéséért felelős fehérvérsejtek arányát mutatja meg a vérképben. Két fő típusuk, a B- és T-sejtek, az antitesttermelésért és a sejtes immunválaszért felelnek. Arányuk emelkedése gyakran vírusfertőzéseket vagy krónikus gyulladásos állapotokat jelez a szervezetben. Csökkenésüket okozhatja súlyos stressz, szteroidkezelés vagy bizonyos immunrendszert érintő megbetegedések.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Limfocita"
+    },
+    {
+        "marker_name": "Monocita %",
+        "description": "A legnagyobb méretű fehérvérsejtek, amelyek a szövetekbe vándorolva makrofágokká alakulnak a szervezetben. Feladatuk a kórokozók és elhalt sejtek bekebelezése, valamint az immunválasz koordinálása. Százalékos arányuk növekedése krónikus fertőzésekre, gyulladásokra vagy autoimmun betegségekre utalhat. A teljes fehérvérsejtszámhoz viszonyított arányuk segít a gyulladásos folyamat fázisának meghatározásában.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Monocita"
+    },
+    {
+        "marker_name": "Eozinofil granulocita %",
+        "description": "Olyan fehérvérsejtek, amelyek elsősorban a paraziták elleni védekezésben és allergiás reakciókban vesznek részt. Százalékos arányuk növekedése allergiás betegségeket, asztmát vagy parazitafertőzést jelezhet a laboratóriumi vizsgálat során. Granulumaik olyan fehérjéket tartalmaznak, amelyek képesek elpusztítani a nagyobb méretű kórokozókat a szervezetben. Alacsony értéküknek általában nincs klinikai jelentősége, de Cushing-szindróma esetén előfordulhat.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Eozinofil_granulocita"
+    },
+    {
+        "marker_name": "Bazofil granulocita %",
+        "description": "A legkisebb számban jelen lévő fehérvérsejtek, amelyek heparint és hisztamint tartalmazó szemcséket hordoznak. Fontos szerepet játszanak a gyulladásos folyamatok elindításában és az allergiás válaszreakciók kialakulásában. Emelkedett arányuk ritka, de utalhat bizonyos hematológiai kórképekre vagy súlyos allergiás állapotokra. Százalékos értékük a rutinvizsgálatok során általában a legalacsonyabb az összes fehérvérsejt-típus közül.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Bazofil_granulocita"
+    },
+    {
+        "marker_name": "Neutrofil granulocita #",
+        "description": "A neutrofil granulociták abszolút számát adja meg a vér egy adott térfogatában kifejezve. Ez az érték pontosabb képet ad a szervezet védekezőképességéről, mint a százalékos megoszlás önmagában. Alacsony értéke (neutropénia) súlyos fertőzésveszélyt jelent, mivel a szervezet nem tud hatékonyan védekezni. Magas száma leggyakrabban akut bakteriális inváziót vagy gennyes gyulladást jelez a szervezetben.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/verkep"
+    },
+    {
+        "marker_name": "Limfocita #",
+        "description": "A vérben keringő limfociták tényleges, számszerű mennyiségét jelenti mikroliterenként vagy literenként megadva. Elengedhetetlen az immunhiányos állapotok és a daganatos hematológiai betegségek pontos diagnosztikájához. A vírusfertőzések során az abszolút szám gyakran megemelkedik a szervezet aktív védekezése következtében. Alacsony értéke krónikus betegségek vagy az immunrendszert károsító kezelések hatására alakulhat ki.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/verkep"
+    },
+    {
+        "marker_name": "Monocita #",
+        "description": "A vérben található monociták abszolút mennyiségét jelző paraméter a laboratóriumi diagnosztikában. Emelkedése krónikus gyulladást, bizonyos típusú fertőzéseket vagy gyógyulási fázist jelez a szervezetben. Mivel a szöveti makrofágok előalakjai, számuk tükrözi a szervezet tisztító és bemutató kapacitását. Az abszolút érték figyelése kritikus a csontvelői működés és a gyulladásos válasz követésében.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/verkep"
+    },
+    {
+        "marker_name": "Eozinofil granulocita #",
+        "description": "Az eozinofil sejtek tényleges száma a mintában, melynek normál értéke általában igen alacsony. Meghatározása kulcsfontosságú az allergiás reakciók súlyosságának és a parazitás betegségek megítélésében. Szignifikáns emelkedése esetén további vizsgálatok szükségesek az alapbetegség pontos felderítésére. A kezelés hatására bekövetkező számcsökkenés a terápia sikerességét és a gyulladás mérséklődését jelzi.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/verkep"
+    },
+    {
+        "marker_name": "Bazofil granulocita #",
+        "description": "A bazofil sejtek abszolút száma, amely a rutin vérkép legritkább sejtösszetevőjét számszerűsíti. Emelkedése ritka kórképekben, például krónikus mieloid leukémiában vagy súlyos pajzsmirigy-alulműködésben fordulhat elő. Szerepük van az azonnali típusú túlérzékenységi reakciók és a krónikus gyulladások fenntartásában. Mivel számuk alapvetően csekély, változásuk diagnosztikai értéke specifikus klinikai környezetben válik fontossá.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/verkep"
+    },
+    {
+        "marker_name": "Magvas vörösvértestek",
+        "description": "Olyan éretlen vörösvértestek, amelyek normál esetben csak a csontvelőben találhatók meg, a vérben nem. Megjelenésük a keringésben súlyos csontvelői stresszt, vérképzési zavart vagy daganatos áttétet jelezhet. Egészséges felnőttek vérképében ezeknek a sejteknek az értéke szinte minden esetben nulla. Újszülötteknél kis számban jelen lehetnek, de felnőttkorban jelenlétük azonnali orvosi kivizsgálást tesz szükségessé.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%B6r%C3%B6sv%C3%A9rtest"
+    },
+    {
+        "marker_name": "Glükóz (éhgyomri,0 perces vércukor) - plazma",
+        "description": "A vérben keringő szőlőcukor mennyisége, amely a szervezet legfontosabb, azonnal felhasználható energiaforrása. Mérése éhgyomri állapotban történik a szénhidrát-anyagcsere zavarainak, például a cukorbetegségnek a kiszűrésére. A hasnyálmirigy által termelt inzulin felelős azért, hogy a glükóz a vérből a sejtekbe jusson. Kóros értéke az anyagcsere felborulását és a szövődmények kockázatának növekedését jelzi hosszú távon.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%A9rcukorszint"
+    },
+    {
+        "marker_name": "Karbamid",
+        "description": "A fehérje-anyagcsere végterméke, amely a májban termelődik az aminosavak lebontása során keletkező amóniából. A vérben lévő szintje elsősorban a vesék kiválasztó funkciójától és a fehérjebeviteltől függ. Emelkedett értéke veseelégtelenségre, kiszáradásra vagy magas fehérjetartalmú étrendre utalhat a klinikai képben. Alacsony szintje ritka, de jelezhet súlyos májkárosodást vagy jelentős mértékű éhezést is.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Karbamid"
+    },
+    {
+        "marker_name": "Kreatinin",
+        "description": "Az izomszövetben lévő kreatin-foszfát lebomlásából származó salakanyag, amely állandó ütemben termelődik a szervezetben. A vesék szűrik ki a vérből, így koncentrációja a veseműködés hatékonyságának egyik legfontosabb mutatója. Szintjét befolyásolja az egyén aktuális izomtömege, kora, neme és a napi fizikai aktivitása. Magas értéke a vesefunkció romlását jelzi, mivel a vese nem képes megfelelően eltávolítani a keringésből.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Kreatinin"
+    },
+    {
+        "marker_name": "eGFR-EPI",
+        "description": "Egy számított érték, amely a kreatinin szintből, korból és nemből becsüli meg a vesék percenkénti szűrőkapacitását. A CKD-EPI képlet a jelenleg legpontosabbnak tartott módszer a krónikus vesebetegség stádiumának meghatározására. Megmutatja, hogy a vesék hajszálerei hány milliliter vért képesek megtisztítani egységnyi idő alatt. A 60 alatti érték tartós fennállása esetén már a veseműködés mérsékelt károsodásáról beszélhetünk.",
+        "source_name": "BCM",
+        "source_link": "https://www.bcm.hu/laboratorium/vesefunkcio-vizsgalata-egfr-kreatinin-karbamid/"
+    },
+    {
+        "marker_name": "Húgysav",
+        "description": "A purinvázas vegyületek lebontásának végterméke, amely normál esetben a vizelettel ürül ki a szervezetből. Magas szintje esetén a húgysav kristályok formájában lerakódhat az ízületekben, ami köszvényt okozhat. Az emelkedett érték hátterében állhat túlzott húsfogyasztás, alkoholfogyasztás vagy a vesék csökkent kiválasztó képessége. Tartósan magas szintje növeli a vesekőképződés és bizonyos szív-érrendszeri megbetegedések kockázatát.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/H%C3%BAgysav"
+    },
+    {
+        "marker_name": "Nátrium (Na)",
+        "description": "A szervezet legfontosabb extracelluláris elektrolitja, amely alapvető szerepet játszik a vízháztartás szabályozásában. Meghatározza a vér ozmotikus nyomását és elengedhetetlen az idegrendszeri impulzusok és izomösszehúzódások működéséhez. Szintjét a vesék és különböző hormonok tartják szűk határok között a szervezetben. Hiánya vagy túlsúlya súlyos idegrendszeri tüneteket, zavartságot vagy akár eszméletvesztést is okozhat.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/N%C3%A1trium"
+    },
+    {
+        "marker_name": "Kálium",
+        "description": "A sejteken belüli legfontosabb kation, amely kritikus szerepet játszik a szívizom és az idegek elektromos ingerelhetőségében. Szintjének kismértékű eltérése is súlyos, akár életveszélyes szívritmuszavarokat idézhet elő a betegnél. A vesék szabályozzák a kiválasztását, ezért vesebetegség esetén szintje gyakran veszélyesen megemelkedhet. Megfelelő egyensúlya elengedhetetlen a sejtek normál térfogatának és sav-bázis egyensúlyának fenntartásához.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/K%C3%A1lium"
+    },
+    {
+        "marker_name": "Kálcium",
+        "description": "A szervezetben legnagyobb mennyiségben előforduló ásványi anyag, amelynek 99%-a a csontokban és fogakban tárolódik. A vérben keringő része létfontosságú a véralvadáshoz, az izomösszehúzódáshoz és az idegi jelátvitelhez. Szintjét a mellékpajzsmirigy hormonja és a D-vitamin szoros együttműködésben szabályozza. Alacsony szintje izomgörcsökhöz, míg magas szintje szívpanaszokhoz vagy vesekőhöz vezethet a páciensnél.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Kalcium"
+    },
+    {
+        "marker_name": "Magnézium",
+        "description": "Több mint 300 enzim működéséhez szükséges kofaktor, amely nélkülözhetetlen az energiatermeléshez és az izomfunkciókhoz. Fontos szerepet játszik a szív egészségének megőrzésében és az idegrendszer nyugalmának biztosításában. Hiánya gyakran okoz izomgörcsöket, fáradékonyságat, ingerlékenységet vagy alvászavarokat a mindennapokban. Felszívódását és ürülését a vesék, valamint a bélrendszer állapota befolyásolja jelentős mértékben.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Magn%C3%A9zium"
+    },
+    {
+        "marker_name": "Összfehérje",
+        "description": "A vérplazmában található összes fehérje együttes mennyiségét jelenti, amely főként albuminból és globulinokból áll. Ezek a fehérjék felelősek a vér ozmotikus nyomásának fenntartásáért és a különböző anyagok szállításáért. Alacsony szintje májbetegségre, vesevesztésre vagy súlyos felszívódási zavarra utalhat a diagnózisban. Magas értéke krónikus gyulladást, fertőzéseket vagy bizonyos típusú vérképzőszervi daganatokat jelezhet.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%A9rplazma"
+    },
+    {
+        "marker_name": "Albumin",
+        "description": "A vérplazma legnagyobb mennyiségben előforduló fehérjéje, amelyet a máj termel folyamatosan. Feladata a plazma onkotikus nyomásának fenntartása, megakadályozva ezzel a folyadék kiszivárgását a szövetek közé. Emellett fontos szállítófehérje, amely hormonokat, gyógyszereket és bilirubinmolekulákat juttat el a célhelyükre. Szintjének csökkenése májkárosodást, vesebetegséget vagy súlyos táplálkozási hiányt jelez a szervezetben.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Albumin"
+    },
+    {
+        "marker_name": "C reaktív protein (CRP)",
+        "description": "A májban termelődő fehérje, amelynek szintje gyulladás vagy szöveti károsodás esetén rendkívül gyorsan megemelkedik. Érzékeny mutatója az akut bakteriális fertőzéseknek, műtét utáni állapotoknak és autoimmun betegségek fellángolásának. Segít a klinikusnak megkülönböztetni a bakteriális eredetű fertőzést a vírusos megbetegedésektől a vizsgálat során. A gyulladásos folyamat sikeres kezelésekor a CRP-szint gyorsan visszatér a normál tartományba.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/C-reakt%C3%ADv_protein"
+    },
+    {
+        "marker_name": "C reaktiv protein ultraszenzitív (hsCRP)",
+        "description": "A CRP mérésének egy speciális, nagy érzékenységű módszere, amely a normál tartományon belüli finom eltéréseket is kimutatja. Elsősorban a szív- és érrendszeri betegségek, például az érelmeszesedés okozta krónikus gyulladás kockázatának becslésére használják. A mérés segítségével azonosíthatók azok a páciensek, akiknél fokozott a szívinfarktus vagy stroke kialakulásának veszélye. Nem akut betegség idején végzett mérése ad megbízható adatot a szervezet alap gyulladásos állapotáról.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/crp"
+    },
+    {
+        "marker_name": "Vas (Fe)",
+        "description": "Nélkülözhetetlen nyomelem, amely a hemoglobin központi alkotórészeként az oxigén szállításáért felelős a szervezetben. Alacsony szintje vashiányos vérszegénységhez, fáradékonysághoz és a szellemi teljesítőképesség csökkenéséhez vezethet. Szintje a vérben napszaki ingadozást mutat, ezért mérése általában a reggeli órákban javasolt a pontosság érdekében. Felszívódását a C-vitamin segíti, míg bizonyos élelmiszerek gátolhatják azt a bélben.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Vas"
+    },
+    {
+        "marker_name": "Transzferrin",
+        "description": "A vérben található fő vas-szállító fehérje, amely a májban termelődik a szervezet igényei szerint. Szintje vashiány esetén megemelkedik, mivel a szervezet így próbál több vasat megkötni és szállítani. Krónikus betegségek vagy májkárosodás esetén a szintje csökkenhet, ami zavarja a vas megfelelő eloszlását. Meghatározása segít elkülöníteni a vashiányos állapotokat az egyéb típusú vérszegénységektől a diagnózisban.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Transzferrin"
+    },
+    {
+        "marker_name": "Transzferrin szaturáció",
+        "description": "Megmutatja, hogy a transzferrin fehérje szállítókapacitásának mekkora része van ténylegesen vassal telítve a vérben. Kiszámításához a szérum vas és a transzferrin szintjének ismerete szükséges a laboratóriumi mérés során. Alacsony értéke egyértelműen vashiányra utal, még akkor is, ha a vas szintje még normálisnak tűnik. Magas értéke vasfelhalmozódást vagy örökletes hemokromatózist jelezhet, ami károsíthatja a belső szerveket.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/vaskoto-kapacitas"
+    },
+    {
+        "marker_name": "Ferritin",
+        "description": "A szervezet elsődleges vastároló fehérjéje, amely a sejteken belül biztonságos formában raktározza a vasat. Szintje a vérben közvetlenül tükrözi a szervezet aktuális vasraktárainak telítettségét a vizsgálat idején. Alacsony ferritin szint a vashiány legérzékenyebb korai mutatója, már a vérszegénység kialakulása előtt. Mivel akut fázis fehérje is, gyulladás esetén értéke megtévesztően magas lehet a valós raktárkészlettől függetlenül.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Ferritin"
+    },
+    {
+        "marker_name": "Koleszterin",
+        "description": "A szervezet számára nélkülözhetetlen lipidszerű anyag, amely a sejtmembránok építőköve és hormonok alapanyaga. Két fő forrása van: a máj által termelt belső mennyiség és a táplálékkal bevitt külső forrás. Magas szintje az érfalakban lerakódva növeli az érelmeszesedés és a szív-érrendszeri betegségek kialakulásának kockázatát. A teljes koleszterinszint mellett fontos a különböző frakciók (HDL, LDL) arányának pontos ismerete is.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Koleszterin"
+    },
+    {
+        "marker_name": "Trigliceridek",
+        "description": "A vérben található leggyakoribb zsírtípus, amely a táplálékból származó energiát raktározza el a zsírszövetben. Szintjük megemelkedik a túlzott kalóriabevitel, cukorfogyasztás vagy alkoholfogyasztás hatására a szervezetben. A magas trigliceridszint fokozza a szívbetegségek kockázatát és súlyos esetben hasnyálmirigy-gyulladást is okozhat. Mérése szigorúan éhgyomri állapotban történik, mivel az étkezés jelentősen befolyásolja a pillanatnyi értéket.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Triglicerid"
+    },
+    {
+        "marker_name": "HDL koleszterin",
+        "description": "Gyakran \"jó\" koleszterinként emlegetik, mert segít eltávolítani a felesleges koleszterint az érfalakról és visszaszállítani a májba. Magas szintje védőfaktort jelent a szív- és érrendszeri megbetegedésekkel, például az infarktussal szemben. Alacsony értéke növeli az érelmeszesedés kockázatát, még akkor is, ha az összkoleszterin szintje normális. Rendszeres testmozgással és egészséges étrenddel a HDL szintje hatékonyan növelhető a szervezetben.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/HDL"
+    },
+    {
+        "marker_name": "Totál bilirubin",
+        "description": "Az elöregedett vörösvértestek hemoglobinjának lebomlása során keletkező epefesték összesített mennyisége a vérben. Magas szintje esetén a szemfehérje és a bőr sárgás elszíneződése, azaz sárgaság alakul ki. Emelkedése utalhat fokozott vörösvértest-pusztulásra, májgyulladásra vagy az epeutak elzáródására a diagnózis során. A totál bilirubin a direkt és indirekt frakciók összegéből áll össze a laboratóriumi mérésben.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Bilirubin"
+    },
+    {
+        "marker_name": "Direkt bilirubin",
+        "description": "A bilirubin vízoldékony formája, amely a májban alakul át glükuronsavval való összekapcsolódás után. Emelkedett szintje leggyakrabban epeúti elzáródásra vagy a májsejtek kiválasztási zavarára utal a páciensnél. A vizelettel is képes ürülni, ilyenkor a vizelet színe sötétebbé válik, ami fontos klinikai jel. Mérése segít pontosítani a sárgaság okát, megkülönböztetve a máj előtti és máj utáni akadályokat.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/bilirubin"
+    },
+    {
+        "marker_name": "GOT (ASAT)",
+        "description": "Egy enzim, amely főként a májban, a szívizomban és a vázizomzatban található meg a sejteken belül. Sejtkárosodás, például májgyulladás vagy szívinfarktus esetén nagy mennyiségben kerül ki a vérkeringésbe. Szintje segít a májfunkció megítélésében, de nem specifikus csak a májra, ezért más enzimekkel együtt mérik. Az ASAT/ALAT arány fontos adat a májkárosodás súlyosságának és típusának meghatározásához.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Aszpart%C3%A1t-aminotranszfer%C3%A1z"
+    },
+    {
+        "marker_name": "GPT (ALAT)",
+        "description": "Elsősorban a májsejtekben előforduló enzim, amelynek emelkedése a májsejtek károsodásának legérzékenyebb mutatója. Mivel főleg a májra jellemző, magas szintje specifikusabban jelez májgyulladást, zsírmájat vagy toxikus hatásokat. Akut vírusos májgyulladás esetén az ALAT értéke akár a normálérték többszörösére is megemelkedhet. Rendszeres ellenőrzése fontos bizonyos gyógyszerek szedésekor, amelyek terhelhetik a máj funkcióit.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Alanin-aminotranszfer%C3%A1z"
+    },
+    {
+        "marker_name": "Gamma GT (GGT)",
+        "description": "A májban és az epeutakban jelen lévő enzim, amely rendkívül érzékenyen jelzi az epeúti elzáródást vagy pangást. Gyakran használják az alkoholfogyasztás okozta májkárosodás vagy a krónikus alkoholizmus szűrésére és követésére. Emelkedett szintje utalhat bizonyos gyógyszerek májra gyakorolt hatására vagy zsírmáj kialakulására is. Egyéb májenzimekkel együtt mérve segít eldönteni, hogy a probléma az epeutakat vagy a májsejteket érinti.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Gamma-glutamil-transzfer%C3%A1z"
+    },
+    {
+        "marker_name": "Alkalikus foszfatáz",
+        "description": "A szervezet számos szövetében, főként a májban, az epeutakban és a csontokban megtalálható enzimcsoport. Emelkedett szintje májbetegségre, epeúti akadályra vagy fokozott csontátépüléssel járó kórfolyamatokra utalhat. Gyermekeknél a növekedés miatt élettani okokból is magasabb lehet az értéke a felnőttekéhez képest. Terhesség alatt a méhlepény is termeli, így a harmadik trimeszterben szintje természetes módon megemelkedik.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Alkalikus_foszfat%C3%A1z"
+    },
+    {
+        "marker_name": "Laktát dehidrogenáz (LDH)",
+        "description": "Szinte minden sejtben megtalálható enzim, amely a szénhidrátok lebontásában és az energiatermelésben játszik szerepet. Bármilyen szöveti sérülés vagy sejtszétesés esetén az LDH a vérplazmába kerül, így általános károsodást jelez. Nem specifikus mutató, de emelkedése vérszegénység, daganatos folyamatok vagy májbetegség gyanúját vethetik fel. Öt izoenzimre bontható, melyek meghatározása segít behatárolni, hogy melyik szerv károsodott.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Lakt%C3%A1t-dehidrogen%C3%A1z"
+    },
+    {
+        "marker_name": "Amiláz",
+        "description": "A hasnyálmirigy és a nyálmirigyek által termelt enzim, amely a keményítő lebontásáért felelős az emésztés során. Szérumszintjének jelentős emelkedése leggyakrabban akut hasnyálmirigy-gyulladásra utal a diagnózisban. A vizeletben is mérhető, mivel a vesék kiválasztják, így segítve a betegség lefolyásának követését. Emelkedését okozhatja a nyálmirigyek gyulladása, például mumpsz fertőzés is a páciensnél.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Amil%C3%A1z"
+    },
+    {
+        "marker_name": "Lipáz",
+        "description": "A hasnyálmirigy által termelt enzim, amely a zsírok lebontását végzi a vékonybélben az emésztési folyamat során. Az amiláznál specifikusabb mutatója a hasnyálmirigy megbetegedéseinek, különösen az akut gyulladásos folyamatoknak. Sejtkárosodás esetén a lipáz a véráramba kerül, ahol szintje az amiláznál hosszabb ideig maradhat emelkedett. Magas értéke azonnali orvosi beavatkozást igényelhet a súlyos szövődmények elkerülése érdekében.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Lip%C3%A1z"
+    },
+    {
+        "marker_name": "TSH",
+        "description": "Az agyalapi mirigy hormonja, amely a pajzsmirigy működését és hormontermelését szabályozza a szervezetben. Elsődleges szűrőparaméter a pajzsmirigy-alulműködés vagy túlműködés felismerésére a klinikumban. Szintje rendkívül érzékenyen reagál a pajzsmirigyhormonok koncentrációjának legkisebb változására is. A meddőségi kivizsgálások és a terhesgondozás során is kiemelt jelentőséggel bíró laboratóriumi érték.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Pajzsmirigyserkent%C5%91_hormon"
+    },
+    {
+        "marker_name": "D vitamin (25OH)",
+        "description": "A szervezet kalcium-anyagcseréjének és csontszerkezetének megőrzéséhez nélkülözhetetlen zsírban oldódó vitamin előanyaga. Szintje tükrözi mind a napsugárzás hatására termelődő, mind a táplálékkal bevitt D-vitamin mennyiségét. Hiánya csontritkuláshoz, immunrendszeri gyengeséghez és fokozott gyulladásos hajlamhoz vezethet a szervezetben. Magyarországon a téli hónapokban a lakosság nagy részénél pótlásra van szükség az optimális szinthez.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/D-vitamin"
+    },
+    {
+        "marker_name": "Inzulin",
+        "description": "A hasnyálmirigy béta-sejtjei által termelt hormon, amely a sejtek cukorfelvételét és a vércukorszint szabályozását irányítja. Hiánya vagy hatástalansága esetén a vércukorszint megemelkedik, ami cukorbetegség kialakulásához vezet a páciensnél. Az inzulinszint mérése segít megkülönböztetni a diabétesz típusait és felismerni az inzulinrezisztenciát. Túl magas szintje gyakran társul metabolikus szindrómával és elhízással a klinikai gyakorlatban.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Inzulin"
+    },
+    {
+        "marker_name": "Inzulin rezisztencia (HOMA index)",
+        "description": "Egy matematikai képlet, amely az éhgyomri vércukor és inzulin szintjéből számítja ki a sejtek inzulinérzékenységét. Segít felismerni azt az állapotot, amikor a szervezetnek az átlagosnál több inzulinra van szüksége a vércukorszint tartásához. A magas HOMA index a 2-es típusú cukorbetegség előszobájának tekinthető állapotot jelezhet. Értékelése fontos a meddőség, a policisztás ovárium szindróma és a túlsúly kezelésében.",
+        "source_name": "Synlab",
+        "source_link": "https://www.synlab.hu/vizsgalat/homa-index-inzulinrezisztencia-meghatarozasa"
+    },
+    {
+        "marker_name": "Hemoglobin A1C (NGSP)",
+        "description": "A vörösvértestekben lévő hemoglobin azon része, amelyhez tartósan cukormolekula kapcsolódott a keringés során. Megmutatja az elmúlt 2-3 hónap átlagos vércukorszintjét, így a hosszú távú anyagcsere-állapot legjobb mutatója. Az NGSP standard szerinti százalékos érték a legelterjedtebb forma a diabétesz gondozásában világszerte. Mivel nem pillanatnyi értéket mér, nem szükséges hozzá éhgyomri állapot a mintavételkor.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Glikozil%C3%A1lt_hemoglobin"
+    },
+    {
+        "marker_name": "Hemoglobin A1C (IFCC)",
+        "description": "Az IFCC standard a HbA1c szintjének pontosabb, mmol/mol egységben kifejezett mérési módszere a laboratóriumokban. Ez a mértékegység közvetlenül a hemoglobin glikált részének mennyiségét adja meg, kerülve a százalékos átszámítást. A klinikai gyakorlatban mindkét standardot feltüntetik az eredmények összehasonlíthatósága és pontossága érdekében. Segít a terápiás célok finomhangolásában és a cukorbetegség szövődményeinek megelőzésében.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Glikozil%C3%A1lt_hemoglobin"
+    },
+    {
+        "marker_name": "Vörösvérsejt süllyedés",
+        "description": "Azt méri, hogy egy óra alatt hány milliméternyit süllyednek a vörösvértestek egy függőlegesen állított üvegcsőben. A gyorsabb süllyedés általános gyulladásra, fertőzésre, daganatos folyamatra vagy vérszegénységre utalhat a szervezetben. Nem specifikus vizsgálat, de egyszerű és hasznos jelzője a szervezetben zajló kóros folyamatok aktivitásának. Az értékét befolyásolja a páciens kora, neme és a vér fehérjeösszetételének változása.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/V%C3%B6r%C3%B6sv%C3%A9rtest-s%C3%BCllyed%C3%A9s"
+    },
+    {
+        "marker_name": "Széklet zonulin",
+        "description": "A zonulin egy fehérje, amely a bélfal sejtjei közötti szoros kapcsolatok átjárhatóságát szabályozza a szervezetben. A székletben mért magas szintje a bélfal fokozott áteresztőképességére, az úgynevezett \"áteresztő bél\" állapotra utalhat. Gyakran vizsgálják cöliákia, ételintoleranciák vagy gyulladásos bélbetegségek gyanúja esetén a diagnosztika során. Segítséget nyújt a bélrendszer barrier funkciójának és az immunrendszer állapotának megítélésében.",
+        "source_name": "Neumann Labs",
+        "source_link": "https://www.neumannlabs.hu/vizsgalatok/gasztroenterologia/szeklet-zonulin/"
+    },
+    {
+        "marker_name": "Széklet kalprotektin",
+        "description": "A fehérvérsejtekből felszabaduló fehérje, amely a bélrendszerben zajló gyulladásos folyamatok érzékeny és specifikus markere. Segít elkülöníteni a gyulladásos bélbetegségeket a nem gyulladásos kórképektől, például az irritábilis bél szindrómától. Magas értéke aktív gyulladást jelez a bélnyálkahártyán, ami további vizsgálatokat tehet szükségessé. Alkalmas a kezelés hatékonyságának nyomon követésére és a betegség fellángolásának előrejelzésére.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Kalprotektin"
+    },
+    {
+        "marker_name": "Hisztamin intolerancia (DAO)",
+        "description": "A diamino-oxidáz enzim aktivitásának mérése, amely a táplálékkal bevitt hisztamin lebontásáért felelős a bélben. Alacsony enzimaktivitás esetén a hisztamin felhalmozódik, ami fejfájást, kiütéseket vagy emésztési panaszokat okozhat. A vizsgálat segít diagnosztizálni a hisztamin intoleranciát és indokolttá teheti a speciális diétát a páciensnél. Fontos elkülöníteni a valódi ételallergiától, mivel itt enzimműködési zavar áll fenn.",
+        "source_name": "Synlab",
+        "source_link": "https://www.synlab.hu/vizsgalat/hisztamin-intolerancia-dao-enzim-aktivitas"
+    },
+    {
+        "marker_name": "Immunglobulin E (totál)",
+        "description": "Az immunrendszer által termelt ellenanyag-típus, amely kulcsszerepet játszik az allergiás reakciók és a parazitafertőzések elleni védekezésben. Magas szintje allergiás hajlamra, asztmára, szénanáthára vagy ekcémára utalhat a vizsgált személynél. Segít eldönteni, hogy a tünetek hátterében valódi allergia áll-e, vagy egyéb típusú érzékenység. Az össz-IgE szint emelkedése után gyakran specifikus IgE mérések szükségesek az allergén azonosításához.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Immunglobulin_E"
+    },
+    {
+        "marker_name": "AST meghatározása",
+        "description": "Ez a vizsgálat általában az Antisztreptolizin-O titer mérését jelenti, amely a Streptococcus baktérium elleni ellenanyagot mutatja ki. Emelkedett szintje korábbi vagy fennálló bakteriális fertőzésekre, például tüszős mandulagyulladásra utalhat a szervezetben. Fontos a szövődmények, mint a reumás láz vagy a vesegyulladás megelőzése és diagnosztizálása szempontjából. A lelet segít eldönteni, hogy szükséges-e célzott kezelés a fertőzés maradványainak felszámolásához.",
+        "source_name": "Lab Tests Online",
+        "source_link": "https://labtestsonline.hu/tests/aso"
+    },
+    {
+        "marker_name": "Vizelet fajsúly",
+        "description": "A vizeletben lévő oldott anyagok koncentrációját mutatja meg, összehasonlítva azt a tiszta víz sűrűségével a méréskor. Tükrözi a vesék koncentráló képességét és a szervezet aktuális hidratáltsági állapotát a mintavétel idején. Magas értéke kiszáradást vagy cukor jelenlétét, míg alacsony értéke túlzott folyadékbevitelt jelezhet. Segít diagnosztizálni bizonyos vesebetegségeket vagy a vizeletkiválasztást szabályozó hormonális zavarokat is.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Vizeletvizsg%C3%A1lat"
+    },
+    {
+        "marker_name": "Vizelet pH",
+        "description": "Megmutatja a vizelet kémhatását, amely normálisan a gyengén savastól az enyhén lúgosig terjedhet az étrend függvényében. Befolyásolja a vesekövek kialakulásának esélyét és bizonyos gyógyszerek hatékonyságát a szervezetben. A húsfogyasztás általában savasabb, míg a zöldségközpontú étrend lúgosabb irányba tolja el az értéket. Kóros eltolódása utalhat anyagcsere-zavarra, fertőzésre vagy a vesék sav-bázis szabályozási hibájára.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Vizeletvizsg%C3%A1lat"
+    },
+    {
+        "marker_name": "Vizelet fehérje",
+        "description": "Egészséges esetben a vizeletben csak minimális mennyiségű fehérje található, mivel a vesék visszatartják azokat a keringésben. Megjelenése a vesék szűrőrendszerének károsodására, gyulladásra vagy magas vérnyomás okozta vesebajra utalhat a páciensnél. Alkalmanként intenzív fizikai megterhelés vagy lázas állapot is okozhat átmeneti és ártalmatlan fehérjeürítést. Tartós jelenléte minden esetben alapos nephrológiai kivizsgálást tesz szükségessé a diagnózis során.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Proteinuria"
+    },
+    {
+        "marker_name": "Vizelet cukor",
+        "description": "Normális körülmények között a vizelet nem tartalmaz kimutatható mennyiségű szőlőcukrot a vese visszaszívó képessége miatt. Megjelenése leggyakrabban akkor fordul elő, ha a vércukorszint meghaladja a veseküszöböt, ami cukorbetegségre utal. Ritkább esetben a vese csatornáinak zavara is okozhat cukorürítést normál vércukorszint mellett is a páciensnél. A vizeletcukor mérése gyors szűrésre alkalmas, de nem helyettesíti a pontos vércukor-meghatározást.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Vizeletvizsg%C3%A1lat"
+    },
+    {
+        "marker_name": "Vizelet aceton",
+        "description": "A ketontestek közé tartozik, amelyek a zsírok fokozott lebontása során keletkeznek energiaforrásként a szervezetben. Jelenléte a vizeletben súlyos, kezeletlen cukorbetegségre vagy tartós éhezésre, szénhidráthiányos állapotra utalhat. Kisgyermekeknél lázas állapot vagy hányás kapcsán gyakran megjelenik, ami azonnali folyadék- és cukorpótlást igényel. A ketonuria az anyagcsere savasodásának veszélyére figyelmeztet, ami sürgősségi állapotot jelenthet.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Aceton"
+    },
+    {
+        "marker_name": "Vizelet urobilinogén",
+        "description": "A bilirubin lebontása során a bélben keletkező vegyület, amelynek egy része felszívódva a vizelettel ürül ki. Megemelkedett szintje májkárosodásra, májgyulladásra vagy a vörösvértestek fokozott szétesésére utalhat a diagnózisban. Teljes hiánya a vizeletben az epeutak teljes elzáródását jelezheti, mivel az epe nem jut el a bélbe. Fontos része az általános vizeletvizsgálatnak a máj- és epebetegségek korai felismerése érdekében.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Urobilinog%C3%A9n"
+    },
+    {
+        "marker_name": "Protrombin INR",
+        "description": "A véralvadási idő egy nemzetközileg egységesített mutatója, amely lehetővé teszi a különböző laborok eredményeinek összehasonlítását. Elsősorban a véralvadásgátló kezelés alatt álló betegek terápiájának beállítására és ellenőrzésére használják a klinikumban. Magasabb értéke lassabb véralvadást és fokozott vérzésveszélyt jelent a páciens számára a mindennapokban. Segít megelőzni a trombózist vagy az embóliát, miközben minimalizálja a vérzéses szövődményeket.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Protrombinid%C5%91"
+    },
+    {
+        "marker_name": "Protrombin idő",
+        "description": "Azt méri, hogy mennyi idő alatt képződik alvadék a plazmában bizonyos véralvadási faktorok aktiválása után. Ez a paraméter a véralvadás külső és közös útvonalának működését vizsgálja a laboratóriumi teszt során. Meghosszabbodása májbetegségre, K-vitamin hiányra vagy véralvadási faktorok hiányára utalhat a szervezetben. Alapvető vizsgálat műtétek előtt a vérzékenység kizárására és a beteg biztonságának garantálására.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Protrombinid%C5%91"
+    },
+    {
+        "marker_name": "Parc. tromboplasztin ido (APTI)",
+        "description": "A véralvadás belső és közös útvonalának hatékonyságát mérő időtartam a laboratóriumi diagnosztika folyamatában. Segít azonosítani az olyan véralvadási zavarokat, mint a hemofília, vagy a véralvadási faktorok hiányát. Ezt a tesztet használják a heparin-kezelés monitorozására is, hogy a gyógyszer adagolása biztonságos maradjon. Megnyúlása fokozott vérzéshajlamot jelez, ami beavatkozások előtt kritikus fontosságú információ az orvosnak.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Aktiv%C3%A1lt_parci%C3%A1lis_tromboplasztinid%C5%91"
+    },
+    {
+        "marker_name": "CEA",
+        "description": "Egy daganatjelző fehérje, amely magzati korban termelődik, felnőtteknél azonban csak minimális mennyiségben van jelen. Szintje megemelkedhet bizonyos rákos megbetegedések, különösen a vastagbél- és végbélrák esetén a szervezetben. Nem alkalmas általános daganatszűrésre, de kulcsszerepe van a már diagnosztizált betegek kezelésének követésében. Dohányosoknál az alapérték valamivel magasabb lehet daganatos folyamat jelenléte nélkül is a méréskor.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/CEA"
+    },
+    {
+        "marker_name": "PSA",
+        "description": "A prosztata mirigysejtjei által termelt fehérje, amelynek emelkedett szintje a daganatos folyamatok egyik jelzője lehet. Magas értéke utalhat jóindulatú prosztata-megnagyobbodásra, gyulladásra vagy prosztatarákra is a diagnózis során. Rendszeres mérése javasolt 50 év feletti férfiaknak a betegségek korai stádiumú felismerése érdekében. A vizsgálat eredményét befolyásolhatja a mérést megelőző fizikai irritáció, például biciklizés is.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Prosztataspecifikus_antig%C3%A9n"
+    },
+    {
+        "marker_name": "Alfa1-globulin",
+        "description": "A szérum fehérjeelektroforézis során elkülönített frakció, amely főként az alfa-1-antitripszin nevű fehérjét tartalmazza. Ez a fehérje gyulladásgátló tulajdonságokkal bír és védi a tüdőszövetet a károsító enzimek hatásától. Szintje megemelkedik akut gyulladásos folyamatok és fertőzések idején a szervezet védekező reakciójaként. Csökkenése örökletes hiányállapotra utalhat, ami korai tüdőtágulat vagy májbetegség kialakulásához vezethet.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Feh%C3%A9rjeelektrofor%C3%A9zis"
+    },
+    {
+        "marker_name": "Alfa2-globulin",
+        "description": "A vérplazma fehérjéinek egy csoportja, amelybe többek között a haptoglobin és az alfa-2-makroglobulin tartozik. Szintje jelentősen megemelkedik akut gyulladás, nefrózis szindróma vagy krónikus gyulladásos folyamatok fennállásakor. Segít a szervezetnek a szabad hemoglobin megkötésében és a gyulladásos válasz koordinálásában a betegség alatt. Az elektroforézis során látható emelkedése fontos diagnosztikai jel a klinikai kép pontosításához.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Feh%C3%A9rjeelektrofor%C3%A9zis"
+    },
+    {
+        "marker_name": "Béta1-globulin",
+        "description": "A béta-globulin frakció része, amelynek legfontosabb összetevője a vas szállításáért felelős transzferrin fehérje. Emelkedett szintje gyakran vashiányos vérszegénységre utal, mivel a szervezet fokozza a szállítókapacitást a hiány pótlására. Alacsony értéke májkárosodást vagy súlyos fehérjevesztéssel járó vesebetegséget jelezhet a laboratóriumi leletben. Meghatározása az összfehérje-megoszlás részeként segít a metabolikus folyamatok átfogó értékelésében.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Feh%C3%A9rjeelektrofor%C3%A9zis"
+    },
+    {
+        "marker_name": "Béta2-globulin",
+        "description": "Ez a frakció olyan fehérjéket tartalmaz, mint a komplementrendszer elemei vagy a béta-2-mikroglobulin a vérben. Szintje megemelkedhet gyulladásos állapotokban, bizonyos daganatos betegségekben vagy magas koleszterinszint esetén. Fontos szerepet játszik az immunrendszer működésében és a sejtek közötti jelátviteli folyamatokban a szervezetben. Az elektroforézis görbén való eltolódása specifikus immunológiai vagy daganatos folyamatokra irányíthatja a figyelmet.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Feh%C3%A9rjeelektrofor%C3%A9zis"
+    },
+    {
+        "marker_name": "Gammaglobulin",
+        "description": "Az immunrendszer által termelt antitesteket, azaz immunglobulinokat tartalmazó fehérjefrakció a vérben. Szintje krónikus fertőzések, autoimmun betegségek vagy májcirrózis esetén jelentősen megemelkedhet a szervezetben. Alacsony értéke gyengült immunrendszert és fokozott fertőzésveszélyt jelez a páciens számára a diagnózisban. Az elektroforézis görbén megjelenő keskeny, magas csúcs bizonyos típusú vérképzőszervi daganatok gyanúját veti fel.",
+        "source_name": "Wikipedia",
+        "source_link": "https://hu.wikipedia.org/wiki/Immunglobulin"
+    }
+]

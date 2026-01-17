@@ -111,7 +111,7 @@ export default function OnboardingPage() {
                                         Töltsd fel a PDF fájlokat
                                     </h3>
                                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                                        Kattints a "Tovább a feltöltéshez" gombra, és töltsd fel az összes letöltött PDF fájlodat.
+                                        Kattints a &quot;Tovább a feltöltéshez&quot; gombra, és töltsd fel az összes letöltött PDF fájlodat.
                                         Az alkalmazás automatikusan egyesíti őket, kinyeri a vérvizsgálati eredményeket, és elmenti a böngésződben.
                                     </p>
                                 </div>

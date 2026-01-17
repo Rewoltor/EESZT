@@ -64,10 +64,11 @@ export function ApiKeyInstructions({ onSlideChange, onLinkClick }: ApiKeyInstruc
                         <div className="mb-4 w-full flex-1 flex items-center justify-center">
                             {slide.image ? (
                                 <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 bg-gray-900">
-                                    <img
+                                    <Image
                                         src={slide.image}
-                                        alt={slide.alt}
-                                        className="w-full h-full object-contain"
+                                        alt={slide.alt || ""}
+                                        fill
+                                        className="object-contain"
                                     />
                                 </div>
                             ) : (
